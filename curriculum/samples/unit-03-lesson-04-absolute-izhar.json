@@ -1,0 +1,373 @@
+{
+  "id": "tajweed-u03-l04-absolute-izhar",
+  "unitId": "unit-03",
+  "lessonNumber": "3.4",
+  "title": {
+    "ar": "الإظهار المطلق",
+    "en": "Absolute manifestation exceptions"
+  },
+  "source": {
+    "book": "Tajweed Rules of the Qur'an — Part One",
+    "pdf": "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+    "pdfPages": [43],
+    "printedPages": [43],
+    "chapter": "Noon Saakinah and Tanween Rules",
+    "section": "Absolute manifestation",
+    "verification": "book source checked; Qur'anic references cross-checked"
+  },
+  "contentOrigin": "source-and-instructional-design",
+  "level": "Foundation",
+  "estimatedMinutes": 35,
+  "prerequisites": [
+    "Recognize noon saakinah.",
+    "Name the idgham-with-ghunnah letters ي ن م و.",
+    "Know that ordinary idgham in this section occurs across two words."
+  ],
+  "learningOutcomes": [
+    "Explain why noon saakinah is not merged when ي or و follows inside the same word.",
+    "Name the four Qur'anic words of absolute manifestation.",
+    "Identify the internal boundary in each word.",
+    "Contrast absolute manifestation with idgham across two words.",
+    "Recite the four words with a clear noon and no merging."
+  ],
+  "definition": {
+    "linguistic": {
+      "ar": "المطلق: غير المقيّد بشرط حروف الحلق.",
+      "en": "Absolute here means a clear pronunciation not caused by a following throat letter."
+    },
+    "technical": {
+      "ar": "الإظهار المطلق هو إظهار النون الساكنة إذا جاء بعدها الياء أو الواو في كلمة واحدة، ويقع في القرآن في أربع كلمات: الدنيا، بنيان، صنوان، قنوان.",
+      "en": "Absolute manifestation is pronouncing noon saakinah clearly when ya or waw follows it inside the same word. It occurs in four Qur'anic words: الدنيا، بنيان، صنوان، قنوان."
+    },
+    "studentFriendly": {
+      "ar": "إذا كانت النون الساكنة والياء أو الواو داخل الكلمة نفسها، لا نطبق الإدغام؛ نحافظ على صوت النون واضحًا.",
+      "en": "If noon saakinah and ya or waw are inside the same word, do not merge them. Keep the noon clear."
+    },
+    "memoryFormula": "كلمتان = قد يكون إدغامًا  |  كلمة واحدة = إظهار مطلق"
+  },
+  "keyTerms": [
+    {"ar": "الإظهار المطلق", "transliteration": "al-izhar al-mutlaq", "en": "absolute manifestation"},
+    {"ar": "كلمة واحدة", "transliteration": "kalimah wahidah", "en": "one word"},
+    {"ar": "استثناء", "transliteration": "istithna'", "en": "an exception to the expected pattern"},
+    {"ar": "الدنيا، بنيان، صنوان، قنوان", "transliteration": "ad-dunya, bunyan, sinwan, qinwan", "en": "the four words to recognize"}
+  ],
+  "teacherPreparation": [
+    "Prepare the four word cards with نْي or نْو highlighted.",
+    "Place فَمَن يَعْمَلْ beside ٱلدُّنْيَا to contrast two words with one word.",
+    "Model a deliberately incorrect merge, then the correct clear noon.",
+    "Keep the explanation focused on the word boundary."
+  ],
+  "openingReview": [
+    {"minutes": 2, "teacherPrompt": "Ask which letters trigger idgham with ghunnah."},
+    {"minutes": 2, "teacherPrompt": "Ask where ordinary idgham occurs: one word or two words?"},
+    {"minutes": 1, "teacherPrompt": "Show نْي inside الدنيا and ask whether there is a space."}
+  ],
+  "conceptExplanation": [
+    {
+      "audience": "student",
+      "text": "The next letter alone is not enough. You must also inspect the word boundary. Ya or waw across two words can trigger idgham, but inside these four words the noon stays clear."
+    },
+    {
+      "audience": "teacher",
+      "text": "This lesson prevents overgeneralization of ينمو. Require the learner to state both the trigger and whether it is in the same or next word."
+    }
+  ],
+  "lessonPath": [
+    {"step": 1, "title": "Recall", "text": "Review ينمو and the two-word condition."},
+    {"step": 2, "title": "Notice", "text": "Find نْي or نْو inside one word."},
+    {"step": 3, "title": "Compare", "text": "Contrast one word with two words."},
+    {"step": 4, "title": "Memorize", "text": "Learn the four Qur'anic words."},
+    {"step": 5, "title": "Recite", "text": "Keep the noon clear without merging."}
+  ],
+  "visualExplanation": [
+    {
+      "type": "rule-equation",
+      "display": "نْ + ي / و داخل كلمة واحدة ← إظهار مطلق",
+      "teacherUse": "Circle the absence of a word space."
+    }
+  ],
+  "ruleSummary": {
+    "condition": "Noon saakinah is followed by ya or waw inside the same word.",
+    "result": "Keep noon clear; do not merge it into ya or waw.",
+    "location": "Four Qur'anic words: الدنيا، بنيان، صنوان، قنوان.",
+    "letters": ["نْي", "نْو"]
+  },
+  "letterGroups": [
+    {"name": {"ar": "مع الياء", "en": "With ya"}, "letters": ["الدُّنْيَا", "بُنْيَان"]},
+    {"name": {"ar": "مع الواو", "en": "With waw"}, "letters": ["صِنْوَان", "قِنْوَان"]}
+  ],
+  "quranExamples": [
+    {
+      "arabic": "ثَوَابَ ٱلدُّنْيَا وَٱلْـَٔاخِرَةِ",
+      "surah": {"ar": "النساء", "en": "An-Nisa"},
+      "ayah": 134,
+      "targetText": "نْيَ",
+      "rule": "الإظهار المطلق",
+      "triggerLetter": "ي",
+      "previousLetter": "نْ",
+      "readingInstruction": "Pronounce the noon clearly, then move to ya without merging.",
+      "teacherExplanation": "Noon saakinah and ya occur inside the same word الدنيا.",
+      "commonError": "Treating the internal نْي like the two-word boundary in فَمَن يَعْمَلْ.",
+      "wordBoundary": "within-one-word",
+      "sourcePage": 43,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "كَأَنَّهُم بُنْيَانٌ مَّرْصُوصٌ",
+      "surah": {"ar": "الصف", "en": "As-Saff"},
+      "ayah": 4,
+      "targetText": "نْيَ",
+      "rule": "الإظهار المطلق",
+      "triggerLetter": "ي",
+      "previousLetter": "نْ",
+      "readingInstruction": "Keep noon audible before ya within بنيان.",
+      "teacherExplanation": "The noon and ya are within one word.",
+      "commonError": "Merging noon into ya.",
+      "wordBoundary": "within-one-word",
+      "sourcePage": 43,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "وَنَخِيلٌ صِنْوَانٌ وَغَيْرُ صِنْوَانٍ",
+      "surah": {"ar": "الرعد", "en": "Ar-Ra'd"},
+      "ayah": 4,
+      "targetText": "نْوَ",
+      "rule": "الإظهار المطلق",
+      "triggerLetter": "و",
+      "previousLetter": "نْ",
+      "readingInstruction": "Complete the noon clearly before waw inside صنوان.",
+      "teacherExplanation": "Noon saakinah and waw occur inside the same word.",
+      "commonError": "Removing the clear noon because waw belongs to ينمو.",
+      "wordBoundary": "within-one-word",
+      "sourcePage": 43,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "وَمِنَ ٱلنَّخْلِ مِن طَلْعِهَا قِنْوَانٌ دَانِيَةٌ",
+      "surah": {"ar": "الأنعام", "en": "Al-An'am"},
+      "ayah": 99,
+      "targetText": "نْوَ",
+      "rule": "الإظهار المطلق",
+      "triggerLetter": "و",
+      "previousLetter": "نْ",
+      "readingInstruction": "Keep noon distinct before waw inside قنوان.",
+      "teacherExplanation": "The target and waw are within one word.",
+      "commonError": "Applying idgham merely because waw follows noon.",
+      "wordBoundary": "within-one-word",
+      "sourcePage": 43,
+      "verificationStatus": "verified"
+    }
+  ],
+  "guidedPractice": [
+    {
+      "sequence": 1,
+      "teacherAction": "Show the word with the internal boundary highlighted.",
+      "studentAction": "State: same word, so no idgham.",
+      "feedback": "Require the location before accepting the rule name."
+    },
+    {
+      "sequence": 2,
+      "teacherAction": "Contrast an exception word with a two-word idgham example.",
+      "studentAction": "Recite both and explain the difference.",
+      "feedback": "Correct word-boundary reasoning and pronunciation separately."
+    }
+  ],
+  "oralPractice": [
+    {
+      "cycle": ["see word", "locate نْ", "check same word", "keep noon clear", "recite in context"],
+      "examplesRequired": 4,
+      "teacherObservation": ["audible noon", "no merging", "accurate ya or waw", "correct explanation"]
+    }
+  ],
+  "interactiveActivities": [
+    {
+      "stage": "1 · Recall the condition",
+      "type": "review",
+      "instruction": {"en": "Where does ordinary idgham occur in this unit?"},
+      "prompt": "Choose the word-boundary condition.",
+      "items": ["Across two words", "Inside one word", "Only when stopping"],
+      "acceptedAnswers": ["Across two words"],
+      "feedbackCorrect": "Correct. The target ends one word and the trigger begins the next.",
+      "feedbackIncorrect": "Review the spaces in the idgham examples."
+    },
+    {
+      "stage": "1 · Recall the condition",
+      "type": "review",
+      "instruction": {"en": "Which pair appears inside the word الدنيا?"},
+      "prompt": "ٱلدُّنْيَا",
+      "items": ["نْي", "نْو", "نْم", "نْن"],
+      "acceptedAnswers": ["نْي"],
+      "feedbackCorrect": "Correct. Noon saakinah is followed by ya.",
+      "feedbackIncorrect": "Inspect the middle of the word."
+    },
+    {
+      "stage": "2 · Memorize the four words",
+      "type": "word-set",
+      "instruction": {"en": "Which is an absolute-manifestation word?"},
+      "prompt": "Choose one.",
+      "items": ["الدنيا", "مَن يَعْمَلْ", "مِن مَّاءٍ", "مِنْ عَلَقٍ"],
+      "acceptedAnswers": ["الدنيا"],
+      "feedbackCorrect": "Correct. نْي occurs inside one word.",
+      "feedbackIncorrect": "Look for an internal نْي or نْو."
+    },
+    {
+      "stage": "2 · Memorize the four words",
+      "type": "word-set",
+      "instruction": {"en": "Which pair contains the two ya words?"},
+      "prompt": "Choose the correct pair.",
+      "items": ["الدنيا، بنيان", "صنوان، قنوان", "من يعمل، من نعمة"],
+      "acceptedAnswers": ["الدنيا، بنيان"],
+      "feedbackCorrect": "Correct. Both contain نْي.",
+      "feedbackIncorrect": "The ya pair is الدنيا and بنيان."
+    },
+    {
+      "stage": "2 · Memorize the four words",
+      "type": "word-set",
+      "instruction": {"en": "Which pair contains the two waw words?"},
+      "prompt": "Choose the correct pair.",
+      "items": ["الدنيا، بنيان", "صنوان، قنوان", "من يعمل، من نعمة"],
+      "acceptedAnswers": ["صنوان، قنوان"],
+      "feedbackCorrect": "Correct. Both contain نْو.",
+      "feedbackIncorrect": "The waw pair is صنوان and قنوان."
+    },
+    {
+      "stage": "3 · Compare one word and two words",
+      "type": "rule-decision",
+      "instruction": {"en": "Which reading rule applies?"},
+      "prompt": "ٱلدُّنْيَا",
+      "items": ["Absolute manifestation", "Idgham with ghunnah", "Iqlab"],
+      "acceptedAnswers": ["Absolute manifestation"],
+      "feedbackCorrect": "Correct. Noon and ya are inside one word.",
+      "feedbackIncorrect": "Check whether there is a word boundary."
+    },
+    {
+      "stage": "3 · Compare one word and two words",
+      "type": "rule-decision",
+      "instruction": {"en": "Which reading rule applies?"},
+      "prompt": "فَمَن يَعْمَلْ",
+      "items": ["Absolute manifestation", "Idgham with ghunnah", "Izhar halqi"],
+      "acceptedAnswers": ["Idgham with ghunnah"],
+      "feedbackCorrect": "Correct. Ya begins the next word.",
+      "feedbackIncorrect": "Here noon and ya are in two separate words."
+    },
+    {
+      "stage": "3 · Compare one word and two words",
+      "type": "rule-decision",
+      "instruction": {"en": "Which reading rule applies?"},
+      "prompt": "صِنْوَانٌ",
+      "items": ["Absolute manifestation", "Idgham with ghunnah", "Izhar halqi"],
+      "acceptedAnswers": ["Absolute manifestation"],
+      "feedbackCorrect": "Correct. Noon and waw are within one word.",
+      "feedbackIncorrect": "The internal word position prevents idgham."
+    },
+    {
+      "stage": "4 · Diagnose the error",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner merges noon into ya in الدنيا. What is the correction?"},
+      "prompt": "ٱلدُّنْيَا",
+      "items": ["Keep noon clear", "Merge more", "Change noon to mim", "Remove ya"],
+      "acceptedAnswers": ["Keep noon clear"],
+      "feedbackCorrect": "Correct. This is absolute manifestation.",
+      "feedbackIncorrect": "The target and ya are inside the same word."
+    },
+    {
+      "stage": "4 · Diagnose the error",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner says every noon before waw is idgham. What did they forget?"},
+      "prompt": "قِنْوَانٌ",
+      "items": ["Check the word boundary", "Count the letters", "Look for qalqalah", "Stop reading"],
+      "acceptedAnswers": ["Check the word boundary"],
+      "feedbackCorrect": "Correct. The location changes the ruling.",
+      "feedbackIncorrect": "Ask: same word or next word?"
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Complete the four-word set."},
+      "prompt": "الدنيا، بنيان، صنوان، …",
+      "items": ["قنوان", "غفور", "من يعمل", "كتاب"],
+      "acceptedAnswers": ["قنوان"],
+      "feedbackCorrect": "Correct. You know all four words.",
+      "feedbackIncorrect": "The missing waw word begins with ق."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Choose the complete explanation."},
+      "prompt": "Why is قِنْوَانٌ read with a clear noon?",
+      "items": ["Noon and waw are inside one word", "Waw is a throat letter", "There is tanween", "The word is long"],
+      "acceptedAnswers": ["Noon and waw are inside one word"],
+      "feedbackCorrect": "Excellent. Location is the key reason.",
+      "feedbackIncorrect": "Name the target, trigger, and same-word location."
+    }
+  ],
+  "commonMistakes": [
+    "Applying idgham whenever ya or waw follows, without checking the word boundary.",
+    "Memorizing only الدنيا and forgetting the other three words.",
+    "Weakening the clear noon inside the word.",
+    "Calling this izhar halqi even though ya and waw are not throat letters."
+  ],
+  "correctionTechniques": [
+    "Draw a box around each whole word to make the boundary visible.",
+    "Contrast الدنيا with فَمَن يَعْمَلْ.",
+    "Group the words into two pairs: نْي and نْو.",
+    "Require the sentence: same word, therefore absolute manifestation."
+  ],
+  "knowledgeChecks": [
+    {"type": "recall", "prompt": "Name all four words.", "success": "All four are named without prompting."},
+    {"type": "comparison", "prompt": "Contrast الدنيا and فمن يعمل.", "success": "The learner explains one word versus two words."},
+    {"type": "recitation", "prompt": "Recite all four words.", "success": "Noon remains clear in each word."}
+  ],
+  "teacherQuestions": [
+    "Where is noon saakinah?",
+    "Does ya or waw occur in the same word?",
+    "Which of the four words is this?",
+    "Should noon remain clear or merge?"
+  ],
+  "studentTasks": [
+    "Group the four words into ya and waw pairs.",
+    "Highlight نْي and نْو.",
+    "Compare one exception with one ordinary idgham example.",
+    "Recite all four words clearly."
+  ],
+  "liveClassFlow": [
+    {"minutes": 5, "phase": "Review", "display": "ينمو and the two-word condition"},
+    {"minutes": 6, "phase": "Discovery", "display": "One word versus two words"},
+    {"minutes": 6, "phase": "Four-word set", "display": "الدنيا، بنيان، صنوان، قنوان"},
+    {"minutes": 7, "phase": "Teacher model", "display": "Clear noon inside each word"},
+    {"minutes": 6, "phase": "Mixed decisions", "display": "Exception or idgham"},
+    {"minutes": 3, "phase": "Error correction", "display": "Overgeneralizing ينمو"},
+    {"minutes": 2, "phase": "Exit check", "display": "Recall and explain"}
+  ],
+  "independentPractice": [
+    "Write the four words in two groups: نْي and نْو.",
+    "Mark the internal boundary and write: one word = clear noon."
+  ],
+  "homework": [
+    "Prepare the four verified words for teacher listening.",
+    "Contrast one of them with فَمَن يَعْمَلْ and explain the difference."
+  ],
+  "exitTicket": [
+    "Name the four words.",
+    "Explain why no idgham occurs.",
+    "Recite one ya word and one waw word."
+  ],
+  "masteryCriteria": [
+    "Names all four exception words.",
+    "Identifies internal نْي and نْو.",
+    "Distinguishes one-word exceptions from two-word idgham.",
+    "Keeps noon clear in all four words.",
+    "Explains the rule using the word boundary."
+  ],
+  "teacherNotes": [
+    "This is an exception-management lesson, not a new throat-letter rule.",
+    "The learner must check both the next letter and its location.",
+    "Keep the four words visible as a permanent reference during early mixed practice."
+  ],
+  "sourceNotes": [
+    "The four-word exception set is based on page 43.",
+    "Qur'anic references were cross-checked independently.",
+    "Activities and teaching sequence are curriculum-design additions."
+  ],
+  "verificationStatus": "source-verified; Qur'anic references checked; live teacher pronunciation review required"
+}

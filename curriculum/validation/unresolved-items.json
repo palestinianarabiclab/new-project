@@ -1,0 +1,24 @@
+{
+  "source": "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+  "items": [
+    {
+      "id": "global-quran-transcription",
+      "scope": "all Qur'anic examples",
+      "status": "needs-manual-review",
+      "reason": "The source PDF is image-only. Arabic phrases must be transcribed from page images and checked before publication."
+    },
+    {
+      "id": "global-audio",
+      "scope": "pronunciation, ghunnah timing, madd timing, articulation, qalqalah",
+      "status": "needs-qualified-teacher-review",
+      "reason": "Written source verification cannot certify produced sound."
+    },
+    {
+      "id": "transliteration-policy",
+      "scope": "all bilingual terminology",
+      "status": "editorial-decision-needed",
+      "reason": "A consistent, learner-friendly transliteration system should be selected while preserving Arabic technical terms."
+    }
+  ]
+}
+

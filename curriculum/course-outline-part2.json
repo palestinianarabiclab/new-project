@@ -1,0 +1,117 @@
+{
+  "id": "tajweed-part-two",
+  "level": "Part Two",
+  "levelOrder": 2,
+  "title": {
+    "ar": "أحكام تجويد القرآن — الجزء الثاني",
+    "en": "Tajweed Rules of the Qur'an — Part Two"
+  },
+  "source": {
+    "pdf": "tajweed-rules_part-2.pdf",
+    "author": "Kareema Carol Czerepinski",
+    "pdfPageCount": 94,
+    "recitation": "Hafs 'an 'Asim through Ash-Shatibiyyah",
+    "verification": "visually audited from scanned pages"
+  },
+  "audience": "Learners who completed Part One and can apply foundational articulation and recitation rules",
+  "delivery": "Teacher-led live screen-sharing lessons",
+  "units": [
+    {
+      "id": "part2-unit-01",
+      "title": {"ar": "النبر في تلاوة القرآن الكريم", "en": "Accent in Qur'anic Recitation"},
+      "sourcePages": [1, 2, 3, 4, 5],
+      "lessons": [
+        "Accent and stopping on a strengthened letter",
+        "Accent with strengthened ya and waw",
+        "Accent after a madd letter",
+        "Accent on final hamzah after madd or leen",
+        "Accent in special dual-form verbs"
+      ]
+    },
+    {
+      "id": "part2-unit-02",
+      "title": {"ar": "صفات الحروف", "en": "Characteristics of Letters"},
+      "sourcePages": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+      "lessons": [
+        "Meaning and categories of letter characteristics",
+        "Characteristics with and without opposites",
+        "Whisper and apparent sound",
+        "Strength, in-between, and softness",
+        "Effects of strength, moderation, and softness",
+        "Elevation and lowering",
+        "Adhesion and openness",
+        "Whistling",
+        "Leen as a letter characteristic",
+        "Drifting",
+        "Controlled repetition",
+        "Spreading around",
+        "Lengthening characteristic",
+        "Nasalization characteristic",
+        "Characteristics in Al-Jazariyyah",
+        "Strength and weakness review"
+      ]
+    },
+    {
+      "id": "part2-unit-03",
+      "title": {"ar": "التفخيم والترقيق", "en": "Tafkheem and Tarqeeq"},
+      "sourcePages": [19, 20, 21, 22, 23, 24, 25, 26, 27],
+      "lessons": [
+        "Tafkheem and tarqeeq definitions and categories",
+        "Letters that are always heavy",
+        "Levels of tafkheem",
+        "Letters that alternate between heavy and light",
+        "Lam in the Name of Allah",
+        "Ra: heavy and light cases",
+        "Tafkheem and tarqeeq cumulative practice"
+      ]
+    },
+    {
+      "id": "part2-unit-04",
+      "title": {"ar": "المتماثلان والمتجانسان والمتقاربان والمتباعدان", "en": "Letter Relationships and Idgham"},
+      "sourcePages": [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42],
+      "lessons": [
+        "Four letter-relationship categories",
+        "Meeting of two letters and types of idgham",
+        "Two identical letters",
+        "Two letters of similar nature",
+        "Two approximating letters",
+        "Two distant letters",
+        "Letter relationships cumulative practice"
+      ]
+    },
+    {
+      "id": "part2-unit-05",
+      "title": {"ar": "مقدمة مختصرة في مصطلحات النحو", "en": "Brief Introduction to Grammar Terms"},
+      "sourcePages": [43, 44, 45, 46, 47, 48],
+      "lessons": [
+        "Why grammar terms matter in Tajweed",
+        "Past-tense verbs",
+        "Present-tense verbs",
+        "Command verbs",
+        "Essential structure of verbs",
+        "Nouns and their signs",
+        "Particles and prepositions",
+        "Grammar terms review"
+      ]
+    },
+    {
+      "id": "part2-unit-06",
+      "title": {"ar": "همزة الوصل", "en": "Connecting Hamzah"},
+      "sourcePages": [49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69],
+      "lessons": [
+        "Hamzah al-wasl and hamzah al-qata",
+        "Hamzah al-wasl in verbs",
+        "Starting vowels in verbs",
+        "Hamzah al-wasl in nouns",
+        "The seven special nouns",
+        "Hamzah al-wasl in particles",
+        "Starting-vowel decision chart",
+        "Meeting of hamzah al-wasl and hamzah al-qata",
+        "Hamzah al-wasl before hamzah al-qata",
+        "Question hamzah before hamzah al-wasl in verbs",
+        "Question hamzah before hamzah al-wasl in nouns",
+        "Connecting hamzah cumulative review"
+      ]
+    }
+  ]
+}

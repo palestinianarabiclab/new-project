@@ -1,0 +1,372 @@
+{
+  "id": "tajweed-u03-l05-idgham-without-ghunnah",
+  "unitId": "unit-03",
+  "lessonNumber": "3.5",
+  "title": {
+    "ar": "الإدغام بغير غنة",
+    "en": "Idgham without ghunnah"
+  },
+  "source": {
+    "book": "Tajweed Rules of the Qur'an — Part One",
+    "pdf": "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+    "pdfPages": [44],
+    "printedPages": [44],
+    "chapter": "Noon Saakinah and Tanween Rules",
+    "section": "Idgham without ghunnah",
+    "verification": "book source checked; Qur'anic references cross-checked"
+  },
+  "contentOrigin": "source-and-instructional-design",
+  "level": "Foundation",
+  "estimatedMinutes": 45,
+  "prerequisites": [
+    "Recognize noon saakinah and tanween.",
+    "Understand that idgham merges the target into the following letter.",
+    "Identify idgham with ghunnah in ي ن م و."
+  ],
+  "learningOutcomes": [
+    "Name lam and ra as the two letters of idgham without ghunnah.",
+    "Identify the rule after noon saakinah or tanween.",
+    "Contrast ي ن م و with ل ر.",
+    "Explain that no two-count idgham ghunnah remains with lam or ra.",
+    "Recite verified examples by merging directly into lam or ra."
+  ],
+  "definition": {
+    "linguistic": {
+      "ar": "الإدغام هو إدخال حرف في حرف حتى يصيرا كحرف واحد مشدد.",
+      "en": "Idgham means merging one letter into another until they sound like one strengthened letter."
+    },
+    "technical": {
+      "ar": "الإدغام بغير غنة هو إدخال النون الساكنة أو التنوين في اللام أو الراء إذا جاء أحدهما في أول الكلمة التالية، من غير إبقاء غنة الإدغام.",
+      "en": "Idgham without ghunnah merges noon saakinah or tanween into lam or ra at the beginning of the next word, without retaining the idgham ghunnah."
+    },
+    "studentFriendly": {
+      "ar": "إذا جاء بعد النون الساكنة أو التنوين لام أو راء في الكلمة التالية، ندمج صوت النون مباشرة في اللام أو الراء بلا غنة حركتين.",
+      "en": "If lam or ra begins the next word after noon saakinah or tanween, merge directly into it without a two-count ghunnah."
+    },
+    "memoryFormula": "نْ أو تنوين + ل ر = إدغام بغير غنة"
+  },
+  "keyTerms": [
+    {"ar": "بغير غنة", "transliteration": "bi-ghayri ghunnah", "en": "without retaining a nasal ghunnah"},
+    {"ar": "اللام", "transliteration": "al-lam", "en": "lam: ل"},
+    {"ar": "الراء", "transliteration": "ar-ra", "en": "ra: ر"},
+    {"ar": "إدغام كامل", "transliteration": "idgham kamil", "en": "complete merging; detailed further in the next lesson"}
+  ],
+  "teacherPreparation": [
+    "Prepare trigger cards ل and ر.",
+    "Place ينمو and ل ر in two contrasting columns.",
+    "Model an incorrect nasal hold, then the correct direct merge.",
+    "Listen for smooth entry into the strengthened lam or ra."
+  ],
+  "openingReview": [
+    {"minutes": 2, "teacherPrompt": "Ask the learner to name ينمو and its ghunnah timing."},
+    {"minutes": 2, "teacherPrompt": "Show ل and ر and ask whether they belong to ينمو."},
+    {"minutes": 1, "teacherPrompt": "Review that idgham occurs across two words."}
+  ],
+  "conceptExplanation": [
+    {
+      "audience": "student",
+      "text": "Both kinds of idgham merge the noon sound. The difference is what remains: with ينمو we keep a two-count ghunnah; with lam and ra we merge without that ghunnah."
+    },
+    {
+      "audience": "teacher",
+      "text": "Avoid saying that all nasal resonance can be physically removed; teach the practical recitation distinction as transmitted and assess it by listening."
+    }
+  ],
+  "lessonPath": [
+    {"step": 1, "title": "Recall", "text": "Find the target and next word."},
+    {"step": 2, "title": "Recognize", "text": "Check whether the trigger is ل or ر."},
+    {"step": 3, "title": "Compare", "text": "Contrast with-ghunnah and without-ghunnah groups."},
+    {"step": 4, "title": "Merge", "text": "Enter directly into strengthened lam or ra."},
+    {"step": 5, "title": "Diagnose", "text": "Remove an added two-count nasal hold."}
+  ],
+  "visualExplanation": [
+    {
+      "type": "rule-equation",
+      "display": "نْ / ً ٍ ٌ + ل ر ← إدغام بغير غنة",
+      "teacherUse": "Keep ل ر visually separate from ينمو."
+    }
+  ],
+  "ruleSummary": {
+    "condition": "Noon saakinah or tanween is followed in the next word by lam or ra.",
+    "result": "Merge directly into lam or ra without retaining a two-count idgham ghunnah.",
+    "location": "Across two words.",
+    "letters": ["ل", "ر"]
+  },
+  "letterGroups": [
+    {"name": {"ar": "حرفا الإدغام بغير غنة", "en": "Without-ghunnah letters"}, "letters": ["ل", "ر"]}
+  ],
+  "quranExamples": [
+    {
+      "arabic": "أُو۟لَـٰٓئِكَ عَلَىٰ هُدًى مِّن رَّبِّهِمْ",
+      "surah": {"ar": "البقرة", "en": "Al-Baqarah"},
+      "ayah": 5,
+      "targetText": "ن رَّ",
+      "rule": "الإدغام بغير غنة",
+      "triggerLetter": "ر",
+      "previousLetter": "نْ",
+      "readingInstruction": "Merge noon directly into the strengthened ra without a two-count ghunnah.",
+      "teacherExplanation": "Ra begins the next word after noon saakinah.",
+      "commonError": "Holding a nasal sound before ra.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 44,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "قَيِّمًا لِّيُنذِرَ بَأْسًا شَدِيدًا مِّن لَّدُنْهُ",
+      "surah": {"ar": "الكهف", "en": "Al-Kahf"},
+      "ayah": 2,
+      "targetText": "ن لَّ",
+      "rule": "الإدغام بغير غنة",
+      "triggerLetter": "ل",
+      "previousLetter": "نْ",
+      "readingInstruction": "Merge noon into the strengthened lam with no two-count nasal hold.",
+      "teacherExplanation": "Lam begins the following word.",
+      "commonError": "Pronouncing a separate noon before lam.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 44,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "هُدًى لِّلْمُتَّقِينَ",
+      "surah": {"ar": "البقرة", "en": "Al-Baqarah"},
+      "ayah": 2,
+      "targetText": "دًى لِّ",
+      "rule": "الإدغام بغير غنة",
+      "triggerLetter": "ل",
+      "previousLetter": "تنوين فتح",
+      "readingInstruction": "Merge the tanween noon sound directly into lam.",
+      "teacherExplanation": "Lam follows tanween across two words.",
+      "commonError": "Keeping the tanween noon separate or adding a two-count ghunnah.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 44,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "وَٱللَّهُ غَفُورٌ رَّحِيمٌ",
+      "surah": {"ar": "البقرة", "en": "Al-Baqarah"},
+      "ayah": 218,
+      "targetText": "رٌ رَّ",
+      "rule": "الإدغام بغير غنة",
+      "triggerLetter": "ر",
+      "previousLetter": "تنوين ضم",
+      "readingInstruction": "Merge the tanween noon sound into the strengthened ra without a two-count ghunnah.",
+      "teacherExplanation": "Ra follows tanween across two words.",
+      "commonError": "Adding the same ghunnah used with ي ن م و.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 44,
+      "verificationStatus": "verified"
+    }
+  ],
+  "guidedPractice": [
+    {
+      "sequence": 1,
+      "teacherAction": "Display the target and trigger only.",
+      "studentAction": "Classify the trigger as ينمو or ل ر.",
+      "feedback": "Require the learner to state whether ghunnah remains."
+    },
+    {
+      "sequence": 2,
+      "teacherAction": "Model direct entry into lam or ra.",
+      "studentAction": "Isolate the boundary, merge, then recite the phrase.",
+      "feedback": "Correct a separate noon and an added nasal hold independently."
+    }
+  ],
+  "oralPractice": [
+    {
+      "cycle": ["find target", "identify ل or ر", "merge directly", "check no two-count hold", "recite in context"],
+      "examplesRequired": 4,
+      "teacherObservation": ["no separate noon", "no added two-count ghunnah", "clear strengthened trigger", "smooth continuation"]
+    }
+  ],
+  "interactiveActivities": [
+    {
+      "stage": "1 · Recognize the group",
+      "type": "letter-group",
+      "instruction": {"en": "Which letters cause idgham without ghunnah?"},
+      "prompt": "Choose the complete group.",
+      "items": ["ل ر", "ي ن م و", "ء ه ع ح غ خ", "ب"],
+      "acceptedAnswers": ["ل ر"],
+      "feedbackCorrect": "Correct. Lam and ra form this group.",
+      "feedbackIncorrect": "Keep ل ر separate from the memory word ينمو."
+    },
+    {
+      "stage": "1 · Recognize the group",
+      "type": "comparison",
+      "instruction": {"en": "Which group keeps a two-count ghunnah?"},
+      "prompt": "Compare the two idgham groups.",
+      "items": ["ي ن م و", "ل ر", "Both groups identically", "Neither group"],
+      "acceptedAnswers": ["ي ن م و"],
+      "feedbackCorrect": "Correct. The two-count idgham ghunnah belongs to ينمو.",
+      "feedbackIncorrect": "Lam and ra are taught without retaining that ghunnah."
+    },
+    {
+      "stage": "2 · Find the trigger",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the trigger."},
+      "prompt": "مِن رَّبِّهِمْ",
+      "items": ["م", "نْ", "ر", "ب"],
+      "acceptedAnswers": ["ر"],
+      "feedbackCorrect": "Correct. Ra begins the next word.",
+      "feedbackIncorrect": "Find the first letter after the target."
+    },
+    {
+      "stage": "2 · Find the trigger",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the trigger."},
+      "prompt": "مِن لَّدُنْهُ",
+      "items": ["م", "نْ", "ل", "د"],
+      "acceptedAnswers": ["ل"],
+      "feedbackCorrect": "Correct. Lam follows noon saakinah.",
+      "feedbackIncorrect": "Inspect the beginning of the second word."
+    },
+    {
+      "stage": "2 · Find the trigger",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the trigger."},
+      "prompt": "هُدًى لِّلْمُتَّقِينَ",
+      "items": ["ً", "ى", "ل", "م"],
+      "acceptedAnswers": ["ل"],
+      "feedbackCorrect": "Correct. Lam follows tanween.",
+      "feedbackIncorrect": "The trigger begins the following word."
+    },
+    {
+      "stage": "3 · Decide the rule",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "غَفُورٌ رَّحِيمٌ",
+      "items": ["Idgham without ghunnah", "Idgham with ghunnah", "Izhar"],
+      "acceptedAnswers": ["Idgham without ghunnah"],
+      "feedbackCorrect": "Correct. Ra follows tanween.",
+      "feedbackIncorrect": "Ra belongs to the ل ر group."
+    },
+    {
+      "stage": "3 · Decide the rule",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "رَحِيمٌ وَدُودٌ",
+      "items": ["Idgham without ghunnah", "Idgham with ghunnah", "Izhar"],
+      "acceptedAnswers": ["Idgham with ghunnah"],
+      "feedbackCorrect": "Correct. Waw belongs to ينمو.",
+      "feedbackIncorrect": "Compare waw with the two groups."
+    },
+    {
+      "stage": "3 · Decide the rule",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "مِنْ عَلَقٍ",
+      "items": ["Idgham without ghunnah", "Idgham with ghunnah", "Izhar"],
+      "acceptedAnswers": ["Izhar"],
+      "feedbackCorrect": "Correct. Ayn is a throat letter.",
+      "feedbackIncorrect": "Ayn is not in ينمو or ل ر."
+    },
+    {
+      "stage": "4 · Diagnose the recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner holds a two-count ghunnah before ra. What should change?"},
+      "prompt": "مِن رَّبِّهِمْ",
+      "items": ["Merge directly without the two-count hold", "Make ghunnah longer", "Keep noon separate", "Change ra to mim"],
+      "acceptedAnswers": ["Merge directly without the two-count hold"],
+      "feedbackCorrect": "Correct. Enter directly into the strengthened ra.",
+      "feedbackIncorrect": "This is the without-ghunnah group."
+    },
+    {
+      "stage": "4 · Diagnose the recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner pronounces noon clearly before lam. What is the correction?"},
+      "prompt": "مِن لَّدُنْهُ",
+      "items": ["Merge into lam", "Use izhar", "Change to mim", "Stop after noon"],
+      "acceptedAnswers": ["Merge into lam"],
+      "feedbackCorrect": "Correct. The noon should not remain separate.",
+      "feedbackIncorrect": "Idgham requires merging into the trigger."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Complete the formula."},
+      "prompt": "Noon saakinah or tanween + ل ر = …",
+      "items": ["Idgham without ghunnah", "Idgham with ghunnah", "Absolute manifestation", "Iqlab"],
+      "acceptedAnswers": ["Idgham without ghunnah"],
+      "feedbackCorrect": "Correct. Lam and ra are the two letters.",
+      "feedbackIncorrect": "Recall the separate group ل ر."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Choose the complete difference."},
+      "prompt": "How do ينمو and ل ر differ?",
+      "items": ["Both merge, but only ينمو keeps the two-count ghunnah", "Only ل ر merges", "Both are izhar", "There is no difference"],
+      "acceptedAnswers": ["Both merge, but only ينمو keeps the two-count ghunnah"],
+      "feedbackCorrect": "Excellent. You identified the shared action and key difference.",
+      "feedbackIncorrect": "Both are idgham; compare what happens to ghunnah."
+    }
+  ],
+  "commonMistakes": [
+    "Adding a two-count ghunnah before lam or ra.",
+    "Keeping a separate clear noon.",
+    "Confusing ل ر with the ينمو group.",
+    "Forgetting that the trigger begins the next word."
+  ],
+  "correctionTechniques": [
+    "Use two columns: ينمو with ghunnah and ل ر without it.",
+    "Practice direct boundary pairs before full phrases.",
+    "Contrast رحيمٌ ودودٌ with غفورٌ رحيمٌ.",
+    "Ask the learner to name the group before reciting."
+  ],
+  "knowledgeChecks": [
+    {"type": "recall", "prompt": "Name the two letters.", "success": "Lam and ra are named."},
+    {"type": "comparison", "prompt": "Contrast the two idgham groups.", "success": "The ghunnah difference is explained."},
+    {"type": "recitation", "prompt": "Recite one lam and one ra example.", "success": "Direct merging is teacher-approved."}
+  ],
+  "teacherQuestions": [
+    "What is the target?",
+    "Does lam or ra begin the next word?",
+    "Should the target merge?",
+    "Does a two-count idgham ghunnah remain?"
+  ],
+  "studentTasks": [
+    "Sort triggers into ينمو and ل ر.",
+    "Highlight target and trigger.",
+    "Compare one example from each idgham type.",
+    "Recite lam and ra examples."
+  ],
+  "liveClassFlow": [
+    {"minutes": 5, "phase": "Review", "display": "Idgham with ghunnah"},
+    {"minutes": 6, "phase": "Definition", "display": "The ل ر group"},
+    {"minutes": 7, "phase": "Auditory contrast", "display": "With versus without two-count ghunnah"},
+    {"minutes": 8, "phase": "Teacher model", "display": "Four verified examples"},
+    {"minutes": 8, "phase": "Mixed decisions", "display": "Izhar, ينمو, or ل ر"},
+    {"minutes": 7, "phase": "Recitation", "display": "Direct merging"},
+    {"minutes": 4, "phase": "Exit check", "display": "Explain and recite"}
+  ],
+  "independentPractice": [
+    "Make two trigger columns: ينمو and ل ر.",
+    "Mark one lam and one ra example."
+  ],
+  "homework": [
+    "Prepare two lam and two ra examples approved by the teacher.",
+    "Explain the difference from idgham with ghunnah before reciting."
+  ],
+  "exitTicket": [
+    "Name ل and ر.",
+    "Explain the difference from ينمو.",
+    "Recite one example without an added two-count ghunnah."
+  ],
+  "masteryCriteria": [
+    "Names lam and ra.",
+    "Identifies the rule in at least 8 of 10 mixed items.",
+    "Contrasts the two idgham groups correctly.",
+    "Merges without a separate noon.",
+    "Avoids an added two-count ghunnah."
+  ],
+  "teacherNotes": [
+    "Assess the practical distinction by listening, not only verbal explanation.",
+    "The next lesson will refine complete and incomplete idgham terminology.",
+    "Keep the two idgham groups visible during mixed practice."
+  ],
+  "sourceNotes": [
+    "The rule and letter group are based on page 44.",
+    "Qur'anic references were cross-checked independently.",
+    "Activities and timing are curriculum-design additions."
+  ],
+  "verificationStatus": "source-verified; Qur'anic references checked; live teacher pronunciation review required"
+}

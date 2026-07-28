@@ -1,0 +1,470 @@
+{
+  "id": "tajweed-u03-l09-written-tanween-mixed-review",
+  "unitId": "unit-03",
+  "lessonNumber": "3.9",
+  "title": {
+    "ar": "علامات التنوين والمراجعة الشاملة",
+    "en": "Written tanween changes and mixed decision practice"
+  },
+  "source": {
+    "book": "Tajweed Rules of the Qur'an — Part One",
+    "pdf": "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+    "pdfPages": [39, 40, 41, 42, 43, 44, 45, 46, 47],
+    "printedPages": [39, 40, 41, 42, 43, 44, 45, 46, 47],
+    "chapter": "Noon Saakinah and Tanween Rules",
+    "section": "Written signs and cumulative review",
+    "verification": "book section reviewed; examples reused from verified lessons"
+  },
+  "contentOrigin": "source-and-instructional-design",
+  "level": "Foundation",
+  "estimatedMinutes": 60,
+  "prerequisites": [
+    "Recognize noon saakinah and all tanween forms.",
+    "Know the trigger groups for izhar, idgham, iqlab, and ikhfa'.",
+    "Apply each rule in guided recitation."
+  ],
+  "learningOutcomes": [
+    "Use Mushaf clues such as the small mim without relying on them alone.",
+    "Apply one decision routine to all four rules.",
+    "Classify mixed noon-saakinah and tanween boundaries.",
+    "Explain every answer by naming the target and immediate next letter.",
+    "Recite a mixed set with teacher-approved rule application."
+  ],
+  "definition": {
+    "linguistic": {
+      "ar": "المراجعة هي إعادة النظر لتثبيت العلم وتصحيح الخطأ.",
+      "en": "Review means revisiting knowledge to strengthen it and correct errors."
+    },
+    "technical": {
+      "ar": "المراجعة الشاملة تجمع أحكام النون الساكنة والتنوين الأربعة في تطبيق واحد: الإظهار، والإدغام، والإقلاب، والإخفاء، مع الاستفادة من علامات المصحف والتحقق دائمًا من الحرف التالي.",
+      "en": "This cumulative review combines izhar, idgham, iqlab, and ikhfa' in one decision process, using Mushaf clues while always verifying the immediately following letter."
+    },
+    "studentFriendly": {
+      "ar": "لا تخمّن الحكم من شكل الكلمة. حدّد النون الساكنة أو التنوين، ثم انظر إلى الحرف التالي مباشرة وضعه في مجموعته.",
+      "en": "Do not guess from the word shape. Find noon saakinah or tanween, inspect the next letter, and place it in its rule group."
+    },
+    "memoryFormula": "الهدف ← الحرف التالي ← مجموعة الحرف ← الحكم ← طريقة النطق"
+  },
+  "keyTerms": [
+    {"ar": "علامة المصحف", "transliteration": "alamat al-mushaf", "en": "a written recitation clue in the Mushaf"},
+    {"ar": "الميم الصغيرة", "transliteration": "al-mim as-saghirah", "en": "the small mim clue for iqlab"},
+    {"ar": "التصنيف المختلط", "transliteration": "at-tasnif al-mukhtalat", "en": "mixed-rule classification"},
+    {"ar": "الحرف التالي مباشرة", "transliteration": "al-harf at-tali mubasharatan", "en": "the immediately following letter"}
+  ],
+  "teacherPreparation": [
+    "Prepare a four-column rule map.",
+    "Mix examples rather than presenting them rule by rule.",
+    "Hide rule colors during the mastery check.",
+    "Use the same decision sentence for every answer."
+  ],
+  "openingReview": [
+    {"minutes": 3, "teacherPrompt": "Ask the learner to name all four rules."},
+    {"minutes": 3, "teacherPrompt": "Rebuild the trigger map from memory."},
+    {"minutes": 2, "teacherPrompt": "Ask what the small mim sign indicates."}
+  ],
+  "conceptExplanation": [
+    {
+      "audience": "student",
+      "text": "Mushaf signs can help, but the reliable method is always to locate the target and inspect the immediate next letter."
+    },
+    {
+      "audience": "teacher",
+      "text": "Use this lesson as both instruction and assessment. Record recognition and recitation mastery separately."
+    }
+  ],
+  "lessonPath": [
+    {"step": 1, "title": "Locate", "text": "Find noon saakinah or tanween."},
+    {"step": 2, "title": "Inspect", "text": "Read only the immediate next letter."},
+    {"step": 3, "title": "Group", "text": "Place the trigger in one of four groups."},
+    {"step": 4, "title": "Name", "text": "State the rule and reason."},
+    {"step": 5, "title": "Perform", "text": "Apply clarity, merging, change, or concealment."},
+    {"step": 6, "title": "Verify", "text": "Use teacher listening and Mushaf clues."}
+  ],
+  "visualExplanation": [
+    {
+      "type": "rule-equation",
+      "display": "ء ه ع ح غ خ = إظهار | ي ن م و ل ر = إدغام | ب = إقلاب | الباقي 15 = إخفاء",
+      "teacherUse": "Cover the map during independent classification."
+    }
+  ],
+  "ruleSummary": {
+    "condition": "Noon saakinah or tanween is followed by another letter.",
+    "result": "The immediate next letter selects izhar, idgham, iqlab, or ikhfa'.",
+    "location": "Within one word or across two words according to each rule and its exceptions.",
+    "letters": ["إظهار", "إدغام", "إقلاب", "إخفاء"]
+  },
+  "letterGroups": [
+    {"name": {"ar": "الإظهار", "en": "Izhar"}, "letters": ["ء", "ه", "ع", "ح", "غ", "خ"]},
+    {"name": {"ar": "الإدغام", "en": "Idgham"}, "letters": ["ي", "ن", "م", "و", "ل", "ر"]},
+    {"name": {"ar": "الإقلاب", "en": "Iqlab"}, "letters": ["ب"]},
+    {"name": {"ar": "الإخفاء", "en": "Ikhfa'"}, "letters": ["ت", "ث", "ج", "د", "ذ", "ز", "س", "ش", "ص", "ض", "ط", "ظ", "ف", "ق", "ك"]}
+  ],
+  "quranExamples": [
+    {
+      "arabic": "مِنْ عَلَقٍ",
+      "surah": {"ar": "العلق", "en": "Al-Alaq"},
+      "ayah": 2,
+      "targetText": "نْ عَ",
+      "rule": "الإظهار",
+      "triggerLetter": "ع",
+      "previousLetter": "نْ",
+      "readingInstruction": "Keep noon clear before ayn.",
+      "teacherExplanation": "Ayn is a throat letter.",
+      "commonError": "Adding prolonged ghunnah.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 41,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "فَمَن يَعْمَلْ",
+      "surah": {"ar": "الزلزلة", "en": "Az-Zalzalah"},
+      "ayah": 7,
+      "targetText": "ن يَ",
+      "rule": "إدغام بغنة",
+      "triggerLetter": "ي",
+      "previousLetter": "نْ",
+      "readingInstruction": "Merge into ya with two-count ghunnah.",
+      "teacherExplanation": "Ya belongs to ينمو.",
+      "commonError": "Keeping noon separate.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 42,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "مِن رَّبِّهِمْ",
+      "surah": {"ar": "البقرة", "en": "Al-Baqarah"},
+      "ayah": 5,
+      "targetText": "ن رَّ",
+      "rule": "إدغام بغير غنة",
+      "triggerLetter": "ر",
+      "previousLetter": "نْ",
+      "readingInstruction": "Merge directly into ra without a two-count ghunnah.",
+      "teacherExplanation": "Ra belongs to the ل ر group.",
+      "commonError": "Adding a nasal hold.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 44,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "مِنۢ بَعْدِ",
+      "surah": {"ar": "البقرة", "en": "Al-Baqarah"},
+      "ayah": 27,
+      "targetText": "نۢ بَ",
+      "rule": "الإقلاب",
+      "triggerLetter": "ب",
+      "previousLetter": "نْ",
+      "readingInstruction": "Change to hidden mim with two-count ghunnah.",
+      "teacherExplanation": "Ba is the single iqlab trigger.",
+      "commonError": "Keeping noon clear.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 46,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "مِن شَرِّ مَا خَلَقَ",
+      "surah": {"ar": "الفلق", "en": "Al-Falaq"},
+      "ayah": 2,
+      "targetText": "ن شَ",
+      "rule": "الإخفاء",
+      "triggerLetter": "ش",
+      "previousLetter": "نْ",
+      "readingInstruction": "Conceal noon with two-count ghunnah.",
+      "teacherExplanation": "Shin is one of the fifteen ikhfa' letters.",
+      "commonError": "Making noon fully clear or fully merged.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 47,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "وَكَانَ ٱللَّهُ سَمِيعًۢا بَصِيرًا",
+      "surah": {"ar": "النساء", "en": "An-Nisa"},
+      "ayah": 134,
+      "targetText": "عًۢا بَ",
+      "rule": "الإقلاب",
+      "triggerLetter": "ب",
+      "previousLetter": "تنوين فتح",
+      "readingInstruction": "Change tanween to hidden mim before ba.",
+      "teacherExplanation": "The small mim is a visual clue, confirmed by ba.",
+      "commonError": "Using the sign without checking the trigger.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 46,
+      "verificationStatus": "verified"
+    }
+  ],
+  "guidedPractice": [
+    {
+      "sequence": 1,
+      "teacherAction": "Display a mixed boundary with colors hidden.",
+      "studentAction": "State target, next letter, group, rule, and performance.",
+      "feedback": "Return to the first incorrect decision step."
+    },
+    {
+      "sequence": 2,
+      "teacherAction": "Reveal the Mushaf clue after the learner decides.",
+      "studentAction": "Use it to verify rather than replace reasoning.",
+      "feedback": "Separate identification score from recitation score."
+    }
+  ],
+  "oralPractice": [
+    {
+      "cycle": ["locate", "inspect", "group", "name", "perform", "teacher verifies"],
+      "examplesRequired": 8,
+      "teacherObservation": ["correct rule", "correct reason", "correct sound change", "correct ghunnah timing"]
+    }
+  ],
+  "interactiveActivities": [
+    {
+      "stage": "1 · Rebuild the map",
+      "type": "map",
+      "instruction": {"en": "Which group causes izhar?"},
+      "prompt": "Choose the six throat letters.",
+      "items": ["ء ه ع ح غ خ", "ي ن م و ل ر", "ت ث ج د ذ", "ب"],
+      "acceptedAnswers": ["ء ه ع ح غ خ"],
+      "feedbackCorrect": "Correct. These are the throat letters.",
+      "feedbackIncorrect": "Izhar uses the six throat letters."
+    },
+    {
+      "stage": "1 · Rebuild the map",
+      "type": "map",
+      "instruction": {"en": "Which group causes idgham?"},
+      "prompt": "Choose all six letters.",
+      "items": ["ي ن م و ل ر", "ء ه ع ح غ خ", "ط ظ ف ق ك", "ب"],
+      "acceptedAnswers": ["ي ن م و ل ر"],
+      "feedbackCorrect": "Correct. Then divide them by ghunnah.",
+      "feedbackIncorrect": "Combine ينمو and ل ر."
+    },
+    {
+      "stage": "1 · Rebuild the map",
+      "type": "map",
+      "instruction": {"en": "Which single letter causes iqlab?"},
+      "prompt": "Choose one.",
+      "items": ["ب", "م", "ق", "ف"],
+      "acceptedAnswers": ["ب"],
+      "feedbackCorrect": "Correct. Ba is reserved for iqlab.",
+      "feedbackIncorrect": "Look for the single-letter rule."
+    },
+    {
+      "stage": "1 · Rebuild the map",
+      "type": "map",
+      "instruction": {"en": "How many ikhfa' letters remain?"},
+      "prompt": "Choose the total.",
+      "items": ["15", "6", "4", "1"],
+      "acceptedAnswers": ["15"],
+      "feedbackCorrect": "Correct. They are the remaining letters.",
+      "feedbackIncorrect": "Recall three groups of five."
+    },
+    {
+      "stage": "2 · Read Mushaf clues",
+      "type": "sign",
+      "instruction": {"en": "What does the small mim indicate?"},
+      "prompt": "نۢ",
+      "items": ["Iqlab", "Izhar", "Idgham", "Qalqalah"],
+      "acceptedAnswers": ["Iqlab"],
+      "feedbackCorrect": "Correct. Confirm it by finding ba.",
+      "feedbackIncorrect": "The small mim points to changed mim quality."
+    },
+    {
+      "stage": "2 · Read Mushaf clues",
+      "type": "method",
+      "instruction": {"en": "What is the safest method?"},
+      "prompt": "Choose the complete routine.",
+      "items": ["Target → next letter → group → rule", "Guess from color", "Look at any later letter", "Always use ghunnah"],
+      "acceptedAnswers": ["Target → next letter → group → rule"],
+      "feedbackCorrect": "Correct. Written clues verify the decision.",
+      "feedbackIncorrect": "Start with the target and immediate next letter."
+    },
+    {
+      "stage": "3 · Mixed classification",
+      "type": "mixed",
+      "instruction": {"en": "Classify the boundary."},
+      "prompt": "مِنْ عَلَقٍ",
+      "items": ["Izhar", "Idgham", "Iqlab", "Ikhfa'"],
+      "acceptedAnswers": ["Izhar"],
+      "feedbackCorrect": "Correct. Ayn is a throat letter.",
+      "feedbackIncorrect": "Place ayn in its group."
+    },
+    {
+      "stage": "3 · Mixed classification",
+      "type": "mixed",
+      "instruction": {"en": "Classify the boundary."},
+      "prompt": "فَمَن يَعْمَلْ",
+      "items": ["Izhar", "Idgham with ghunnah", "Iqlab", "Ikhfa'"],
+      "acceptedAnswers": ["Idgham with ghunnah"],
+      "feedbackCorrect": "Correct. Ya belongs to ينمو.",
+      "feedbackIncorrect": "Find ya in the idgham map."
+    },
+    {
+      "stage": "3 · Mixed classification",
+      "type": "mixed",
+      "instruction": {"en": "Classify the boundary."},
+      "prompt": "مِن رَّبِّهِمْ",
+      "items": ["Izhar", "Idgham without ghunnah", "Iqlab", "Ikhfa'"],
+      "acceptedAnswers": ["Idgham without ghunnah"],
+      "feedbackCorrect": "Correct. Ra belongs to ل ر.",
+      "feedbackIncorrect": "Ra is an idgham letter without ghunnah."
+    },
+    {
+      "stage": "3 · Mixed classification",
+      "type": "mixed",
+      "instruction": {"en": "Classify the boundary."},
+      "prompt": "مِنۢ بَعْدِ",
+      "items": ["Izhar", "Idgham", "Iqlab", "Ikhfa'"],
+      "acceptedAnswers": ["Iqlab"],
+      "feedbackCorrect": "Correct. Ba follows noon.",
+      "feedbackIncorrect": "Ba has its own single-letter rule."
+    },
+    {
+      "stage": "3 · Mixed classification",
+      "type": "mixed",
+      "instruction": {"en": "Classify the boundary."},
+      "prompt": "مِن شَرِّ",
+      "items": ["Izhar", "Idgham", "Iqlab", "Ikhfa'"],
+      "acceptedAnswers": ["Ikhfa'"],
+      "feedbackCorrect": "Correct. Shin is one of the fifteen.",
+      "feedbackIncorrect": "Shin is not in the other three groups."
+    },
+    {
+      "stage": "4 · Explain performance",
+      "type": "performance",
+      "instruction": {"en": "Which performance matches izhar?"},
+      "prompt": "Choose the correct action.",
+      "items": ["Keep noon clear", "Merge noon", "Change to hidden mim", "Conceal between clear and merged"],
+      "acceptedAnswers": ["Keep noon clear"],
+      "feedbackCorrect": "Correct. Izhar preserves clarity.",
+      "feedbackIncorrect": "Match the word izhar with clarity."
+    },
+    {
+      "stage": "4 · Explain performance",
+      "type": "performance",
+      "instruction": {"en": "Which performance matches iqlab?"},
+      "prompt": "Choose the correct action.",
+      "items": ["Change to hidden mim", "Keep noon clear", "Merge into lam", "Remove all ghunnah"],
+      "acceptedAnswers": ["Change to hidden mim"],
+      "feedbackCorrect": "Correct. Keep two-count ghunnah.",
+      "feedbackIncorrect": "Iqlab means changing the sound."
+    },
+    {
+      "stage": "4 · Explain performance",
+      "type": "performance",
+      "instruction": {"en": "Which performance matches ikhfa'?"},
+      "prompt": "Choose the complete action.",
+      "items": ["Conceal between clear and merged with two-count ghunnah", "Keep fully clear", "Change to mim", "Merge into ra"],
+      "acceptedAnswers": ["Conceal between clear and merged with two-count ghunnah"],
+      "feedbackCorrect": "Correct. You included the sound state and timing.",
+      "feedbackIncorrect": "Ikhfa' is the concealed middle state."
+    },
+    {
+      "stage": "5 · Diagnose mistakes",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner checks a later ba instead of the immediate qaf."},
+      "prompt": "مِن قَبْلُ",
+      "items": ["Use qaf and apply ikhfa'", "Use ba and apply iqlab", "Use izhar", "Stop after noon"],
+      "acceptedAnswers": ["Use qaf and apply ikhfa'"],
+      "feedbackCorrect": "Correct. Only the immediate next letter matters.",
+      "feedbackIncorrect": "Do not skip qaf to reach ba."
+    },
+    {
+      "stage": "5 · Diagnose mistakes",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner sees a clue but cannot explain the trigger."},
+      "prompt": "What should the teacher request?",
+      "items": ["Name the immediate next letter", "Memorize the color only", "Skip the example", "Guess the rule"],
+      "acceptedAnswers": ["Name the immediate next letter"],
+      "feedbackCorrect": "Correct. The clue supports reasoning, not replaces it.",
+      "feedbackIncorrect": "Return to the decision routine."
+    },
+    {
+      "stage": "6 · Final mastery",
+      "type": "exit-check",
+      "instruction": {"en": "Choose the complete decision sequence."},
+      "prompt": "What order should always be used?",
+      "items": ["Target → next letter → group → rule → performance", "Rule → guess → target", "Color → rule", "Ghunnah → any letter"],
+      "acceptedAnswers": ["Target → next letter → group → rule → performance"],
+      "feedbackCorrect": "Excellent. This routine transfers to every mixed example.",
+      "feedbackIncorrect": "Begin with the target and finish with performance."
+    },
+    {
+      "stage": "6 · Final mastery",
+      "type": "exit-check",
+      "instruction": {"en": "Which score shows knowledge mastery?"},
+      "prompt": "Use the course standard.",
+      "items": ["At least 8 of 10 with reasons", "1 of 10", "Any score without explanation", "Recitation only"],
+      "acceptedAnswers": ["At least 8 of 10 with reasons"],
+      "feedbackCorrect": "Correct. Recitation mastery is assessed separately by the teacher.",
+      "feedbackIncorrect": "Knowledge and recitation have separate mastery checks."
+    }
+  ],
+  "commonMistakes": [
+    "Guessing from a visual clue without checking the next letter.",
+    "Looking at a later letter instead of the immediate next letter.",
+    "Using ghunnah for every rule.",
+    "Knowing the rule name but performing the wrong sound.",
+    "Treating recognition mastery as recitation mastery."
+  ],
+  "correctionTechniques": [
+    "Return to the first incorrect decision step.",
+    "Keep a four-column map available, then gradually hide it.",
+    "Require a complete spoken reason.",
+    "Score identification and recitation separately.",
+    "Use previously mastered examples before unseen mixed examples."
+  ],
+  "knowledgeChecks": [
+    {"type": "map", "prompt": "Rebuild all four trigger groups.", "success": "All groups are correct."},
+    {"type": "recognition", "prompt": "Classify ten mixed examples.", "success": "At least eight are correct with reasons."},
+    {"type": "recitation", "prompt": "Recite eight mixed examples.", "success": "Teacher approves rule application in two attempts."}
+  ],
+  "teacherQuestions": [
+    "What is the target?",
+    "What comes immediately after it?",
+    "Which group contains that letter?",
+    "What is the rule?",
+    "How must the sound be performed?"
+  ],
+  "studentTasks": [
+    "Rebuild the trigger map.",
+    "Complete mixed classification without colors.",
+    "Explain every answer.",
+    "Recite a balanced set from all four rules."
+  ],
+  "liveClassFlow": [
+    {"minutes": 8, "phase": "Map retrieval", "display": "Four trigger groups"},
+    {"minutes": 7, "phase": "Mushaf clues", "display": "Small mim and written forms"},
+    {"minutes": 12, "phase": "Guided mixed decisions", "display": "Known examples"},
+    {"minutes": 12, "phase": "Independent decisions", "display": "Hidden rule map"},
+    {"minutes": 12, "phase": "Mixed recitation", "display": "Eight examples"},
+    {"minutes": 6, "phase": "Error correction", "display": "Individual first-error step"},
+    {"minutes": 3, "phase": "Final exit", "display": "Sequence and score"}
+  ],
+  "independentPractice": [
+    "Create a one-page four-rule map.",
+    "Classify ten teacher-approved boundaries before reciting."
+  ],
+  "homework": [
+    "Prepare eight mixed examples: two from each main rule.",
+    "For every example write target, trigger, rule, and performance."
+  ],
+  "exitTicket": [
+    "Rebuild the decision sequence.",
+    "Classify one unseen mixed boundary.",
+    "Recite one teacher-selected example."
+  ],
+  "masteryCriteria": [
+    "Rebuilds all four trigger groups.",
+    "Uses the decision routine without prompting.",
+    "Classifies at least 8 of 10 mixed examples with reasons.",
+    "Performs all four rule outcomes accurately.",
+    "Passes teacher-observed recitation in two consecutive attempts."
+  ],
+  "teacherNotes": [
+    "This lesson completes the unit but should also serve as a recurring spiral review.",
+    "Do not mark the unit mastered from quiz performance alone.",
+    "Keep a record of which trigger groups still cause hesitation.",
+    "Return to the relevant focused lesson when a repeated error appears."
+  ],
+  "sourceNotes": [
+    "The review integrates pages 39–47.",
+    "Examples are reused from source-verified lessons.",
+    "Mixed assessment and decision sequence are curriculum-design additions."
+  ],
+  "verificationStatus": "unit synthesis complete; live teacher recitation assessment required"
+}

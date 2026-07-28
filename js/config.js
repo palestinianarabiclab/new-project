@@ -1,0 +1,21 @@
+const appConfig = window.__APP_CONFIG__ || {};
+
+window.firebaseConfig = appConfig.firebase || null;
+window.googleCalendarConfig = {
+    clientId: appConfig.googleCalendar?.clientId || "",
+    apiKey: appConfig.googleCalendar?.apiKey || "",
+    discoveryDocs: appConfig.googleCalendar?.discoveryDocs || [
+        "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
+    ],
+    scopes:
+        appConfig.googleCalendar?.scopes ||
+        "https://www.googleapis.com/auth/calendar.events",
+    redirectUri:
+        appConfig.googleCalendar?.redirectUri || window.location.origin + "/",
+};
+
+if (!window.__APP_CONFIG__) {
+    console.warn(
+        "Runtime app config is missing. Create js/config.runtime.js locally or inject it during deployment."
+    );
+}

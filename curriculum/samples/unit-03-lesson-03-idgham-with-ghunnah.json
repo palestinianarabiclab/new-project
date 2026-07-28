@@ -1,0 +1,408 @@
+{
+  "id": "tajweed-u03-l03-idgham-with-ghunnah",
+  "unitId": "unit-03",
+  "lessonNumber": "3.3",
+  "title": {
+    "ar": "الإدغام بغنة",
+    "en": "Idgham with ghunnah"
+  },
+  "source": {
+    "book": "Tajweed Rules of the Qur'an — Part One",
+    "pdf": "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+    "pdfPages": [42, 43],
+    "printedPages": [42, 43],
+    "chapter": "Noon Saakinah and Tanween Rules",
+    "section": "Idgham with Ghunnah",
+    "verification": "book source checked; Qur'anic references cross-checked"
+  },
+  "contentOrigin": "source-and-instructional-design",
+  "level": "Foundation",
+  "estimatedMinutes": 50,
+  "prerequisites": [
+    "Recognize noon saakinah and all three tanween forms.",
+    "Use the routine: find the target, then inspect the next letter.",
+    "Distinguish a clear noon sound in izhar."
+  ],
+  "learningOutcomes": [
+    "Define idgham as merging one letter into the next.",
+    "Name the four idgham-with-ghunnah letters: ي ن م و.",
+    "Identify the rule in at least 8 of 10 mixed boundaries.",
+    "Explain that this idgham occurs across two words.",
+    "Recite four verified examples with a merged sound and a two-count ghunnah."
+  ],
+  "definition": {
+    "linguistic": {
+      "ar": "الإدغام لغةً: إدخال الشيء في الشيء.",
+      "en": "Linguistically, idgham means inserting or merging one thing into another."
+    },
+    "technical": {
+      "ar": "الإدغام بغنة هو إدخال النون الساكنة أو التنوين في أحد حروف ي ن م و حتى يصيرا حرفًا واحدًا مشددًا من جنس الحرف الثاني، مع غنة مقدارها حركتان.",
+      "en": "Idgham with ghunnah merges noon saakinah or tanween into a following ي، ن، م، or و, producing a strengthened sound of the second letter with a two-count ghunnah."
+    },
+    "studentFriendly": {
+      "ar": "إذا جاء بعد النون الساكنة أو التنوين حرف من ي ن م و بين كلمتين، لا نظهر النون منفصلة؛ ندمجها في الحرف التالي مع غنة حركتين.",
+      "en": "When noon saakinah or tanween is followed across two words by ي، ن، م، or و, merge the noon sound into the next letter and hold the ghunnah for two counts."
+    },
+    "memoryFormula": "نْ أو تنوين + ي ن م و = إدغام بغنة حركتين"
+  },
+  "keyTerms": [
+    {"ar": "الإدغام", "transliteration": "al-idgham", "en": "merging one sound into the next"},
+    {"ar": "الغنة", "transliteration": "al-ghunnah", "en": "a nasal sound from the nasal passage"},
+    {"ar": "حركتان", "transliteration": "harakatan", "en": "two measured counts"},
+    {"ar": "ينمو", "transliteration": "yanmu", "en": "memory word containing ي ن م و"},
+    {"ar": "بين كلمتين", "transliteration": "bayna kalimatayn", "en": "across two separate words"}
+  ],
+  "teacherPreparation": [
+    "Prepare four trigger cards: ي ن م و.",
+    "Model clear izhar and merged idgham as an audible contrast.",
+    "Use a steady two-count hand gesture for ghunnah.",
+    "Do not rely on written transliteration as a substitute for live recitation."
+  ],
+  "openingReview": [
+    {"minutes": 2, "teacherPrompt": "Show نْ and the three tanween forms; ask the learner to name the target."},
+    {"minutes": 2, "teacherPrompt": "Review izhar: does the noon remain separate or merge?"},
+    {"minutes": 1, "teacherPrompt": "Ask the learner to read the memory word ينمو."}
+  ],
+  "conceptExplanation": [
+    {
+      "audience": "student",
+      "text": "In izhar the noon remains clear and separate. In idgham with ghunnah, the noon sound joins the next letter and a controlled nasal sound remains for two counts."
+    },
+    {
+      "audience": "teacher",
+      "text": "Teach recognition, merging, and ghunnah timing as separate skills. This lesson covers ي ن م و across two words; the four absolute-manifestation exceptions belong to the following lesson."
+    }
+  ],
+  "lessonPath": [
+    {"step": 1, "title": "Recall", "text": "Find noon saakinah or tanween."},
+    {"step": 2, "title": "Discover", "text": "Inspect the next letter: ي ن م و."},
+    {"step": 3, "title": "Compare", "text": "Hear clear izhar versus merged idgham."},
+    {"step": 4, "title": "Count", "text": "Hold the ghunnah for two balanced counts."},
+    {"step": 5, "title": "Apply", "text": "Identify, explain, and recite."},
+    {"step": 6, "title": "Master", "text": "Diagnose merging and timing errors."}
+  ],
+  "visualExplanation": [
+    {
+      "type": "rule-equation",
+      "display": "نْ / ً ٍ ٌ  +  ي ن م و  ←  إدغام بغنة (حركتان)",
+      "teacherUse": "Point to the word boundary before modeling the merged sound."
+    }
+  ],
+  "ruleSummary": {
+    "condition": "Noon saakinah or tanween is followed in the next word by ي، ن، م، or و.",
+    "result": "Merge the noon sound into the following letter and keep a controlled ghunnah for two counts.",
+    "location": "In this rule, the target and trigger occur across two words.",
+    "letters": ["ي", "ن", "م", "و"]
+  },
+  "letterGroups": [
+    {"name": {"ar": "كلمة جامعة", "en": "Memory word: ينمو"}, "letters": ["ي", "ن", "م", "و"]}
+  ],
+  "quranExamples": [
+    {
+      "arabic": "فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُۥ",
+      "surah": {"ar": "الزلزلة", "en": "Az-Zalzalah"},
+      "ayah": 7,
+      "targetText": "ن يَ",
+      "rule": "الإدغام بغنة",
+      "triggerLetter": "ي",
+      "previousLetter": "نْ",
+      "readingInstruction": "Merge the noon into ya and hold the ghunnah for two counts before completing ya.",
+      "teacherExplanation": "Ya follows noon saakinah across two words.",
+      "commonError": "Pronouncing a separate clear noon before ya.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 42,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "وَمَا بِكُم مِّن نِّعْمَةٍ فَمِنَ ٱللَّهِ",
+      "surah": {"ar": "النحل", "en": "An-Nahl"},
+      "ayah": 53,
+      "targetText": "ن نِّ",
+      "rule": "الإدغام بغنة",
+      "triggerLetter": "ن",
+      "previousLetter": "نْ",
+      "readingInstruction": "Merge into the strengthened noon and keep its ghunnah for two counts.",
+      "teacherExplanation": "Noon follows noon saakinah across two words.",
+      "commonError": "Reading two separate noon sounds.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 42,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "أَلَمْ نَخْلُقكُّم مِّن مَّاءٍ مَّهِينٍ",
+      "surah": {"ar": "المرسلات", "en": "Al-Mursalat"},
+      "ayah": 20,
+      "targetText": "ن مَّ",
+      "rule": "الإدغام بغنة",
+      "triggerLetter": "م",
+      "previousLetter": "نْ",
+      "readingInstruction": "Move from the noon sound into the closed lips of mim with a two-count ghunnah.",
+      "teacherExplanation": "Mim follows noon saakinah across two words.",
+      "commonError": "Keeping the tongue fixed for a clear noon instead of preparing the lips for mim.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 42,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "إِنَّ رَبِّى رَحِيمٌ وَدُودٌ",
+      "surah": {"ar": "هود", "en": "Hud"},
+      "ayah": 90,
+      "targetText": "مٌ وَ",
+      "rule": "الإدغام بغنة",
+      "triggerLetter": "و",
+      "previousLetter": "تنوين ضم",
+      "readingInstruction": "Merge the tanween noon sound into waw with a two-count ghunnah.",
+      "teacherExplanation": "Waw follows tanween across two words.",
+      "commonError": "Dropping the tanween sound completely without leaving the ghunnah.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 42,
+      "verificationStatus": "verified"
+    }
+  ],
+  "guidedPractice": [
+    {
+      "sequence": 1,
+      "teacherAction": "Display only target, boundary, and trigger.",
+      "studentAction": "Name the target, trigger, and rule.",
+      "feedback": "Require the learner to say that the letters are in two words."
+    },
+    {
+      "sequence": 2,
+      "teacherAction": "Model isolate → merge → two-count ghunnah → full phrase.",
+      "studentAction": "Copy each stage, then recite independently.",
+      "feedback": "Correct merging and timing separately."
+    }
+  ],
+  "oralPractice": [
+    {
+      "cycle": ["listen", "find boundary", "merge", "count two", "recite in context"],
+      "examplesRequired": 4,
+      "teacherObservation": ["no separate noon", "accurate trigger", "two-count ghunnah", "smooth continuation"]
+    }
+  ],
+  "interactiveActivities": [
+    {
+      "stage": "1 · Recall the target",
+      "type": "review",
+      "instruction": {"en": "Find the target."},
+      "prompt": "فَمَن يَعْمَلْ",
+      "items": ["نْ", "ي", "ع", "ل"],
+      "acceptedAnswers": ["نْ"],
+      "feedbackCorrect": "Correct. First locate noon saakinah.",
+      "feedbackIncorrect": "Find the noon carrying sukoon before inspecting ya."
+    },
+    {
+      "stage": "1 · Recall the target",
+      "type": "review",
+      "instruction": {"en": "Find the target."},
+      "prompt": "رَحِيمٌ وَدُودٌ",
+      "items": ["تنوين ضم", "و", "د", "م"],
+      "acceptedAnswers": ["تنوين ضم"],
+      "feedbackCorrect": "Correct. Dammatayn produces the tanween noon sound.",
+      "feedbackIncorrect": "Inspect the doubled dammah at the end of the first word."
+    },
+    {
+      "stage": "2 · Recognize ينمو",
+      "type": "letter-group",
+      "instruction": {"en": "Which group contains all idgham-with-ghunnah letters?"},
+      "prompt": "Choose the memory group.",
+      "items": ["ي ن م و", "ء ه ع ح", "ل ر", "ب"],
+      "acceptedAnswers": ["ي ن م و"],
+      "feedbackCorrect": "Correct. The memory word is ينمو.",
+      "feedbackIncorrect": "Read the memory word: يَنْمُو."
+    },
+    {
+      "stage": "2 · Recognize ينمو",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the trigger."},
+      "prompt": "فَمَن يَعْمَلْ",
+      "items": ["ف", "نْ", "ي", "ع"],
+      "acceptedAnswers": ["ي"],
+      "feedbackCorrect": "Correct. Ya triggers idgham with ghunnah.",
+      "feedbackIncorrect": "The trigger is immediately after noon saakinah."
+    },
+    {
+      "stage": "2 · Recognize ينمو",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the trigger."},
+      "prompt": "مِن نِّعْمَةٍ",
+      "items": ["م", "نْ", "ن", "ع"],
+      "acceptedAnswers": ["ن"],
+      "feedbackCorrect": "Correct. Noon is one of the four letters.",
+      "feedbackIncorrect": "Inspect the first letter of the second word."
+    },
+    {
+      "stage": "2 · Recognize ينمو",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the trigger."},
+      "prompt": "مِن مَّاءٍ",
+      "items": ["مِن", "نْ", "م", "ء"],
+      "acceptedAnswers": ["م"],
+      "feedbackCorrect": "Correct. Mim triggers merging with ghunnah.",
+      "feedbackIncorrect": "Look immediately after the word boundary."
+    },
+    {
+      "stage": "2 · Recognize ينمو",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the trigger."},
+      "prompt": "رَحِيمٌ وَدُودٌ",
+      "items": ["م", "ٌ", "و", "د"],
+      "acceptedAnswers": ["و"],
+      "feedbackCorrect": "Correct. Waw follows the tanween.",
+      "feedbackIncorrect": "The trigger begins the second word."
+    },
+    {
+      "stage": "3 · Decide the rule",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "فَمَن يَعْمَلْ",
+      "items": ["Idgham with ghunnah", "Izhar", "Iqlab"],
+      "acceptedAnswers": ["Idgham with ghunnah"],
+      "feedbackCorrect": "Correct. Noon saakinah is followed by ya across two words.",
+      "feedbackIncorrect": "Ya belongs to ينمو."
+    },
+    {
+      "stage": "3 · Decide the rule",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "مِنْ عَلَقٍ",
+      "items": ["Idgham with ghunnah", "Izhar", "Iqlab"],
+      "acceptedAnswers": ["Izhar"],
+      "feedbackCorrect": "Correct. Ayn is a throat letter, not one of ينمو.",
+      "feedbackIncorrect": "Compare the trigger with ء ه ع ح غ خ and ي ن م و."
+    },
+    {
+      "stage": "3 · Decide the rule",
+      "type": "rule-decision",
+      "instruction": {"en": "Where does this idgham occur?"},
+      "prompt": "Choose the lesson condition.",
+      "items": ["Across two words", "Only inside one word", "Only when stopping"],
+      "acceptedAnswers": ["Across two words"],
+      "feedbackCorrect": "Correct. The target ends one word and the trigger begins the next.",
+      "feedbackIncorrect": "Look at the word boundary in each verified example."
+    },
+    {
+      "stage": "4 · Diagnose recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "The learner pronounces a separate clear noon before ya. What should change?"},
+      "prompt": "فَمَن يَعْمَلْ",
+      "items": ["Merge into ya", "Make noon clearer", "Change to mim", "Remove ya"],
+      "acceptedAnswers": ["Merge into ya"],
+      "feedbackCorrect": "Correct. Do not keep a separate noon sound.",
+      "feedbackIncorrect": "Idgham means merging into the following letter."
+    },
+    {
+      "stage": "4 · Diagnose recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "The ghunnah lasts much too long. What is the correction?"},
+      "prompt": "Use the lesson timing.",
+      "items": ["Two balanced counts", "No ghunnah", "Four counts", "As long as possible"],
+      "acceptedAnswers": ["Two balanced counts"],
+      "feedbackCorrect": "Correct. Keep the ghunnah controlled at two counts.",
+      "feedbackIncorrect": "Use the teacher's steady two-count gesture."
+    },
+    {
+      "stage": "4 · Diagnose recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "The learner drops the tanween sound with no ghunnah before waw. What is missing?"},
+      "prompt": "رَحِيمٌ وَدُودٌ",
+      "items": ["Two-count ghunnah", "A clear separate noon", "A qalqalah", "A long madd"],
+      "acceptedAnswers": ["Two-count ghunnah"],
+      "feedbackCorrect": "Correct. The noon is merged, but its ghunnah remains.",
+      "feedbackIncorrect": "Merging does not mean deleting the nasal quality."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Complete the formula."},
+      "prompt": "Noon saakinah or tanween + ينمو = …",
+      "items": ["Idgham with ghunnah", "Izhar", "Ikhfa", "Iqlab"],
+      "acceptedAnswers": ["Idgham with ghunnah"],
+      "feedbackCorrect": "Correct. Now explain the word boundary and timing.",
+      "feedbackIncorrect": "Recall the four letters ي ن م و."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Choose the complete explanation."},
+      "prompt": "Why is فَمَن يَعْمَلْ idgham with ghunnah?",
+      "items": ["Ya follows noon saakinah across two words", "It contains noon", "Ya is a throat letter", "The phrase is short"],
+      "acceptedAnswers": ["Ya follows noon saakinah across two words"],
+      "feedbackCorrect": "Excellent. You named the target, trigger, and location.",
+      "feedbackIncorrect": "A complete reason identifies the target, next letter, and word boundary."
+    }
+  ],
+  "commonMistakes": [
+    "Pronouncing a separate clear noon before the trigger.",
+    "Removing the noon sound without preserving ghunnah.",
+    "Holding the ghunnah too briefly or too long.",
+    "Applying this rule inside one word.",
+    "Confusing ينمو with the throat letters."
+  ],
+  "correctionTechniques": [
+    "Contrast a deliberately clear noon with the correctly merged form.",
+    "Use two finger taps for the ghunnah timing.",
+    "Practice the boundary alone before the full phrase.",
+    "Require the learner to point to the space between the two words."
+  ],
+  "knowledgeChecks": [
+    {"type": "oral", "prompt": "Name the four letters using ينمو.", "success": "All four are named."},
+    {"type": "recognition", "prompt": "Classify ten mixed izhar and idgham boundaries.", "success": "At least eight are correct with a reason."},
+    {"type": "recitation", "prompt": "Recite one example for each trigger.", "success": "Merging and two-count ghunnah are teacher-approved."}
+  ],
+  "teacherQuestions": [
+    "Where is the target?",
+    "What letter begins the next word?",
+    "Is it in ينمو?",
+    "Should the noon remain separate or merge?",
+    "How many counts does the ghunnah last?"
+  ],
+  "studentTasks": [
+    "Memorize ينمو as the four-letter group.",
+    "Mark the target, word boundary, and trigger.",
+    "Contrast one izhar example with one idgham example.",
+    "Recite one verified example for each trigger."
+  ],
+  "liveClassFlow": [
+    {"minutes": 5, "phase": "Review", "display": "Target-first decision routine"},
+    {"minutes": 6, "phase": "Definition", "display": "Merging versus clear pronunciation"},
+    {"minutes": 5, "phase": "Letter group", "display": "The memory word ينمو"},
+    {"minutes": 8, "phase": "Teacher model", "display": "Four verified examples"},
+    {"minutes": 8, "phase": "Recognition", "display": "Target, boundary, and trigger"},
+    {"minutes": 8, "phase": "Recitation", "display": "Merge and count two"},
+    {"minutes": 6, "phase": "Error diagnosis", "display": "Clarity, deletion, and timing"},
+    {"minutes": 4, "phase": "Exit check", "display": "Explain and recite"}
+  ],
+  "independentPractice": [
+    "Review ينمو and the four verified boundaries.",
+    "Mark target, boundary, and trigger before reciting."
+  ],
+  "homework": [
+    "Prepare four teacher-approved examples, one for each letter.",
+    "For each example: identify, explain, count two, then recite to the teacher."
+  ],
+  "exitTicket": [
+    "Name ي ن م و.",
+    "Explain why فَمَن يَعْمَلْ uses idgham with ghunnah.",
+    "Recite one selected example with controlled two-count ghunnah."
+  ],
+  "masteryCriteria": [
+    "Names all four letters without prompting.",
+    "Identifies the rule in at least 8 of 10 mixed boundaries.",
+    "Explains that the rule occurs across two words.",
+    "Merges without a separate noon sound.",
+    "Maintains a teacher-approved two-count ghunnah."
+  ],
+  "teacherNotes": [
+    "Recognition, merging, and timing are separate mastery targets.",
+    "Do not teach the absolute-manifestation exceptions as ordinary idgham; they are the next lesson.",
+    "A written shaddah may help the learner see the result, but teacher listening remains essential.",
+    "Use the same decision routine established in the foundations lesson."
+  ],
+  "sourceNotes": [
+    "The definition and four-letter group are based on pages 42–43.",
+    "Qur'anic references were cross-checked independently.",
+    "Activities, timing, and feedback are instructional-design additions."
+  ],
+  "verificationStatus": "source-verified; Qur'anic references checked; live teacher pronunciation review required"
+}

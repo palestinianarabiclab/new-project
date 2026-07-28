@@ -1,0 +1,116 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function userDocPath(uid) {
+      return /databases/$(database)/documents/users/$(uid);
+    }
+
+    function requestUserDoc() {
+      return get(userDocPath(request.auth.uid));
+    }
+
+    function ownsDoc(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function authEmail() {
+      return signedIn() && request.auth.token.email is string
+        ? request.auth.token.email
+        : "";
+    }
+
+    function isTeacher() {
+      return signedIn() && requestUserDoc().data.role == "teacher";
+    }
+
+    function isValidEmail(email) {
+      return email is string &&
+        email.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
+    }
+
+    function isStudentUserCreate() {
+      return request.resource.data.keys().hasOnly(['email', 'role', 'createdAt', 'createdBy']) &&
+        isValidEmail(request.resource.data.email) &&
+        request.resource.data.role == "student";
+    }
+
+    match /users/{uid} {
+      allow read: if ownsDoc(uid);
+
+      allow create: if (
+        ownsDoc(uid) &&
+        isStudentUserCreate() &&
+        request.resource.data.email == authEmail()
+      ) || (
+        isTeacher() &&
+        isStudentUserCreate() &&
+        request.resource.data.createdBy == request.auth.uid
+      );
+
+      allow update: if ownsDoc(uid) &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['email']) &&
+        request.resource.data.email == resource.data.email &&
+        request.resource.data.role == resource.data.role;
+
+      allow delete: if false;
+    }
+
+    match /teachers/{uid} {
+      allow read: if ownsDoc(uid) && isTeacher();
+
+      allow create: if ownsDoc(uid) &&
+        isTeacher() &&
+        request.resource.data.keys().hasOnly([
+          'email', 'name', 'settings', 'updatedAt', 'createdAt'
+        ]);
+
+      allow update: if ownsDoc(uid) &&
+        isTeacher() &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'email', 'name', 'settings', 'updatedAt'
+        ]);
+
+      allow delete: if false;
+    }
+
+    match /teacherStudents/{docId} {
+      allow read: if isTeacher() && resource.data.teacherId == request.auth.uid;
+      allow create: if isTeacher() &&
+        request.resource.data.teacherId == request.auth.uid &&
+        request.resource.data.name is string &&
+        request.resource.data.name.size() > 0;
+      allow update: if isTeacher() &&
+        resource.data.teacherId == request.auth.uid &&
+        request.resource.data.teacherId == request.auth.uid;
+      allow delete: if isTeacher() && resource.data.teacherId == request.auth.uid;
+    }
+
+    match /lessonTemplates/{docId} {
+      allow read: if signedIn();
+      allow create: if isTeacher() &&
+        request.resource.data.lesson is map &&
+        request.resource.data.lesson.meta is map &&
+        request.resource.data.lesson.meta.lessonTitle is string &&
+        request.resource.data.lesson.meta.lessonTitle.size() > 0;
+      allow update, delete: if isTeacher();
+    }
+  match /content_lessons/{docId} {
+      allow read: if true;
+
+      allow create: if isTeacher() &&
+        request.resource.data.lesson is map &&
+        request.resource.data.lesson.meta is map &&
+        request.resource.data.lesson.meta.lessonTitle is string &&
+        request.resource.data.lesson.meta.lessonTitle.size() > 0;
+
+      allow update, delete: if isTeacher();
+    }
+    match /errorLogs/{docId} {
+      allow read, write: if isTeacher();
+    }
+  }
+}

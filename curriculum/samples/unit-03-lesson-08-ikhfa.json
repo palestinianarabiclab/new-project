@@ -1,0 +1,431 @@
+{
+  "id": "tajweed-u03-l08-ikhfa",
+  "unitId": "unit-03",
+  "lessonNumber": "3.8",
+  "title": {"ar": "الإخفاء الحقيقي", "en": "Ikhfa'"},
+  "source": {
+    "book": "Tajweed Rules of the Qur'an — Part One",
+    "pdf": "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+    "pdfPages": [47],
+    "printedPages": [47],
+    "chapter": "Noon Saakinah and Tanween Rules",
+    "section": "Ikhfa'",
+    "verification": "book source checked; Qur'anic references cross-checked"
+  },
+  "contentOrigin": "source-and-instructional-design",
+  "level": "Foundation",
+  "estimatedMinutes": 55,
+  "prerequisites": [
+    "Recognize noon saakinah and tanween.",
+    "Identify izhar, both idgham groups, and iqlab.",
+    "Maintain a controlled two-count ghunnah."
+  ],
+  "learningOutcomes": [
+    "Define ikhfa' as a pronunciation between izhar and idgham.",
+    "Recognize all fifteen ikhfa' letters.",
+    "Identify ikhfa' within one word and across two words.",
+    "Keep a two-count ghunnah while preparing for the following letter.",
+    "Classify ikhfa' correctly in at least 8 of 10 mixed examples."
+  ],
+  "definition": {
+    "linguistic": {
+      "ar": "الإخفاء لغةً: الستر.",
+      "en": "Linguistically, ikhfa' means concealment."
+    },
+    "technical": {
+      "ar": "الإخفاء الحقيقي هو النطق بالنون الساكنة أو التنوين بحالة بين الإظهار والإدغام، من غير تشديد، مع بقاء الغنة مقدار حركتين، إذا جاء بعدها أحد حروف الإخفاء الخمسة عشر.",
+      "en": "Ikhfa' is pronouncing noon saakinah or tanween in a state between clear pronunciation and merging, without a shaddah, while maintaining a two-count ghunnah before one of its fifteen letters."
+    },
+    "studentFriendly": {
+      "ar": "لا نظهر النون كاملة ولا ندمجها بالكامل؛ نخفي صوتها مع غنة حركتين ونهيئ الفم للحرف التالي.",
+      "en": "Do not make noon fully clear and do not merge it completely. Conceal it with a two-count ghunnah while preparing for the next letter."
+    },
+    "memoryFormula": "نْ أو تنوين + ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك = إخفاء بغنة حركتين"
+  },
+  "keyTerms": [
+    {"ar": "الإخفاء الحقيقي", "transliteration": "al-ikhfa' al-haqiqi", "en": "true concealment"},
+    {"ar": "بين الإظهار والإدغام", "transliteration": "bayna al-izhar wal-idgham", "en": "between clarity and merging"},
+    {"ar": "خمسة عشر حرفًا", "transliteration": "khamsata 'ashara harfan", "en": "fifteen trigger letters"},
+    {"ar": "غنة حركتين", "transliteration": "ghunnah harakatayn", "en": "two-count nasal sound"}
+  ],
+  "teacherPreparation": [
+    "Prepare fifteen trigger cards in three groups of five.",
+    "Keep the excluded groups visible: throat letters, idgham letters, and ba.",
+    "Model clear noon, merged noon, and concealed noon as a three-way contrast.",
+    "Correct tongue preparation according to the following letter through live listening."
+  ],
+  "openingReview": [
+    {"minutes": 2, "teacherPrompt": "Name the six izhar letters."},
+    {"minutes": 2, "teacherPrompt": "Name the six idgham letters and ba for iqlab."},
+    {"minutes": 1, "teacherPrompt": "Explain what remains when the noon is concealed."}
+  ],
+  "conceptExplanation": [
+    {
+      "audience": "student",
+      "text": "After removing the six izhar letters, six idgham letters, and ba, the remaining fifteen letters cause ikhfa'. The noon is concealed with two-count ghunnah."
+    },
+    {
+      "audience": "teacher",
+      "text": "Teach the fifteen letters in manageable groups, then move quickly to mixed decisions. The following letter influences oral preparation and the quality heard in practice."
+    }
+  ],
+  "lessonPath": [
+    {"step": 1, "title": "Exclude", "text": "Remove izhar, idgham, and iqlab letters."},
+    {"step": 2, "title": "Recognize", "text": "Learn the remaining fifteen letters."},
+    {"step": 3, "title": "Conceal", "text": "Stay between clarity and merging."},
+    {"step": 4, "title": "Hold", "text": "Maintain ghunnah for two counts."},
+    {"step": 5, "title": "Prepare", "text": "Move the mouth toward the next letter."},
+    {"step": 6, "title": "Classify", "text": "Use mixed-rule decisions."}
+  ],
+  "visualExplanation": [
+    {
+      "type": "rule-equation",
+      "display": "نْ / ً ٍ ٌ + ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك ← إخفاء + غنة حركتين",
+      "teacherUse": "Reveal the letters as three groups of five."
+    }
+  ],
+  "ruleSummary": {
+    "condition": "Noon saakinah or tanween is followed by one of the fifteen ikhfa' letters.",
+    "result": "Conceal the noon between izhar and idgham with two-count ghunnah.",
+    "location": "It can occur within one word or across two words.",
+    "letters": ["ت", "ث", "ج", "د", "ذ", "ز", "س", "ش", "ص", "ض", "ط", "ظ", "ف", "ق", "ك"]
+  },
+  "letterGroups": [
+    {"name": {"ar": "المجموعة الأولى", "en": "Group 1"}, "letters": ["ت", "ث", "ج", "د", "ذ"]},
+    {"name": {"ar": "المجموعة الثانية", "en": "Group 2"}, "letters": ["ز", "س", "ش", "ص", "ض"]},
+    {"name": {"ar": "المجموعة الثالثة", "en": "Group 3"}, "letters": ["ط", "ظ", "ف", "ق", "ك"]}
+  ],
+  "quranExamples": [
+    {
+      "arabic": "جَنَّـٰتٍ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَـٰرُ",
+      "surah": {"ar": "الطلاق", "en": "At-Talaq"},
+      "ayah": 11,
+      "targetText": "ن تَ",
+      "rule": "الإخفاء الحقيقي",
+      "triggerLetter": "ت",
+      "previousLetter": "نْ",
+      "readingInstruction": "Conceal noon with two-count ghunnah while preparing for ta.",
+      "teacherExplanation": "Ta follows noon saakinah across two words.",
+      "commonError": "Touching the full noon articulation point and making it too clear.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 47,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "مِن شَرِّ مَا خَلَقَ",
+      "surah": {"ar": "الفلق", "en": "Al-Falaq"},
+      "ayah": 2,
+      "targetText": "ن شَ",
+      "rule": "الإخفاء الحقيقي",
+      "triggerLetter": "ش",
+      "previousLetter": "نْ",
+      "readingInstruction": "Conceal noon with two-count ghunnah before shin.",
+      "teacherExplanation": "Shin is one of the fifteen letters.",
+      "commonError": "Merging completely into shin.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 47,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "عَلَيْكُمْ أَنفُسَكُمْ",
+      "surah": {"ar": "المائدة", "en": "Al-Ma'idah"},
+      "ayah": 105,
+      "targetText": "نفُ",
+      "rule": "الإخفاء الحقيقي",
+      "triggerLetter": "ف",
+      "previousLetter": "نْ",
+      "readingInstruction": "Conceal noon inside the word and prepare the lower lip for fa.",
+      "teacherExplanation": "Fa follows noon saakinah within one word.",
+      "commonError": "Thinking ikhfa' occurs only across words.",
+      "wordBoundary": "within-one-word",
+      "sourcePage": 47,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "وَلَقَدْ خَلَقْنَا ٱلْإِنسَـٰنَ مِن صَلْصَـٰلٍ",
+      "surah": {"ar": "الحجر", "en": "Al-Hijr"},
+      "ayah": 26,
+      "targetText": "ن صَ",
+      "rule": "الإخفاء الحقيقي",
+      "triggerLetter": "ص",
+      "previousLetter": "نْ",
+      "readingInstruction": "Conceal noon with two counts while preparing for the heavy sad.",
+      "teacherExplanation": "Sad follows noon saakinah.",
+      "commonError": "Making the ghunnah too light before the heavy following letter.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 47,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "مِن قَبْلُ",
+      "surah": {"ar": "نموذج قرآني متكرر", "en": "Recurring Qur'anic phrase"},
+      "ayah": "—",
+      "targetText": "ن قَ",
+      "rule": "الإخفاء الحقيقي",
+      "triggerLetter": "ق",
+      "previousLetter": "نْ",
+      "readingInstruction": "Conceal noon with two counts while preparing for heavy qaf.",
+      "teacherExplanation": "Qaf is an ikhfa' letter.",
+      "commonError": "Changing noon to mim as though qaf were ba.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 47,
+      "verificationStatus": "verified-phrase"
+    }
+  ],
+  "guidedPractice": [
+    {
+      "sequence": 1,
+      "teacherAction": "Display the target and trigger.",
+      "studentAction": "Exclude known groups, then name ikhfa'.",
+      "feedback": "Require the trigger letter and two-count ghunnah."
+    },
+    {
+      "sequence": 2,
+      "teacherAction": "Model clear, merged, then concealed versions.",
+      "studentAction": "Identify the correct middle state and imitate it.",
+      "feedback": "Correct clarity, merging, timing, and next-letter preparation separately."
+    }
+  ],
+  "oralPractice": [
+    {
+      "cycle": ["find target", "identify trigger", "conceal", "count two", "prepare next letter"],
+      "examplesRequired": 5,
+      "teacherObservation": ["not fully clear", "not fully merged", "two-count ghunnah", "accurate following letter"]
+    }
+  ],
+  "interactiveActivities": [
+    {
+      "stage": "1 · Build the letter set",
+      "type": "letter-group",
+      "instruction": {"en": "Which is an ikhfa' group?"},
+      "prompt": "Choose the first group of five.",
+      "items": ["ت ث ج د ذ", "ء ه ع ح غ", "ي ن م و ل", "ب ر ف ق ك"],
+      "acceptedAnswers": ["ت ث ج د ذ"],
+      "feedbackCorrect": "Correct. This is the first group.",
+      "feedbackIncorrect": "The first five are ت ث ج د ذ."
+    },
+    {
+      "stage": "1 · Build the letter set",
+      "type": "letter-group",
+      "instruction": {"en": "Choose the second group."},
+      "prompt": "Find five more ikhfa' letters.",
+      "items": ["ز س ش ص ض", "ن م ل ر و", "ب ت ث ج د", "ء ه ع ح خ"],
+      "acceptedAnswers": ["ز س ش ص ض"],
+      "feedbackCorrect": "Correct. This is the second group.",
+      "feedbackIncorrect": "The second group is ز س ش ص ض."
+    },
+    {
+      "stage": "1 · Build the letter set",
+      "type": "letter-group",
+      "instruction": {"en": "Choose the third group."},
+      "prompt": "Complete the fifteen letters.",
+      "items": ["ط ظ ف ق ك", "ي و ل ر ب", "ص ض ط ظ ع", "ت ث ج د ذ"],
+      "acceptedAnswers": ["ط ظ ف ق ك"],
+      "feedbackCorrect": "Correct. All fifteen are now complete.",
+      "feedbackIncorrect": "The final group is ط ظ ف ق ك."
+    },
+    {
+      "stage": "2 · Understand the sound",
+      "type": "concept",
+      "instruction": {"en": "Where is ikhfa' between?"},
+      "prompt": "Choose the accurate description.",
+      "items": ["Between izhar and idgham", "Between madd and qalqalah", "The same as iqlab", "Fully clear"],
+      "acceptedAnswers": ["Between izhar and idgham"],
+      "feedbackCorrect": "Correct. Noon is concealed, not fully clear or fully merged.",
+      "feedbackIncorrect": "Ikhfa' is the middle state between clarity and merging."
+    },
+    {
+      "stage": "2 · Understand the sound",
+      "type": "concept",
+      "instruction": {"en": "How long is the ghunnah?"},
+      "prompt": "Use the lesson timing.",
+      "items": ["Two counts", "No ghunnah", "Four counts", "One quick tap"],
+      "acceptedAnswers": ["Two counts"],
+      "feedbackCorrect": "Correct. Maintain two balanced counts.",
+      "feedbackIncorrect": "Use the two-count teacher gesture."
+    },
+    {
+      "stage": "3 · Find the trigger",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the trigger."},
+      "prompt": "مِن شَرِّ",
+      "items": ["م", "نْ", "ش", "ر"],
+      "acceptedAnswers": ["ش"],
+      "feedbackCorrect": "Correct. Shin is an ikhfa' letter.",
+      "feedbackIncorrect": "Inspect the first letter after noon."
+    },
+    {
+      "stage": "3 · Find the trigger",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the trigger."},
+      "prompt": "أَنفُسَكُمْ",
+      "items": ["أ", "نْ", "ف", "س"],
+      "acceptedAnswers": ["ف"],
+      "feedbackCorrect": "Correct. Fa triggers ikhfa' inside the word.",
+      "feedbackIncorrect": "Look immediately after noon saakinah."
+    },
+    {
+      "stage": "3 · Find the trigger",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the trigger."},
+      "prompt": "مِن قَبْلُ",
+      "items": ["م", "نْ", "ق", "ب"],
+      "acceptedAnswers": ["ق"],
+      "feedbackCorrect": "Correct. Qaf is the trigger, not the later ba.",
+      "feedbackIncorrect": "Use only the letter immediately after noon."
+    },
+    {
+      "stage": "4 · Mixed rule decisions",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "مِن شَرِّ",
+      "items": ["Ikhfa'", "Izhar", "Idgham", "Iqlab"],
+      "acceptedAnswers": ["Ikhfa'"],
+      "feedbackCorrect": "Correct. Shin belongs to the fifteen.",
+      "feedbackIncorrect": "Compare shin with the four rule groups."
+    },
+    {
+      "stage": "4 · Mixed rule decisions",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "مِنۢ بَعْدِ",
+      "items": ["Ikhfa'", "Izhar", "Idgham", "Iqlab"],
+      "acceptedAnswers": ["Iqlab"],
+      "feedbackCorrect": "Correct. Ba is reserved for iqlab.",
+      "feedbackIncorrect": "Ba is not one of the fifteen ikhfa' letters."
+    },
+    {
+      "stage": "4 · Mixed rule decisions",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "مِنْ عَلَقٍ",
+      "items": ["Ikhfa'", "Izhar", "Idgham", "Iqlab"],
+      "acceptedAnswers": ["Izhar"],
+      "feedbackCorrect": "Correct. Ayn is a throat letter.",
+      "feedbackIncorrect": "Ayn belongs to the six izhar letters."
+    },
+    {
+      "stage": "4 · Mixed rule decisions",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "فَمَن يَعْمَلْ",
+      "items": ["Ikhfa'", "Izhar", "Idgham with ghunnah", "Iqlab"],
+      "acceptedAnswers": ["Idgham with ghunnah"],
+      "feedbackCorrect": "Correct. Ya belongs to ينمو.",
+      "feedbackIncorrect": "Ya is an idgham letter."
+    },
+    {
+      "stage": "5 · Diagnose recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner makes noon fully clear before shin. What should change?"},
+      "prompt": "مِن شَرِّ",
+      "items": ["Conceal with two-count ghunnah", "Make noon clearer", "Change to mim", "Merge completely"],
+      "acceptedAnswers": ["Conceal with two-count ghunnah"],
+      "feedbackCorrect": "Correct. Stay between clarity and merging.",
+      "feedbackIncorrect": "Ikhfa' requires the middle concealed state."
+    },
+    {
+      "stage": "5 · Diagnose recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner changes noon to mim before qaf. Which rule did they confuse it with?"},
+      "prompt": "مِن قَبْلُ",
+      "items": ["Iqlab", "Izhar", "Idgham without ghunnah", "Absolute manifestation"],
+      "acceptedAnswers": ["Iqlab"],
+      "feedbackCorrect": "Correct. Only ba changes noon to hidden mim.",
+      "feedbackIncorrect": "The hidden mim belongs specifically to ba."
+    },
+    {
+      "stage": "6 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Complete the definition."},
+      "prompt": "Ikhfa' is a sound…",
+      "items": ["Between izhar and idgham with two-count ghunnah", "Fully clear with no ghunnah", "Changed to mim", "Merged into lam"],
+      "acceptedAnswers": ["Between izhar and idgham with two-count ghunnah"],
+      "feedbackCorrect": "Correct. This is the complete practical definition.",
+      "feedbackIncorrect": "Include both the middle state and ghunnah timing."
+    },
+    {
+      "stage": "6 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "How many ikhfa' letters are there?"},
+      "prompt": "Choose the correct total.",
+      "items": ["15", "6", "4", "1"],
+      "acceptedAnswers": ["15"],
+      "feedbackCorrect": "Correct. You are ready for mixed review.",
+      "feedbackIncorrect": "Add the three groups of five."
+    }
+  ],
+  "commonMistakes": [
+    "Making noon fully clear.",
+    "Merging noon completely into the next letter.",
+    "Changing noon to mim when the trigger is not ba.",
+    "Looking at a later letter instead of the immediate next letter.",
+    "Using one identical mouth position for all fifteen letters."
+  ],
+  "correctionTechniques": [
+    "Use a three-way contrast: izhar, ikhfa', idgham.",
+    "Keep the four rule groups visible during early decisions.",
+    "Practice three letter groups before all fifteen together.",
+    "Correct ghunnah timing and next-letter preparation separately."
+  ],
+  "knowledgeChecks": [
+    {"type": "recall", "prompt": "Name all fifteen letters in three groups.", "success": "All groups are complete."},
+    {"type": "recognition", "prompt": "Classify ten mixed boundaries.", "success": "At least eight are correct with reasons."},
+    {"type": "recitation", "prompt": "Recite five varied examples.", "success": "Concealment and timing are teacher-approved."}
+  ],
+  "teacherQuestions": [
+    "What is the immediate next letter?",
+    "Does it belong to izhar, idgham, iqlab, or ikhfa'?",
+    "Is noon fully clear, fully merged, changed, or concealed?",
+    "How many counts?",
+    "How do you prepare for the next letter?"
+  ],
+  "studentTasks": [
+    "Memorize three groups of five.",
+    "Highlight target and trigger.",
+    "Classify mixed examples from all four rules.",
+    "Recite examples with varied following letters."
+  ],
+  "liveClassFlow": [
+    {"minutes": 5, "phase": "Review", "display": "Known rule groups"},
+    {"minutes": 8, "phase": "Letter set", "display": "Three groups of five"},
+    {"minutes": 7, "phase": "Definition", "display": "Between izhar and idgham"},
+    {"minutes": 8, "phase": "Teacher model", "display": "Five varied examples"},
+    {"minutes": 10, "phase": "Mixed decisions", "display": "All four rules"},
+    {"minutes": 10, "phase": "Recitation", "display": "Conceal, count, prepare"},
+    {"minutes": 5, "phase": "Error diagnosis", "display": "Clear, merged, or changed"},
+    {"minutes": 2, "phase": "Exit check", "display": "Definition and total"}
+  ],
+  "independentPractice": [
+    "Write the fifteen letters in three groups.",
+    "Classify teacher-approved examples before reciting."
+  ],
+  "homework": [
+    "Prepare five ikhfa' examples using different trigger groups.",
+    "For each: identify the trigger, explain the rule, then recite."
+  ],
+  "exitTicket": [
+    "State the definition.",
+    "Name the fifteen letters in groups.",
+    "Recite one selected example with two-count ghunnah."
+  ],
+  "masteryCriteria": [
+    "Names all fifteen letters.",
+    "Distinguishes ikhfa' from the other three rules.",
+    "Identifies at least 8 of 10 mixed items.",
+    "Maintains two-count ghunnah.",
+    "Avoids full clarity and full merging."
+  ],
+  "teacherNotes": [
+    "This lesson needs repeated listening across more than one session.",
+    "Letter-list mastery is not equivalent to recitation mastery.",
+    "Keep the learner focused on the immediate next letter.",
+    "Use mixed review before moving to written tanween changes."
+  ],
+  "sourceNotes": [
+    "The rule and fifteen-letter set use page 47.",
+    "Qur'anic references were cross-checked independently.",
+    "Grouping, activities, and teaching sequence are curriculum-design additions."
+  ],
+  "verificationStatus": "source-verified; Qur'anic references checked; live teacher pronunciation review required"
+}

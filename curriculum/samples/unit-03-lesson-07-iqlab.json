@@ -1,0 +1,372 @@
+{
+  "id": "tajweed-u03-l07-iqlab",
+  "unitId": "unit-03",
+  "lessonNumber": "3.7",
+  "title": {"ar": "الإقلاب", "en": "Iqlab"},
+  "source": {
+    "book": "Tajweed Rules of the Qur'an — Part One",
+    "pdf": "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+    "pdfPages": [46],
+    "printedPages": [46],
+    "chapter": "Noon Saakinah and Tanween Rules",
+    "section": "Iqlab",
+    "verification": "book source checked; Qur'anic references cross-checked"
+  },
+  "contentOrigin": "source-and-instructional-design",
+  "level": "Foundation",
+  "estimatedMinutes": 45,
+  "prerequisites": [
+    "Recognize noon saakinah and tanween.",
+    "Use the target-then-next-letter decision routine.",
+    "Recognize ghunnah as a controlled nasal sound."
+  ],
+  "learningOutcomes": [
+    "Define iqlab as changing the noon sound into a hidden mim sound.",
+    "Name ba as the single iqlab trigger.",
+    "Recognize the small mim sign used in the Mushaf.",
+    "Identify iqlab within one word and across two words.",
+    "Recite verified examples with hidden mim and two-count ghunnah."
+  ],
+  "definition": {
+    "linguistic": {
+      "ar": "الإقلاب لغةً: تحويل الشيء عن وجهه.",
+      "en": "Linguistically, iqlab means changing or turning something."
+    },
+    "technical": {
+      "ar": "الإقلاب هو قلب النون الساكنة أو التنوين ميمًا مخفاة عند الباء، مع غنة مقدارها حركتان.",
+      "en": "Iqlab changes noon saakinah or tanween into a hidden mim sound before ba, with a two-count ghunnah."
+    },
+    "studentFriendly": {
+      "ar": "إذا جاء بعد النون الساكنة أو التنوين حرف الباء، نحول صوت النون إلى ميم مخفاة مع غنة حركتين.",
+      "en": "When ba follows noon saakinah or tanween, change the noon sound into a hidden mim and hold the ghunnah for two counts."
+    },
+    "memoryFormula": "نْ أو تنوين + ب = ميم مخفاة بغنة حركتين"
+  },
+  "keyTerms": [
+    {"ar": "الإقلاب", "transliteration": "al-iqlab", "en": "changing the noon sound into hidden mim"},
+    {"ar": "ميم مخفاة", "transliteration": "mim mukhfah", "en": "a concealed mim sound"},
+    {"ar": "الباء", "transliteration": "al-ba", "en": "the single trigger: ب"},
+    {"ar": "الميم الصغيرة", "transliteration": "al-mim as-saghirah", "en": "the small mim sign that points to iqlab"},
+    {"ar": "حركتان", "transliteration": "harakatan", "en": "two measured counts"}
+  ],
+  "teacherPreparation": [
+    "Prepare a large ba card and a small-mim Mushaf sign.",
+    "Model the lip position without pressing the lips too tightly.",
+    "Contrast clear noon, full mim, and the hidden mim of iqlab.",
+    "Use a two-count hand gesture for ghunnah."
+  ],
+  "openingReview": [
+    {"minutes": 2, "teacherPrompt": "Ask the learner to find noon saakinah or tanween."},
+    {"minutes": 2, "teacherPrompt": "Review a two-count ghunnah."},
+    {"minutes": 1, "teacherPrompt": "Show ب and ask where it is articulated."}
+  ],
+  "conceptExplanation": [
+    {
+      "audience": "student",
+      "text": "Ba is the only iqlab letter. The noon does not stay clear and does not merge into ba; its sound changes to a concealed mim with two-count ghunnah."
+    },
+    {
+      "audience": "teacher",
+      "text": "Teach three actions separately: change to mim quality, conceal rather than produce a full released mim, and maintain two-count ghunnah."
+    }
+  ],
+  "lessonPath": [
+    {"step": 1, "title": "Find", "text": "Locate noon saakinah or tanween."},
+    {"step": 2, "title": "Check", "text": "Confirm that ba follows."},
+    {"step": 3, "title": "Change", "text": "Turn the noon sound into hidden mim."},
+    {"step": 4, "title": "Hold", "text": "Maintain ghunnah for two counts."},
+    {"step": 5, "title": "Continue", "text": "Move smoothly into ba."}
+  ],
+  "visualExplanation": [
+    {
+      "type": "rule-equation",
+      "display": "نْ / ً ٍ ٌ + ب ← ميم مخفاة + غنة حركتين",
+      "teacherUse": "Point out the small mim sign before modeling."
+    }
+  ],
+  "ruleSummary": {
+    "condition": "Ba immediately follows noon saakinah or tanween.",
+    "result": "Change the noon sound to a hidden mim with two-count ghunnah, then pronounce ba.",
+    "location": "It can occur within one word or across two words.",
+    "letters": ["ب"]
+  },
+  "letterGroups": [
+    {"name": {"ar": "حرف الإقلاب الوحيد", "en": "The single iqlab letter"}, "letters": ["ب"]}
+  ],
+  "quranExamples": [
+    {
+      "arabic": "مِنۢ بَعْدِ مِيثَـٰقِهِ",
+      "surah": {"ar": "البقرة", "en": "Al-Baqarah"},
+      "ayah": 27,
+      "targetText": "نۢ بَ",
+      "rule": "الإقلاب",
+      "triggerLetter": "ب",
+      "previousLetter": "نْ",
+      "readingInstruction": "Change noon to hidden mim, hold two counts, then move into ba.",
+      "teacherExplanation": "Ba follows noon saakinah across two words.",
+      "commonError": "Keeping noon clear or producing a fully released mim.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 46,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "قَالَ يَـٰٓـَٔادَمُ أَنۢبِئْهُم بِأَسْمَآئِهِمْ",
+      "surah": {"ar": "البقرة", "en": "Al-Baqarah"},
+      "ayah": 33,
+      "targetText": "نۢبِ",
+      "rule": "الإقلاب",
+      "triggerLetter": "ب",
+      "previousLetter": "نْ",
+      "readingInstruction": "Apply hidden mim inside the word before ba.",
+      "teacherExplanation": "Iqlab occurs here within one word.",
+      "commonError": "Thinking iqlab occurs only between words.",
+      "wordBoundary": "within-one-word",
+      "sourcePage": 46,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "وَكَانَ ٱللَّهُ سَمِيعًۢا بَصِيرًۭا",
+      "surah": {"ar": "النساء", "en": "An-Nisa"},
+      "ayah": 134,
+      "targetText": "عًۢا بَ",
+      "rule": "الإقلاب",
+      "triggerLetter": "ب",
+      "previousLetter": "تنوين فتح",
+      "readingInstruction": "Change the tanween noon sound into hidden mim before ba.",
+      "teacherExplanation": "Ba follows tanween across two words.",
+      "commonError": "Reading the tanween as a clear noon.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 46,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "إِنَّهُۥ عَلِيمٌۢ بِذَاتِ ٱلصُّدُورِ",
+      "surah": {"ar": "الملك", "en": "Al-Mulk"},
+      "ayah": 13,
+      "targetText": "مٌۢ بِ",
+      "rule": "الإقلاب",
+      "triggerLetter": "ب",
+      "previousLetter": "تنوين ضم",
+      "readingInstruction": "Change the tanween noon sound into concealed mim with two counts.",
+      "teacherExplanation": "Ba follows dammatayn across two words.",
+      "commonError": "Closing and releasing the lips as a complete mim before ba.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 46,
+      "verificationStatus": "verified"
+    }
+  ],
+  "guidedPractice": [
+    {
+      "sequence": 1,
+      "teacherAction": "Show target, small mim, and ba.",
+      "studentAction": "Name the target, trigger, and changed sound.",
+      "feedback": "Require the learner to say hidden mim, not simply mim."
+    },
+    {
+      "sequence": 2,
+      "teacherAction": "Model isolate → conceal → count two → ba.",
+      "studentAction": "Copy the boundary, then recite the full phrase.",
+      "feedback": "Correct lip closure and ghunnah timing separately."
+    }
+  ],
+  "oralPractice": [
+    {
+      "cycle": ["find target", "find ba", "change to hidden mim", "count two", "continue into ba"],
+      "examplesRequired": 4,
+      "teacherObservation": ["no clear noon", "hidden not fully released mim", "two-count ghunnah", "accurate ba"]
+    }
+  ],
+  "interactiveActivities": [
+    {
+      "stage": "1 · Recognize the trigger",
+      "type": "letter-group",
+      "instruction": {"en": "Which letter triggers iqlab?"},
+      "prompt": "Choose the single letter.",
+      "items": ["ب", "م", "ن", "ل"],
+      "acceptedAnswers": ["ب"],
+      "feedbackCorrect": "Correct. Ba is the only iqlab letter.",
+      "feedbackIncorrect": "Iqlab has one trigger only."
+    },
+    {
+      "stage": "1 · Recognize the trigger",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the trigger."},
+      "prompt": "مِنۢ بَعْدِ",
+      "items": ["م", "نْ", "ب", "ع"],
+      "acceptedAnswers": ["ب"],
+      "feedbackCorrect": "Correct. Ba immediately follows the target.",
+      "feedbackIncorrect": "Inspect the first letter of the next word."
+    },
+    {
+      "stage": "2 · Understand the change",
+      "type": "concept",
+      "instruction": {"en": "What happens to the noon sound?"},
+      "prompt": "Noon saakinah or tanween before ba…",
+      "items": ["Changes to hidden mim", "Stays fully clear", "Merges into lam", "Disappears with no ghunnah"],
+      "acceptedAnswers": ["Changes to hidden mim"],
+      "feedbackCorrect": "Correct. This change is the meaning of iqlab.",
+      "feedbackIncorrect": "The sound changes rather than staying noon."
+    },
+    {
+      "stage": "2 · Understand the change",
+      "type": "concept",
+      "instruction": {"en": "How long is the ghunnah?"},
+      "prompt": "Use the lesson timing.",
+      "items": ["Two counts", "No counts", "Four counts", "Any length"],
+      "acceptedAnswers": ["Two counts"],
+      "feedbackCorrect": "Correct. Keep two balanced counts.",
+      "feedbackIncorrect": "Use the teacher's two-count hand signal."
+    },
+    {
+      "stage": "2 · Understand the change",
+      "type": "concept",
+      "instruction": {"en": "What does the small mim sign indicate?"},
+      "prompt": "نۢ",
+      "items": ["Iqlab", "Izhar", "Qalqalah", "Madd"],
+      "acceptedAnswers": ["Iqlab"],
+      "feedbackCorrect": "Correct. It points to the changed mim quality.",
+      "feedbackIncorrect": "The small mim is the visual clue for iqlab."
+    },
+    {
+      "stage": "3 · Decide the rule",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "سَمِيعًۢا بَصِيرًا",
+      "items": ["Iqlab", "Idgham", "Izhar", "Ikhfa"],
+      "acceptedAnswers": ["Iqlab"],
+      "feedbackCorrect": "Correct. Ba follows tanween.",
+      "feedbackIncorrect": "Look for the single iqlab trigger."
+    },
+    {
+      "stage": "3 · Decide the rule",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "مِن رَّبِّهِمْ",
+      "items": ["Iqlab", "Idgham without ghunnah", "Izhar", "Ikhfa"],
+      "acceptedAnswers": ["Idgham without ghunnah"],
+      "feedbackCorrect": "Correct. Ra is not ba.",
+      "feedbackIncorrect": "Iqlab occurs only before ba."
+    },
+    {
+      "stage": "3 · Decide the rule",
+      "type": "location",
+      "instruction": {"en": "Where can iqlab occur?"},
+      "prompt": "Choose the complete answer.",
+      "items": ["Inside one word or across two words", "Across two words only", "Inside one word only"],
+      "acceptedAnswers": ["Inside one word or across two words"],
+      "feedbackCorrect": "Correct. Compare أَنبِئْهُم with مِن بَعْدِ.",
+      "feedbackIncorrect": "The examples show both locations."
+    },
+    {
+      "stage": "4 · Diagnose recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner reads a clear noon before ba. What should change?"},
+      "prompt": "مِنۢ بَعْدِ",
+      "items": ["Change to hidden mim", "Make noon clearer", "Merge into ra", "Remove ba"],
+      "acceptedAnswers": ["Change to hidden mim"],
+      "feedbackCorrect": "Correct. Clear noon would miss the iqlab.",
+      "feedbackIncorrect": "Iqlab changes the noon quality."
+    },
+    {
+      "stage": "4 · Diagnose recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner produces a fully released mim before ba. What is the correction?"},
+      "prompt": "Choose the accurate sound.",
+      "items": ["Hidden mim with ghunnah", "Full separate mim", "Clear noon", "No nasal sound"],
+      "acceptedAnswers": ["Hidden mim with ghunnah"],
+      "feedbackCorrect": "Correct. Conceal the mim quality before entering ba.",
+      "feedbackIncorrect": "The rule calls for a hidden, not fully released, mim."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Complete the formula."},
+      "prompt": "Noon saakinah or tanween + ب = …",
+      "items": ["Hidden mim with two-count ghunnah", "Clear noon", "Idgham into lam", "Qalqalah"],
+      "acceptedAnswers": ["Hidden mim with two-count ghunnah"],
+      "feedbackCorrect": "Correct. You included the changed sound and timing.",
+      "feedbackIncorrect": "State the new sound and its ghunnah."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Choose the complete explanation."},
+      "prompt": "Why is أَنۢبِئْهُم iqlab?",
+      "items": ["Ba follows noon saakinah inside the word", "Mim follows noon", "It contains tanween", "Ba is a throat letter"],
+      "acceptedAnswers": ["Ba follows noon saakinah inside the word"],
+      "feedbackCorrect": "Excellent. You named the target, trigger, and location.",
+      "feedbackIncorrect": "A complete reason includes noon saakinah and ba."
+    }
+  ],
+  "commonMistakes": [
+    "Keeping noon clear before ba.",
+    "Producing a fully released mim instead of concealed mim.",
+    "Holding ghunnah too briefly or too long.",
+    "Thinking iqlab occurs only between words.",
+    "Confusing the small mim sign with an ordinary written mim."
+  ],
+  "correctionTechniques": [
+    "Contrast clear noon, full mim, and hidden mim.",
+    "Use a mirror to check gentle lip preparation.",
+    "Practice the target and ba boundary before the full phrase.",
+    "Use two finger taps for ghunnah timing."
+  ],
+  "knowledgeChecks": [
+    {"type": "recall", "prompt": "Name the single trigger.", "success": "Ba is named immediately."},
+    {"type": "recognition", "prompt": "Classify ten mixed boundaries.", "success": "At least eight are correct."},
+    {"type": "recitation", "prompt": "Recite within-word and two-word examples.", "success": "Hidden mim and timing are teacher-approved."}
+  ],
+  "teacherQuestions": [
+    "Where is the target?",
+    "Does ba follow immediately?",
+    "What sound does noon change into?",
+    "Is the mim full or hidden?",
+    "How many counts?"
+  ],
+  "studentTasks": [
+    "Find the small mim sign.",
+    "Mark target and ba.",
+    "Sort within-word and two-word examples.",
+    "Recite with hidden mim and two counts."
+  ],
+  "liveClassFlow": [
+    {"minutes": 5, "phase": "Review", "display": "Target and ghunnah"},
+    {"minutes": 6, "phase": "Definition", "display": "The single trigger ب"},
+    {"minutes": 6, "phase": "Visual clue", "display": "Small mim sign"},
+    {"minutes": 8, "phase": "Teacher model", "display": "Four verified examples"},
+    {"minutes": 8, "phase": "Guided practice", "display": "Change, conceal, count, continue"},
+    {"minutes": 7, "phase": "Error diagnosis", "display": "Clear noon versus full mim"},
+    {"minutes": 5, "phase": "Exit check", "display": "Explain and recite"}
+  ],
+  "independentPractice": [
+    "Circle the small mim sign in teacher-approved examples.",
+    "Label each example inside one word or across two words."
+  ],
+  "homework": [
+    "Prepare two within-word and two two-word iqlab examples.",
+    "Explain the rule before reciting to the teacher."
+  ],
+  "exitTicket": [
+    "Name the trigger.",
+    "Explain the changed sound and timing.",
+    "Recite one selected example."
+  ],
+  "masteryCriteria": [
+    "Names ba as the only trigger.",
+    "Recognizes the small mim sign.",
+    "Identifies iqlab in at least 8 of 10 items.",
+    "Produces concealed mim with two-count ghunnah.",
+    "Applies the rule in both locations."
+  ],
+  "teacherNotes": [
+    "Do not describe iqlab as simply replacing the written letter; distinguish script from recited sound.",
+    "Teacher listening is essential for lip position and concealment.",
+    "Keep the four-step cue visible: change, conceal, count, continue."
+  ],
+  "sourceNotes": [
+    "The rule and examples use page 46.",
+    "Qur'anic references were cross-checked independently.",
+    "Activities and teaching sequence are curriculum-design additions."
+  ],
+  "verificationStatus": "source-verified; Qur'anic references checked; live teacher pronunciation review required"
+}

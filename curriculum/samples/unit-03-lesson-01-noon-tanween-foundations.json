@@ -1,0 +1,396 @@
+{
+  "id": "tajweed-u03-l01-noon-tanween-foundations",
+  "unitId": "unit-03",
+  "lessonNumber": "3.1",
+  "title": {
+    "ar": "تعريف النون الساكنة والتنوين وأشكالهما",
+    "en": "Definitions and visual forms"
+  },
+  "source": {
+    "book": "Tajweed Rules of the Qur'an — Part One",
+    "pdf": "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+    "pdfPages": [39, 40],
+    "printedPages": [39, 40],
+    "chapter": "Noon Saakinah and Tanween Rules",
+    "section": "Definitions and visual forms",
+    "verification": "book source checked"
+  },
+  "contentOrigin": "source-and-instructional-design",
+  "level": "Foundation",
+  "estimatedMinutes": 40,
+  "prerequisites": [
+    "Recognize the Arabic letter noon: ن.",
+    "Recognize fathah, kasrah, dammah, and sukoon.",
+    "Read short Arabic syllables slowly."
+  ],
+  "learningOutcomes": [
+    "Define noon saakinah and recognize نْ.",
+    "Define tanween as an extra noon sound heard when continuing.",
+    "Recognize fathatayn ً, kasratayn ٍ, and dammatayn ٌ.",
+    "Explain two differences between noon saakinah and tanween.",
+    "Use the routine: find the target, then inspect the next letter."
+  ],
+  "definition": {
+    "linguistic": {
+      "ar": "السكون هو عدم الحركة، والتنوين هو التصويت بالنون.",
+      "en": "Sukoon indicates no vowel; tanween produces an additional noon sound."
+    },
+    "technical": {
+      "ar": "النون الساكنة هي نون أصلية خالية من الحركة، تثبت لفظًا وخطًا ووصلاً ووقفًا. والتنوين نون ساكنة زائدة تلحق آخر الاسم لفظًا لا خطًا، وتثبت في الوصل دون الوقف.",
+      "en": "Noon saakinah is an original noon with no vowel, written and pronounced. Tanween is an additional noon sound at the end of a noun when continuing; it is heard but not written as the letter noon."
+    },
+    "studentFriendly": {
+      "ar": "إذا رأيت نْ فهذه نون ساكنة مكتوبة. وإذا رأيت ً أو ٍ أو ٌ فستسمع صوت نون عند الوصل، وهذا هو التنوين.",
+      "en": "If you see نْ, it is a written noon saakinah. If you see ً, ٍ, or ٌ, you hear a noon sound when continuing; that is tanween."
+    },
+    "memoryFormula": "نْ = نون مكتوبة ساكنة  |  ً ٍ ٌ = صوت نون زائد عند الوصل"
+  },
+  "keyTerms": [
+    {"ar": "النون الساكنة", "transliteration": "an-nun as-sakinah", "en": "a written noon with sukoon"},
+    {"ar": "التنوين", "transliteration": "at-tanwin", "en": "an extra noon sound at the end of a noun when continuing"},
+    {"ar": "تنوين الفتح", "transliteration": "tanwin al-fath", "en": "fathatayn: ً"},
+    {"ar": "تنوين الكسر", "transliteration": "tanwin al-kasr", "en": "kasratayn: ٍ"},
+    {"ar": "تنوين الضم", "transliteration": "tanwin ad-damm", "en": "dammatayn: ٌ"},
+    {"ar": "الوصل والوقف", "transliteration": "al-wasl wal-waqf", "en": "continuing and stopping"}
+  ],
+  "teacherPreparation": [
+    "Display the forms one at a time: نْ, ـًـ, ـٍـ, ـٌـ.",
+    "Say each form before asking the learner to name it.",
+    "Keep this lesson focused on recognition before introducing the four rules.",
+    "Contrast what is seen in writing with what is heard during continuation."
+  ],
+  "openingReview": [
+    {"minutes": 2, "teacherPrompt": "Show نَ، نِ، نُ، نْ and ask which noon has no vowel."},
+    {"minutes": 2, "teacherPrompt": "Review fathah, kasrah, dammah, and sukoon."}
+  ],
+  "conceptExplanation": [
+    {
+      "audience": "student",
+      "text": "Every coming rule begins with the same first step: find noon saakinah or tanween, then look at the immediately following letter."
+    },
+    {
+      "audience": "teacher",
+      "text": "Build visual and auditory recognition before naming izhar, idgham, iqlab, or ikhfa'."
+    }
+  ],
+  "lessonPath": [
+    {"step": 1, "title": "See", "text": "Compare نْ with the three tanween signs."},
+    {"step": 2, "title": "Hear", "text": "Notice the noon sound during continuation."},
+    {"step": 3, "title": "Compare", "text": "Separate written noon from tanween."},
+    {"step": 4, "title": "Locate", "text": "Find the target before the next letter."},
+    {"step": 5, "title": "Prepare", "text": "Practice the decision routine."}
+  ],
+  "visualExplanation": [
+    {
+      "type": "rule-equation",
+      "display": "نْ  ≠  ً ٍ ٌ   |   كلاهما يعطينا صوت نون ساكنة عند الوصل",
+      "teacherUse": "Ask what differs visually and what is similar in sound."
+    }
+  ],
+  "ruleSummary": {
+    "condition": "First locate noon saakinah نْ or one of the three tanween signs ً ٍ ٌ.",
+    "result": "Treat both as a noon sound when continuing, then inspect the immediately following letter.",
+    "location": "Noon saakinah can occur within or at the end of a word; tanween occurs at the end of a noun.",
+    "letters": ["نْ", "ً", "ٍ", "ٌ"]
+  },
+  "letterGroups": [
+    {"name": {"ar": "نون ساكنة مكتوبة", "en": "Written noon saakinah"}, "letters": ["نْ"]},
+    {"name": {"ar": "أشكال التنوين", "en": "Three tanween forms"}, "letters": ["ً", "ٍ", "ٌ"]}
+  ],
+  "examplesHeading": {
+    "title": "Visual forms and reading examples",
+    "subtitle": "Identify what is written, then say what is heard when continuing."
+  },
+  "quranExamples": [
+    {
+      "arabic": "مِنْ",
+      "surah": {"ar": "نموذج بصري", "en": "Visual form"},
+      "ayah": "A",
+      "targetText": "نْ",
+      "rule": "نون ساكنة",
+      "triggerLetter": "نْ",
+      "previousLetter": "نْ",
+      "readingInstruction": "Pronounce noon with no added vowel.",
+      "teacherExplanation": "The letter noon is visibly written and carries sukoon.",
+      "commonError": "Adding a vowel after noon.",
+      "wordBoundary": "within-one-word",
+      "sourcePage": 39,
+      "verificationStatus": "source-form"
+    },
+    {
+      "arabic": "كِتَابًا",
+      "surah": {"ar": "نموذج تعليمي", "en": "Fathatayn"},
+      "ayah": "B",
+      "targetText": "ابًا",
+      "rule": "تنوين فتح",
+      "triggerLetter": "ً",
+      "previousLetter": "ً",
+      "readingInstruction": "When continuing, hear an an ending.",
+      "teacherExplanation": "The doubled fathah represents tanween; there is no written noon.",
+      "commonError": "Searching for a written ن in the ending.",
+      "wordBoundary": "word-ending",
+      "sourcePage": 40,
+      "verificationStatus": "instructional-form"
+    },
+    {
+      "arabic": "كِتَابٍ",
+      "surah": {"ar": "نموذج تعليمي", "en": "Kasratayn"},
+      "ayah": "C",
+      "targetText": "ابٍ",
+      "rule": "تنوين كسر",
+      "triggerLetter": "ٍ",
+      "previousLetter": "ٍ",
+      "readingInstruction": "When continuing, hear an in ending.",
+      "teacherExplanation": "The doubled kasrah represents tanween kasr.",
+      "commonError": "Calling it a single kasrah.",
+      "wordBoundary": "word-ending",
+      "sourcePage": 40,
+      "verificationStatus": "instructional-form"
+    },
+    {
+      "arabic": "كِتَابٌ",
+      "surah": {"ar": "نموذج تعليمي", "en": "Dammatayn"},
+      "ayah": "D",
+      "targetText": "ابٌ",
+      "rule": "تنوين ضم",
+      "triggerLetter": "ٌ",
+      "previousLetter": "ٌ",
+      "readingInstruction": "When continuing, hear an un ending.",
+      "teacherExplanation": "The doubled dammah represents tanween damm.",
+      "commonError": "Pronouncing only a single u sound when continuing.",
+      "wordBoundary": "word-ending",
+      "sourcePage": 40,
+      "verificationStatus": "instructional-form"
+    }
+  ],
+  "guidedPractice": [
+    {
+      "sequence": 1,
+      "teacherAction": "Show one isolated form.",
+      "studentAction": "Name it and state whether noon is written or only heard.",
+      "feedback": "Correct visual identification before asking for a rule."
+    },
+    {
+      "sequence": 2,
+      "teacherAction": "Place a following-letter card after the form.",
+      "studentAction": "Point to the target first, then to the next letter.",
+      "feedback": "Use the routine: target first, next letter second."
+    }
+  ],
+  "oralPractice": [
+    {
+      "cycle": ["see", "name", "hear", "compare", "continue"],
+      "examplesRequired": 4,
+      "teacherObservation": ["correct form name", "no added vowel on نْ", "audible noon sound in tanween when continuing"]
+    }
+  ],
+  "interactiveActivities": [
+    {
+      "stage": "1 · Recognize noon saakinah",
+      "type": "visual-recognition",
+      "instruction": {"en": "Select noon saakinah."},
+      "prompt": "Which noon has no vowel?",
+      "items": ["نَ", "نِ", "نْ", "نُ"],
+      "acceptedAnswers": ["نْ"],
+      "feedbackCorrect": "Correct. The sukoon marks noon saakinah.",
+      "feedbackIncorrect": "Look for the sukoon above noon."
+    },
+    {
+      "stage": "1 · Recognize noon saakinah",
+      "type": "definition",
+      "instruction": {"en": "Which description is correct?"},
+      "prompt": "Noon saakinah is…",
+      "items": ["A written noon with no vowel", "Two fathahs", "A noon with dammah"],
+      "acceptedAnswers": ["A written noon with no vowel"],
+      "feedbackCorrect": "Correct. Noon is written and carries sukoon.",
+      "feedbackIncorrect": "Separate the written letter نْ from tanween."
+    },
+    {
+      "stage": "2 · Recognize tanween",
+      "type": "visual-recognition",
+      "instruction": {"en": "Select all three tanween forms."},
+      "prompt": "Which group is tanween?",
+      "items": ["ً ٍ ٌ", "َ ِ ُ", "ْ ّ ٰ"],
+      "acceptedAnswers": ["ً ٍ ٌ"],
+      "feedbackCorrect": "Correct. Tanween uses doubled vowel signs.",
+      "feedbackIncorrect": "Look for the doubled vowel signs."
+    },
+    {
+      "stage": "2 · Recognize tanween",
+      "type": "form-name",
+      "instruction": {"en": "Name this sign."},
+      "prompt": "ً",
+      "items": ["Fathatayn", "Kasratayn", "Dammatayn"],
+      "acceptedAnswers": ["Fathatayn"],
+      "feedbackCorrect": "Correct. This is tanween fath.",
+      "feedbackIncorrect": "It is made from two fathah signs."
+    },
+    {
+      "stage": "2 · Recognize tanween",
+      "type": "form-name",
+      "instruction": {"en": "Name this sign."},
+      "prompt": "ٍ",
+      "items": ["Fathatayn", "Kasratayn", "Dammatayn"],
+      "acceptedAnswers": ["Kasratayn"],
+      "feedbackCorrect": "Correct. This is tanween kasr.",
+      "feedbackIncorrect": "It is made from two kasrah signs."
+    },
+    {
+      "stage": "2 · Recognize tanween",
+      "type": "form-name",
+      "instruction": {"en": "Name this sign."},
+      "prompt": "ٌ",
+      "items": ["Fathatayn", "Kasratayn", "Dammatayn"],
+      "acceptedAnswers": ["Dammatayn"],
+      "feedbackCorrect": "Correct. This is tanween damm.",
+      "feedbackIncorrect": "It is made from two dammah signs."
+    },
+    {
+      "stage": "3 · Compare",
+      "type": "comparison",
+      "instruction": {"en": "Where is noon visibly written?"},
+      "prompt": "Compare نْ and ً.",
+      "items": ["نْ", "ً", "Both", "Neither"],
+      "acceptedAnswers": ["نْ"],
+      "feedbackCorrect": "Correct. Tanween gives a noon sound without a full ن.",
+      "feedbackIncorrect": "Look for the actual letter shape ن."
+    },
+    {
+      "stage": "3 · Compare",
+      "type": "comparison",
+      "instruction": {"en": "Which occurs at the end of a noun?"},
+      "prompt": "Choose the correct target.",
+      "items": ["Tanween", "Noon saakinah", "Both always"],
+      "acceptedAnswers": ["Tanween"],
+      "feedbackCorrect": "Correct. Tanween is attached to the end of a noun.",
+      "feedbackIncorrect": "Noon saakinah can occur in more than one position."
+    },
+    {
+      "stage": "3 · Compare",
+      "type": "comparison",
+      "instruction": {"en": "What do both produce in continuation?"},
+      "prompt": "نْ and ً ٍ ٌ",
+      "items": ["A noon sound", "A mim sound", "No sound"],
+      "acceptedAnswers": ["A noon sound"],
+      "feedbackCorrect": "Correct. This is why the same four rules apply.",
+      "feedbackIncorrect": "Listen for the n sound."
+    },
+    {
+      "stage": "4 · Decision routine",
+      "type": "decision-step",
+      "instruction": {"en": "What is the first step?"},
+      "prompt": "Before naming a rule…",
+      "items": ["Find the target", "Guess the rule", "Look at any final letter"],
+      "acceptedAnswers": ["Find the target"],
+      "feedbackCorrect": "Correct. Find noon saakinah or tanween first.",
+      "feedbackIncorrect": "Locate the target before the next letter."
+    },
+    {
+      "stage": "4 · Decision routine",
+      "type": "decision-step",
+      "instruction": {"en": "What is the second step?"},
+      "prompt": "After finding the target…",
+      "items": ["Inspect the immediately following letter", "Count the words", "Always add ghunnah"],
+      "acceptedAnswers": ["Inspect the immediately following letter"],
+      "feedbackCorrect": "Correct. The next letter determines the rule.",
+      "feedbackIncorrect": "Inspect the letter immediately after the target."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Identify the target."},
+      "prompt": "مِنْ",
+      "items": ["Noon saakinah", "Tanween fath", "Tanween kasr", "Tanween damm"],
+      "acceptedAnswers": ["Noon saakinah"],
+      "feedbackCorrect": "Correct. Noon is written and has sukoon.",
+      "feedbackIncorrect": "Look for the written نْ."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Identify the target."},
+      "prompt": "كِتَابٍ",
+      "items": ["Noon saakinah", "Tanween fath", "Tanween kasr", "Tanween damm"],
+      "acceptedAnswers": ["Tanween kasr"],
+      "feedbackCorrect": "Correct. The ending carries kasratayn.",
+      "feedbackIncorrect": "Inspect the doubled sign under the final letter."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Choose the complete routine."},
+      "prompt": "How do you begin every coming rule question?",
+      "items": ["Find target → inspect next letter", "Read fast → guess", "Always add ghunnah"],
+      "acceptedAnswers": ["Find target → inspect next letter"],
+      "feedbackCorrect": "Excellent. You are ready for izhar.",
+      "feedbackIncorrect": "Use the same two opening steps every time."
+    }
+  ],
+  "commonMistakes": [
+    "Confusing a single vowel sign with tanween.",
+    "Looking for a written noon inside tanween.",
+    "Adding a vowel after noon saakinah.",
+    "Inspecting the next letter before locating the target."
+  ],
+  "correctionTechniques": [
+    "Use two columns: written noon versus heard noon sound.",
+    "Ask the learner to trace the actual letter ن.",
+    "Alternate isolated forms until recognition is automatic.",
+    "Repeat: find the target, then inspect the next letter."
+  ],
+  "knowledgeChecks": [
+    {"type": "recognition", "prompt": "Name four randomly displayed target forms.", "success": "Four of four are correct."},
+    {"type": "comparison", "prompt": "Give two differences between noon saakinah and tanween.", "success": "Writing and position or stopping are mentioned."}
+  ],
+  "teacherQuestions": [
+    "Is noon visibly written?",
+    "Which sign do you see?",
+    "What sound do you hear when continuing?",
+    "What comes after locating the target?"
+  ],
+  "studentTasks": [
+    "Sort forms into noon saakinah and tanween.",
+    "Name the three tanween signs.",
+    "Explain one similarity and two differences.",
+    "Use the target-first routine."
+  ],
+  "liveClassFlow": [
+    {"minutes": 5, "phase": "Review", "display": "Noon and basic vowel signs"},
+    {"minutes": 7, "phase": "Definition", "display": "Written noon versus additional noon sound"},
+    {"minutes": 7, "phase": "Visual comparison", "display": "نْ and ً ٍ ٌ"},
+    {"minutes": 8, "phase": "Guided recognition", "display": "Random form cards"},
+    {"minutes": 7, "phase": "Hear and continue", "display": "Teacher-modeled endings"},
+    {"minutes": 4, "phase": "Decision routine", "display": "Find target → inspect next letter"},
+    {"minutes": 2, "phase": "Exit check", "display": "Name, compare, explain"}
+  ],
+  "independentPractice": [
+    "Write one line containing نْ and one containing each tanween form.",
+    "Label each form and say whether noon is written or heard."
+  ],
+  "homework": [
+    "Find five teacher-approved targets containing noon saakinah or tanween.",
+    "Mark only the target; do not classify the four rules yet."
+  ],
+  "exitTicket": [
+    "Point to noon saakinah.",
+    "Name the three tanween signs.",
+    "State: find the target, then inspect the next letter."
+  ],
+  "masteryCriteria": [
+    "Recognizes نْ and all three tanween signs.",
+    "Explains the additional noon sound in tanween.",
+    "Distinguishes the forms in at least 8 of 10 items.",
+    "Uses the target-first decision routine."
+  ],
+  "teacherNotes": [
+    "Do not rush a learner who confuses the forms.",
+    "Keep rule names out of early recognition practice.",
+    "End by asking: What comes immediately after the target?"
+  ],
+  "sourceNotes": [
+    "Definitions and forms use pages 39–40.",
+    "كتاب examples are instructional forms, not Qur'anic quotations.",
+    "Activities and timing are curriculum-design additions."
+  ],
+  "verificationStatus": "source-verified; teacher pronunciation review required"
+}

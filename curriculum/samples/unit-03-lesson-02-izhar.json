@@ -1,0 +1,570 @@
+{
+  "id": "tajweed-u03-l02-izhar",
+  "unitId": "unit-03",
+  "lessonNumber": "3.2",
+  "title": {
+    "ar": "الإظهار الحلقي",
+    "en": "Izhar"
+  },
+  "source": {
+    "book": "Tajweed Rules of the Qur'an — Part One",
+    "pdf": "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+    "pdfPages": [41],
+    "printedPages": [41],
+    "chapter": "Noon Saakinah and Tanween Rules",
+    "section": "Al-Ith-haar / الإظهار",
+    "verification": "book source checked; Qur'anic references cross-checked"
+  },
+  "contentOrigin": "source-and-instructional-design",
+  "level": "Foundation",
+  "estimatedMinutes": 50,
+  "prerequisites": [
+    "Recognize noon saakinah: نْ.",
+    "Recognize the three forms of tanween: ً ٍ ٌ.",
+    "Know that throat letters come from three areas of the throat."
+  ],
+  "learningOutcomes": [
+    "Define izhar as clear pronunciation.",
+    "Name and recognize the six throat letters: ء ه ع ح غ خ.",
+    "Find the target and the immediately following letter.",
+    "Identify izhar in at least 8 of 10 examples and explain why.",
+    "Recite six guided examples with a clear noon sound, without merging or added ghunnah."
+  ],
+  "keyTerms": [
+    {
+      "ar": "الإظهار",
+      "transliteration": "al-izhar",
+      "en": "clear pronunciation / manifestation",
+      "contentOrigin": "source"
+    },
+    {
+      "ar": "النون الساكنة",
+      "transliteration": "an-nun as-sakinah",
+      "en": "noon with no vowel: نْ",
+      "contentOrigin": "source"
+    },
+    {
+      "ar": "التنوين",
+      "transliteration": "at-tanwin",
+      "en": "an extra noon sound at the end of a noun when continuing",
+      "contentOrigin": "source"
+    },
+    {
+      "ar": "حروف الحلق",
+      "transliteration": "huruf al-halq",
+      "en": "the six throat letters",
+      "contentOrigin": "source"
+    }
+  ],
+  "teacherPreparation": [
+    "Open page 41 of the source book.",
+    "Prepare the six throat-letter cards: ء ه ع ح غ خ.",
+    "Share only the lesson area on screen and reveal explanations after the learner predicts.",
+    "Model every Qur'anic phrase live; the interface does not replace teacher correction."
+  ],
+  "openingReview": [
+    {
+      "minutes": 2,
+      "teacherPrompt": "Ask the learner to select noon saakinah from نَ، نْ، نُ."
+    },
+    {
+      "minutes": 2,
+      "teacherPrompt": "Ask the learner to recognize the three tanween signs."
+    },
+    {
+      "minutes": 1,
+      "teacherPrompt": "Ask: Which part of the mouth produces ء ه ع ح غ خ?"
+    }
+  ],
+  "conceptExplanation": [
+    {
+      "audience": "student",
+      "text": "Look for noon saakinah or tanween, then inspect only the next letter. If it is one of the six throat letters, keep the noon sound clear. Do not merge it into the next letter and do not stretch a ghunnah."
+    },
+    {
+      "audience": "teacher",
+      "text": "Izhar means clarity. It occurs when noon saakinah or tanween is followed immediately by ء ه ع ح غ خ. It may occur inside one word or between two words."
+    }
+  ],
+  "definition": {
+    "linguistic": {
+      "ar": "الإظهار لغةً: البيان والوضوح.",
+      "en": "Linguistically, izhar means clarity and making something clear."
+    },
+    "technical": {
+      "ar": "الإظهار اصطلاحًا: إخراج النون الساكنة أو التنوين من مخرجهما بوضوح، من غير إدغام ولا إخفاء، ومن غير غنة زائدة، إذا جاء بعدهما أحد حروف الحلق الستة: ء ه ع ح غ خ.",
+      "en": "In Tajweed, izhar is pronouncing noon saakinah or tanween clearly from its articulation point, without merging or hiding it and without added ghunnah, when followed by one of the six throat letters: ء ه ع ح غ خ."
+    },
+    "studentFriendly": {
+      "ar": "ابحث عن النون الساكنة أو التنوين، ثم انظر إلى الحرف التالي مباشرة. إذا كان حرفًا حلقيًا، أظهر صوت النون بوضوح.",
+      "en": "Find noon saakinah or tanween and look at the very next letter. If it is a throat letter, keep the noon sound clear."
+    },
+    "memoryFormula": "نْ أو تنوين + حرف حلقي = إظهار واضح"
+  },
+  "lessonPath": [
+    {"step": 1, "title": "Recall", "text": "Recognize noon saakinah and tanween."},
+    {"step": 2, "title": "Discover", "text": "Inspect the letter immediately after the noon sound."},
+    {"step": 3, "title": "Understand", "text": "Connect the six letters to the three throat areas."},
+    {"step": 4, "title": "Apply", "text": "Identify the target, trigger, and rule."},
+    {"step": 5, "title": "Recite", "text": "Listen, isolate, connect, and recite."},
+    {"step": 6, "title": "Master", "text": "Diagnose mistakes and complete the exit check."}
+  ],
+  "visualExplanation": [
+    {
+      "type": "rule-equation",
+      "display": "نْ / ـًـ / ـٍـ / ـٌـ  +  ء ه ع ح غ خ  ←  إظهار",
+      "teacherUse": "Reveal the six letters only after the learner predicts that the throat is involved."
+    },
+    {
+      "type": "throat-map",
+      "display": [
+        {"area": "Deepest throat", "letters": ["ء", "ه"]},
+        {"area": "Middle throat", "letters": ["ع", "ح"]},
+        {"area": "Closest throat", "letters": ["غ", "خ"]}
+      ],
+      "teacherUse": "Teach the letters as three memorable pairs."
+    }
+  ],
+  "ruleSummary": {
+    "condition": "Noon saakinah or tanween is immediately followed by a throat letter.",
+    "result": "Pronounce the noon sound clearly, without merging and without added ghunnah.",
+    "location": "It can occur inside one word or across two words.",
+    "letters": ["ء", "ه", "ع", "ح", "غ", "خ"]
+  },
+  "letterGroups": [
+    {
+      "name": {"ar": "أقصى الحلق", "en": "Deepest throat"},
+      "letters": ["ء", "ه"]
+    },
+    {
+      "name": {"ar": "وسط الحلق", "en": "Middle throat"},
+      "letters": ["ع", "ح"]
+    },
+    {
+      "name": {"ar": "أدنى الحلق", "en": "Closest throat"},
+      "letters": ["غ", "خ"]
+    }
+  ],
+  "quranExamples": [
+    {
+      "arabic": "مَنْ ءَامَنَ بِٱللَّهِ",
+      "surah": {"ar": "البقرة", "en": "Al-Baqarah"},
+      "ayah": 62,
+      "targetText": "نْ ءَ",
+      "rule": "الإظهار",
+      "triggerLetter": "ء",
+      "previousLetter": "نْ",
+      "readingInstruction": "Complete the noon clearly, then begin the hamzah separately.",
+      "teacherExplanation": "The next letter is hamzah, from the deepest throat.",
+      "commonError": "Dropping the noon or stretching a nasal sound.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 41,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "إِنْ هُوَ إِلَّا وَحْيٌ يُوحَىٰ",
+      "surah": {"ar": "النجم", "en": "An-Najm"},
+      "ayah": 4,
+      "targetText": "نْ هُ",
+      "rule": "الإظهار",
+      "triggerLetter": "ه",
+      "previousLetter": "نْ",
+      "readingInstruction": "Keep the noon distinct before moving gently to ha.",
+      "teacherExplanation": "The next letter is ha, from the deepest throat.",
+      "commonError": "Weakening the noon before the soft ha.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": "supplementary verified example",
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "خَلَقَ ٱلْإِنسَانَ مِنْ عَلَقٍ",
+      "surah": {"ar": "العلق", "en": "Al-Alaq"},
+      "ayah": 2,
+      "targetText": "نْ عَ",
+      "rule": "الإظهار",
+      "triggerLetter": "ع",
+      "previousLetter": "نْ",
+      "readingInstruction": "Complete the noon clearly before moving to ayn.",
+      "teacherExplanation": "The next letter is ayn, from the middle throat.",
+      "commonError": "Moving early to ayn and weakening the noon.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 41,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "فَصَلِّ لِرَبِّكَ وَٱنْحَرْ",
+      "surah": {"ar": "الكوثر", "en": "Al-Kawthar"},
+      "ayah": 2,
+      "targetText": "نْحَ",
+      "rule": "الإظهار",
+      "triggerLetter": "ح",
+      "previousLetter": "نْ",
+      "readingInstruction": "Make the noon clear inside the word, then pronounce ha from the middle throat.",
+      "teacherExplanation": "The next letter is ha ح, and izhar occurs here inside one word.",
+      "commonError": "Hiding the noon because both letters occur in one word.",
+      "wordBoundary": "within-one-word",
+      "sourcePage": 41,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "وَنَزَعْنَا مَا فِي صُدُورِهِم مِّنْ غِلٍّ",
+      "surah": {"ar": "الأعراف", "en": "Al-A'raf"},
+      "ayah": 43,
+      "targetText": "نْ غِ",
+      "rule": "الإظهار",
+      "triggerLetter": "غ",
+      "previousLetter": "نْ",
+      "readingInstruction": "Finish the noon clearly before moving to ghayn.",
+      "teacherExplanation": "The next letter is ghayn, from the closest part of the throat.",
+      "commonError": "Merging the noon into the heavy ghayn.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": "supplementary verified example",
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "وَمَا تُنفِقُوا۟ مِنْ خَيْرٍ",
+      "surah": {"ar": "البقرة", "en": "Al-Baqarah"},
+      "ayah": 272,
+      "targetText": "نْ خَ",
+      "rule": "الإظهار",
+      "triggerLetter": "خ",
+      "previousLetter": "نْ",
+      "readingInstruction": "Keep the noon clear, then pronounce kha without pulling the noon toward it.",
+      "teacherExplanation": "The next letter is kha, from the closest part of the throat.",
+      "commonError": "Letting the strength of kha hide the noon.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": "supplementary verified example",
+      "verificationStatus": "verified"
+    }
+  ],
+  "guidedPractice": [
+    {
+      "sequence": 1,
+      "teacherAction": "Display only the target and following letter.",
+      "studentAction": "Name the target, the next letter, and its throat pair.",
+      "feedback": "Do not accept only the rule name; require the reason."
+    },
+    {
+      "sequence": 2,
+      "teacherAction": "Reveal the full phrase and model it once.",
+      "studentAction": "Point, isolate, connect, then recite the phrase.",
+      "feedback": "Correct clarity and unwanted nasalization separately."
+    }
+  ],
+  "oralPractice": [
+    {
+      "cycle": ["listen", "point to target", "isolate", "connect", "recite in context"],
+      "examplesRequired": 6,
+      "teacherObservation": ["clear noon", "no merging", "no added ghunnah", "accurate throat letter"]
+    }
+  ],
+  "interactiveActivities": [
+    {
+      "stage": "1 · Quick review",
+      "type": "review",
+      "instruction": {"en": "Which one is noon saakinah?"},
+      "prompt": "Choose the noon that has no vowel.",
+      "items": ["نَ", "نْ", "نُ", "نِ"],
+      "acceptedAnswers": ["نْ"],
+      "feedbackCorrect": "Correct. The sukoon shows that the noon has no vowel.",
+      "feedbackIncorrect": "Look for the small sukoon sign above the noon."
+    },
+    {
+      "stage": "1 · Quick review",
+      "type": "review",
+      "instruction": {"en": "Which group contains all three tanween signs?"},
+      "prompt": "Find fathatayn, kasratayn, and dammatayn.",
+      "items": ["َ ِ ُ", "ً ٍ ٌ", "ْ ّ ٰ"],
+      "acceptedAnswers": ["ً ٍ ٌ"],
+      "feedbackCorrect": "Correct. These three endings produce an extra noon sound when continuing.",
+      "feedbackIncorrect": "Tanween is written with doubled vowel signs."
+    },
+    {
+      "stage": "1 · Quick review",
+      "type": "review",
+      "instruction": {"en": "Where are the six izhar letters articulated?"},
+      "prompt": "ء ه ع ح غ خ",
+      "items": ["Lips", "Tongue", "Throat", "Nasal passage"],
+      "acceptedAnswers": ["Throat"],
+      "feedbackCorrect": "Correct. They are the six throat letters.",
+      "feedbackIncorrect": "Say the letters slowly and notice where their sound begins."
+    },
+    {
+      "stage": "2 · Recognize the six letters",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the izhar trigger."},
+      "prompt": "مَنْ ءَامَنَ",
+      "items": ["م", "نْ", "ء", "ن"],
+      "acceptedAnswers": ["ء"],
+      "feedbackCorrect": "Correct. Hamzah is the letter immediately after noon saakinah.",
+      "feedbackIncorrect": "First find نْ, then inspect only the next letter."
+    },
+    {
+      "stage": "2 · Recognize the six letters",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the izhar trigger."},
+      "prompt": "إِنْ هُوَ",
+      "items": ["إ", "نْ", "ه", "و"],
+      "acceptedAnswers": ["ه"],
+      "feedbackCorrect": "Correct. Ha ه follows noon saakinah.",
+      "feedbackIncorrect": "The trigger is the letter immediately after نْ."
+    },
+    {
+      "stage": "2 · Recognize the six letters",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the izhar trigger."},
+      "prompt": "مِنْ عَلَقٍ",
+      "items": ["م", "نْ", "ع", "ل"],
+      "acceptedAnswers": ["ع"],
+      "feedbackCorrect": "Correct. Ayn is a middle-throat letter.",
+      "feedbackIncorrect": "Look immediately after noon saakinah."
+    },
+    {
+      "stage": "2 · Recognize the six letters",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the izhar trigger."},
+      "prompt": "وَٱنْحَرْ",
+      "items": ["و", "نْ", "ح", "ر"],
+      "acceptedAnswers": ["ح"],
+      "feedbackCorrect": "Correct. Ha ح follows noon saakinah inside the word.",
+      "feedbackIncorrect": "Izhar can also occur inside one word."
+    },
+    {
+      "stage": "2 · Recognize the six letters",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the izhar trigger."},
+      "prompt": "مِنْ غِلٍّ",
+      "items": ["م", "نْ", "غ", "ل"],
+      "acceptedAnswers": ["غ"],
+      "feedbackCorrect": "Correct. Ghayn is a closest-throat letter.",
+      "feedbackIncorrect": "Find the first letter after نْ."
+    },
+    {
+      "stage": "2 · Recognize the six letters",
+      "type": "trigger-recognition",
+      "instruction": {"en": "Select the izhar trigger."},
+      "prompt": "مِنْ خَيْرٍ",
+      "items": ["م", "نْ", "خ", "ي"],
+      "acceptedAnswers": ["خ"],
+      "feedbackCorrect": "Correct. Kha is one of the six throat letters.",
+      "feedbackIncorrect": "The trigger comes directly after noon saakinah."
+    },
+    {
+      "stage": "3 · Understand the throat map",
+      "type": "throat-map",
+      "instruction": {"en": "Which pair comes from the deepest throat?"},
+      "prompt": "Choose one pair.",
+      "items": ["ء ه", "ع ح", "غ خ"],
+      "acceptedAnswers": ["ء ه"],
+      "feedbackCorrect": "Correct. Hamzah and ha come from the deepest throat.",
+      "feedbackIncorrect": "Remember the pairs from deep to near: ء ه · ع ح · غ خ."
+    },
+    {
+      "stage": "3 · Understand the throat map",
+      "type": "throat-map",
+      "instruction": {"en": "Which pair comes from the middle throat?"},
+      "prompt": "Choose one pair.",
+      "items": ["ء ه", "ع ح", "غ خ"],
+      "acceptedAnswers": ["ع ح"],
+      "feedbackCorrect": "Correct. Ayn and ha ح come from the middle throat.",
+      "feedbackIncorrect": "The middle pair is ع ح."
+    },
+    {
+      "stage": "3 · Understand the throat map",
+      "type": "throat-map",
+      "instruction": {"en": "Which pair comes from the closest part of the throat?"},
+      "prompt": "Choose one pair.",
+      "items": ["ء ه", "ع ح", "غ خ"],
+      "acceptedAnswers": ["غ خ"],
+      "feedbackCorrect": "Correct. Ghayn and kha are the closest-throat pair.",
+      "feedbackIncorrect": "The pair nearest the mouth is غ خ."
+    },
+    {
+      "stage": "4 · Apply the decision steps",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "مِنْ عَلَقٍ",
+      "items": ["Izhar", "Not izhar"],
+      "acceptedAnswers": ["Izhar"],
+      "feedbackCorrect": "Correct. Noon saakinah is followed by ayn.",
+      "feedbackIncorrect": "Ayn is one of the six throat letters."
+    },
+    {
+      "stage": "4 · Apply the decision steps",
+      "type": "rule-decision",
+      "instruction": {"en": "Which rule applies?"},
+      "prompt": "مِنْ خَيْرٍ",
+      "items": ["Izhar", "Not izhar"],
+      "acceptedAnswers": ["Izhar"],
+      "feedbackCorrect": "Correct. Noon saakinah is followed by kha.",
+      "feedbackIncorrect": "Kha belongs to the throat group."
+    },
+    {
+      "stage": "4 · Apply the decision steps",
+      "type": "rule-decision",
+      "instruction": {"en": "Is this an izhar boundary?"},
+      "prompt": "مِن يَوْمٍ",
+      "items": ["Yes", "No"],
+      "acceptedAnswers": ["No"],
+      "feedbackCorrect": "Correct. Ya is not one of the six izhar letters.",
+      "feedbackIncorrect": "Check the next letter against ء ه ع ح غ خ."
+    },
+    {
+      "stage": "4 · Apply the decision steps",
+      "type": "rule-decision",
+      "instruction": {"en": "Is this an izhar boundary?"},
+      "prompt": "مِن مَّاءٍ",
+      "items": ["Yes", "No"],
+      "acceptedAnswers": ["No"],
+      "feedbackCorrect": "Correct. Mim is not a throat letter.",
+      "feedbackIncorrect": "The next letter is mim, not one of ء ه ع ح غ خ."
+    },
+    {
+      "stage": "5 · Diagnose the recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner merges the noon into ayn. What should change?"},
+      "prompt": "مِنْ عَلَقٍ",
+      "items": ["Keep the noon clear", "Remove the noon", "Stretch the ghunnah", "Merge more strongly"],
+      "acceptedAnswers": ["Keep the noon clear"],
+      "feedbackCorrect": "Correct. Complete the noon, then move separately to ayn.",
+      "feedbackIncorrect": "Izhar means clarity; the noon must remain audible."
+    },
+    {
+      "stage": "5 · Diagnose the recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner holds a long nasal sound before kha. What is the correction?"},
+      "prompt": "مِنْ خَيْرٍ",
+      "items": ["Add more ghunnah", "No added ghunnah", "Drop kha", "Merge noon into kha"],
+      "acceptedAnswers": ["No added ghunnah"],
+      "feedbackCorrect": "Correct. Keep the noon clear without prolonging nasalization.",
+      "feedbackIncorrect": "The clear noon is not merged or given an added ghunnah."
+    },
+    {
+      "stage": "5 · Diagnose the recitation",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner says izhar cannot occur inside one word. Which example corrects that idea?"},
+      "prompt": "Choose the within-word example.",
+      "items": ["مَنْ ءَامَنَ", "مِنْ عَلَقٍ", "وَٱنْحَرْ", "مِنْ خَيْرٍ"],
+      "acceptedAnswers": ["وَٱنْحَرْ"],
+      "feedbackCorrect": "Correct. In وَٱنْحَرْ, noon saakinah and ح are in the same word.",
+      "feedbackIncorrect": "Look for نْ and the throat letter inside a single word."
+    },
+    {
+      "stage": "6 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Complete the rule sentence."},
+      "prompt": "Noon saakinah or tanween + a throat letter = …",
+      "items": ["Izhar", "Merging", "Hiding", "Changing to mim"],
+      "acceptedAnswers": ["Izhar"],
+      "feedbackCorrect": "Correct. This is the full izhar condition.",
+      "feedbackIncorrect": "The noon remains clear when a throat letter follows."
+    },
+    {
+      "stage": "6 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Which answer gives the complete reason?"},
+      "prompt": "Why is مِنْ غِلٍّ izhar?",
+      "items": ["Because it has noon", "Because ghayn follows noon saakinah and ghayn is a throat letter", "Because ghayn is heavy", "Because it is two words"],
+      "acceptedAnswers": ["Because ghayn follows noon saakinah and ghayn is a throat letter"],
+      "feedbackCorrect": "Excellent. You named the target, the following letter, and its group.",
+      "feedbackIncorrect": "A complete reason names the target, the next letter, and why that letter triggers izhar."
+    },
+    {
+      "stage": "6 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Choose the correct recitation method."},
+      "prompt": "How should the noon sound be read in إِنْ هُوَ?",
+      "items": ["Clearly, then move to ه", "Merged into ه", "Changed to mim", "Hidden with a long ghunnah"],
+      "acceptedAnswers": ["Clearly, then move to ه"],
+      "feedbackCorrect": "Correct. Now recite it to your teacher.",
+      "feedbackIncorrect": "Izhar keeps the noon sound clear."
+    }
+  ],
+  "commonMistakes": [
+    "Adding a prolonged ghunnah to the clear noon.",
+    "Weakening or dropping the noon sound.",
+    "Merging the noon into the following throat letter.",
+    "Looking at a later letter instead of the immediately following letter.",
+    "Thinking izhar occurs only between two words."
+  ],
+  "correctionTechniques": [
+    "Isolate noon with sukoon, pronounce the throat letter separately, then reconnect them.",
+    "Point to the exact boundary and ask: What comes immediately after the noon sound?",
+    "Use the three pairs ء ه · ع ح · غ خ instead of memorizing an unstructured six-letter list.",
+    "Require the learner to recite after every recognition answer."
+  ],
+  "knowledgeChecks": [
+    {
+      "type": "oral",
+      "prompt": "Name the six izhar letters and group them by the three throat areas.",
+      "success": "All six letters are named and grouped correctly."
+    },
+    {
+      "type": "recognition",
+      "prompt": "Classify ten mixed noon-saakinah and tanween boundaries.",
+      "success": "At least eight are identified correctly with a reason."
+    },
+    {
+      "type": "recitation",
+      "prompt": "Recite one example for each throat letter.",
+      "success": "The noon remains clear without merging or added ghunnah."
+    }
+  ],
+  "teacherQuestions": [
+    "Where is the noon saakinah or tanween?",
+    "What letter comes immediately after it?",
+    "Is that letter one of ء ه ع ح غ خ?",
+    "Which throat pair contains it?",
+    "How should the noon sound be recited?"
+  ],
+  "studentTasks": [
+    "Sort the six letters into the three throat areas.",
+    "Highlight the target and trigger in every phrase.",
+    "Explain the rule before reciting.",
+    "Recite one example for each of the six letters."
+  ],
+  "liveClassFlow": [
+    {"minutes": 5, "phase": "Retrieval review", "display": "Noon saakinah, tanween, and the throat"},
+    {"minutes": 5, "phase": "Guided discovery", "display": "Find the target and inspect only the next letter"},
+    {"minutes": 6, "phase": "Simple rule", "display": "Rule equation and three throat pairs"},
+    {"minutes": 8, "phase": "Teacher model", "display": "Six verified examples, one per letter"},
+    {"minutes": 10, "phase": "Guided identification", "display": "Trigger and throat-map activities"},
+    {"minutes": 8, "phase": "Student recitation", "display": "Listen, isolate, connect, recite"},
+    {"minutes": 5, "phase": "Mistake diagnosis", "display": "Merging, added ghunnah, and within-word example"},
+    {"minutes": 3, "phase": "Mastery check", "display": "Recognition, reason, and oral exit task"}
+  ],
+  "independentPractice": [
+    "Review the six letters as three pairs: ء ه · ع ح · غ خ.",
+    "For each assigned phrase, mark the target, circle the trigger, name the rule, then recite."
+  ],
+  "homework": [
+    "Prepare three teacher-approved examples: identify the trigger, explain the rule, then recite.",
+    "Do not self-certify pronunciation; bring the reading back for teacher correction."
+  ],
+  "exitTicket": [
+    "Recognition: identify the target and trigger in مِنْ غِلٍّ.",
+    "Explanation: say why izhar applies using a complete sentence.",
+    "Oral task: recite one teacher-selected example clearly."
+  ],
+  "masteryCriteria": [
+    "Names all six throat letters and groups them into three pairs.",
+    "Identifies izhar in at least 8 of 10 mixed boundaries.",
+    "Explains each answer by naming the following throat letter.",
+    "Recites one example for each letter without merging or added prolonged ghunnah.",
+    "Correctly diagnoses the three common errors in this lesson."
+  ],
+  "teacherNotes": [
+    "Use one decision routine throughout: target → next letter → throat group → rule → recitation.",
+    "Do not move through all activities in silence; after recognition, ask the learner to recite.",
+    "Knowledge of the six letters does not equal recitation mastery.",
+    "Supplementary examples were added to provide one verified example for every throat letter; page 41 remains the primary book source.",
+    "Teacher script: The next letter is from the throat, so keep the noon clear, then move to the next letter without merging or added ghunnah."
+  ],
+  "sourceNotes": [
+    "Page 41 provides the definition, six throat letters, and examples of izhar.",
+    "The source states that izhar can occur within one word or between two words.",
+    "Supplementary Qur'anic examples complete the one-example-per-letter teaching set.",
+    "Activities, staging, timing, and feedback are instructional-design additions."
+  ],
+  "verificationStatus": "source-verified; Qur'anic references checked; live teacher pronunciation review required"
+}

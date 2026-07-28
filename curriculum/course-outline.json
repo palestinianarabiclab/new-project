@@ -1,0 +1,162 @@
+{
+  "id": "tajweed-part-one",
+  "title": {
+    "ar": "أحكام تجويد القرآن — الجزء الأول",
+    "en": "Tajweed Rules of the Qur'an — Part One"
+  },
+  "source": {
+    "pdf": "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+    "author": "Kareema Carol Czerepinski",
+    "pdfPageCount": 92,
+    "recitation": "Hafs 'an 'Asim through Ash-Shatibiyyah",
+    "verification": "visually-audited"
+  },
+  "audience": "English-speaking learners who know Arabic letters, vowel marks, and elementary reading",
+  "delivery": "Teacher-led live screen-sharing lessons",
+  "masteryPolicy": {
+    "knowledge": "At least 80% accurate identification and explanation in mixed examples",
+    "recitation": "Teacher-observed correct application in verified examples across two consecutive attempts",
+    "publicationReview": "Arabic transcription and pronunciation guidance require qualified Tajweed-teacher approval"
+  },
+  "units": [
+    {
+      "id": "unit-00",
+      "title": {"ar": "علامات المصحف والتهيئة", "en": "Qur'anic Markings and Orientation"},
+      "sourcePages": [9, 10, 11, 15, 16],
+      "lessons": [
+        "Course scope, reading tradition, and how to study",
+        "Zero marks and standing oblong zero",
+        "Sukoon and small Qur'anic letters"
+      ]
+    },
+    {
+      "id": "unit-01",
+      "title": {"ar": "مقدمة في علم التجويد", "en": "Introduction to Tajweed"},
+      "sourcePages": [17, 18, 19, 20, 21, 22, 23, 24, 25],
+      "lessons": [
+        "Internal and external manners",
+        "Prostrations of recitation",
+        "Isti'adhah and basmalah",
+        "Starting a surah: four connection forms",
+        "Basmalah between two surahs",
+        "Levels of recitation",
+        "Principles of Tajweed",
+        "Obvious and hidden errors"
+      ]
+    },
+    {
+      "id": "unit-02",
+      "title": {"ar": "مخارج الحروف", "en": "Articulation Points"},
+      "sourcePages": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38],
+      "lessons": [
+        "Meaning and method of finding a makhraj",
+        "Five general articulation areas",
+        "Empty space and madd letters",
+        "Three throat articulation points",
+        "Deepest and middle tongue",
+        "Side of the tongue",
+        "Tip of the tongue groups",
+        "Two lips",
+        "Nasal passage",
+        "Cumulative articulation review"
+      ]
+    },
+    {
+      "id": "unit-03",
+      "title": {"ar": "أحكام النون الساكنة والتنوين", "en": "Noon Saakinah and Tanween"},
+      "sourcePages": [39, 40, 41, 42, 43, 44, 45, 46, 47],
+      "lessons": [
+        "Definitions and visual forms",
+        "Izhar",
+        "Idgham with ghunnah",
+        "Absolute manifestation exceptions",
+        "Idgham without ghunnah",
+        "Complete and incomplete idgham",
+        "Iqlab",
+        "Ikhfa'",
+        "Written tanween changes and mixed decision practice"
+      ]
+    },
+    {
+      "id": "unit-04",
+      "title": {"ar": "أحكام الميم الساكنة", "en": "Meem Saakinah"},
+      "sourcePages": [49, 50, 51, 52, 53],
+      "lessons": [
+        "Meem saakinah overview",
+        "Oral concealment",
+        "Small merging of identical letters",
+        "Oral manifestation and caution before fa and waw",
+        "Mixed application review"
+      ]
+    },
+    {
+      "id": "unit-05",
+      "title": {"ar": "الغنة", "en": "Ghunnah"},
+      "sourcePages": [55, 56, 57],
+      "lessons": [
+        "Ghunnah definition and nasal articulation",
+        "Four ranks of ghunnah",
+        "Listening and teacher-observed recitation review"
+      ]
+    },
+    {
+      "id": "unit-06",
+      "title": {"ar": "أحكام اللام الساكنة", "en": "Lam Saakinah"},
+      "sourcePages": [59, 60, 61, 62],
+      "lessons": [
+        "Five categories of lam saakinah",
+        "Lam of the definite article: clear reading",
+        "Lam of the definite article: merging",
+        "Lam in verbs, commands, nouns, and particles",
+        "Exception and mixed review"
+      ]
+    },
+    {
+      "id": "unit-07",
+      "title": {"ar": "المدود", "en": "Mudood"},
+      "sourcePages": [63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81],
+      "lessons": [
+        "Madd and leen letters",
+        "Natural madd",
+        "Lesser connecting madd",
+        "Substitute madd",
+        "Secondary madd and its causes",
+        "Exchange madd",
+        "Required attached madd",
+        "Separate allowed madd",
+        "Greater connecting madd",
+        "Presented sukoon madd",
+        "Leen madd",
+        "Compulsory madd overview",
+        "Compulsory madd in a word",
+        "Compulsory madd in a letter",
+        "Stronger of two causes",
+        "Cumulative madd decision practice"
+      ]
+    },
+    {
+      "id": "unit-08",
+      "title": {"ar": "كيفية حدوث الحروف", "en": "How Letters Are Formed"},
+      "sourcePages": [83, 84, 85, 86],
+      "lessons": [
+        "How sound and letters are formed",
+        "Non-vowelled letters",
+        "Vowelled letters and mouth movement",
+        "Formation review before qalqalah"
+      ]
+    },
+    {
+      "id": "unit-09",
+      "title": {"ar": "القلقلة", "en": "Qalqalah"},
+      "sourcePages": [87, 88, 89, 90, 91],
+      "lessons": [
+        "Qalqalah mechanism and letters",
+        "Avoiding an added vowel",
+        "Lesser qalqalah",
+        "Greater qalqalah",
+        "Final Part One review"
+      ]
+    }
+  ]
+}
+

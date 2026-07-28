@@ -1,0 +1,818 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tajweed Teaching Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com https://apis.google.com; script-src-elem 'self' 'unsafe-inline' https://www.gstatic.com https://apis.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https://api.alquran.cloud https://cdn.islamic.network https://www.gstatic.com https://firestore.googleapis.com https://securetoken.googleapis.com https://identitytoolkit.googleapis.com https://www.googleapis.com https://firebaseinstallations.googleapis.com; media-src 'self' https://cdn.islamic.network https:; frame-src https://*.firebaseapp.com https://*.web.app https://apis.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111827'/%3E%3Ctext x='32' y='42' font-size='28' text-anchor='middle' fill='%23f8fafc' font-family='Arial, sans-serif'%3EPA%3C/text%3E%3C/svg%3E" />
+    
+    <!-- App scripts (order matters) -->
+    <script src="./js/config.runtime.js"></script>
+    <script src="./js/config.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Top Navigation -->
+    <header class="top-nav">
+        <div class="top-nav__inner">
+            <div class="top-nav__brand">
+                <span class="logo-circle">PA</span>
+                <span class="logo-text">Tajweed Teaching Lab</span>
+            </div>
+            <nav class="top-nav__links">
+                <button class="top-nav__link" data-nav="home-screen">Home</button>
+                <button class="top-nav__link" data-nav="quran-screen">المصحف</button>
+                <button class="top-nav__link" data-nav="students-screen">Profiles</button>
+                <button class="top-nav__link" data-nav="teacher-dashboard-screen">Teacher</button>
+            </nav>
+        </div>
+    </header>
+    <!-- Modal بسيط للـ Login/Signup -->
+    <div id="authModal" class="modal">
+        <div class="modal__backdrop" data-close-auth></div>
+        <div class="modal__body">
+            <button class="modal__close" data-close-auth>&times;</button>
+            <h3 style="margin-bottom:8px;">Sign in / Sign up</h3>
+            <form id="authForm" autocomplete="off">
+                <div class="form-field">
+                    <label>Email</label>
+                    <input type="email" id="authEmail" required autocomplete="username" />
+                </div>
+                <div class="form-field">
+                    <label>Password</label>
+                    <input type="password" id="authPassword" required autocomplete="current-password" />
+                </div>
+                <div class="form-field">
+                    <label>Role</label>
+                    <select id="authRole" disabled aria-hidden="true">
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn--primary btn--sm">Continue</button>
+            </form>
+            <p class="small-note" style="font-size:0.8rem;">
+                If your email is not registered yet, please ask your teacher to create an account for you.
+            </p>
+            <p id="authError" style="color:#b91c1c; font-size:0.8rem; margin-top:6px;"></p>
+
+        </div>
+    </div>
+
+    <!-- ============== HOME SCREEN ============== -->
+    <section id="home-screen" class="screen screen--active screen--full-hero">
+        <div class="hero hero--full">
+            <div class="hero__overlay"></div>
+            <div class="hero__content hero__content--center">
+                <h1 class="hero__title">Teach Tajweed Clearly</h1>
+
+                <div class="hero__actions hero__actions--center">
+                    <button id="btnHeroStudent" class="btn btn--primary btn--lg">
+                        😊 I'm a Student
+                    </button>
+                    <button id="btnHeroTeacher" class="btn btn--outline btn--lg">
+                        👩‍🏫 I'm a Teacher
+                    </button>
+                    <button id="btnHeroGuest" class="btn btn--primary btn--lg btn--guest">
+                        Continue as Guest
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- ============== Auth SCREEN ============== -->
+
+        <div id="authBar" class="top-nav__links">
+            <span id="authStatus" style="font-size:0.8rem; margin-right:8px;"></span>
+            <button id="btnLogin" class="top-nav__link">Login</button>
+            <button id="btnLogout" class="top-nav__link" style="display:none;">Logout</button>
+        </div>
+
+
+
+        <!--  ==== STUDENT SELECTION SCREEN ============== -->
+        <section id="students-screen" class="screen">
+            <div class="section-header">
+                <h2>Select your Profile</h2>
+                <p class="section-header__subtitle">
+                    Choose a student or create a new profile. Progress is saved locally on this device.
+                </p>
+            </div>
+
+            <div id="noStudentsMessage" class="empty-state">
+                <p>No students yet. Add your first student below!</p>
+            </div>
+
+            <div id="studentsGrid" class="students-grid"></div>
+
+            <div class="section-split">
+                <div class="section-split__col">
+                    <h3>Create Profile</h3>
+                    <p class="section-header__subtitle">
+                        Set a learning goal and starting level for your student.
+                    </p>
+                    <form id="addStudentForm" class="card form-card">
+                        <div class="form-field">
+                            <label for="studentName">Student Name</label>
+                            <input id="studentName" type="text" placeholder="e.g. Sara" required />
+                        </div>
+
+                        <div class="form-field">
+                            <span class="form-field__label">Learning Goals</span>
+                            <div class="goal-options">
+                                <label class="goal-chip">
+                                    <input type="checkbox" name="goalOption" value="CorrectRecitation" />
+                                    <span>📖 Correct recitation</span>
+                                </label>
+                                <label class="goal-chip">
+                                    <input type="checkbox" name="goalOption" value="RuleRecognition" />
+                                    <span>🔎 Recognize rules</span>
+                                </label>
+                                <label class="goal-chip">
+                                    <input type="checkbox" name="goalOption" value="Makharij" />
+                                    <span>🗣️ Improve makharij</span>
+                                </label>
+                                <label class="goal-chip">
+                                    <input type="checkbox" name="goalOption" value="FluentReading" />
+                                    <span>🌿 Fluent reading</span>
+                                </label>
+                                <label class="goal-chip">
+                                    <input type="checkbox" name="goalOption" value="MaddTiming" />
+                                    <span>⏱️ Madd timing</span>
+                                </label>
+                                <label class="goal-chip">
+                                    <input type="checkbox" name="goalOption" value="TeacherReview" />
+                                    <span>✅ Teacher-guided mastery</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="studentLevel">Course</label>
+                            <select id="studentLevel">
+                                <option value="Part One">Tajweed — Part One</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full">Create Profile</button>
+                    </form>
+                </div>
+                <div class="section-split__col section-split__col--hint">
+                    <h4>Tip for teachers</h4>
+                    <p>
+                        Use one device in class and let students re-use their profile every session.
+                        You can check their homework notes and progress per section.
+                    </p>
+            <p style="margin-top: 6px;">
+                        Need to adjust lessons or add new ones?
+                        Go to the <strong>Teacher Dashboard</strong> from the top bar.
+                    </p>
+                </div>
+            </div>
+            <section class="td-main" hidden>
+                <div id="teacherEditor" class="lesson-content td-editor" style="margin-top: 0; display: none;"></div>
+                <div id="addUnitCard" class="card add-unit-card td-addunit">
+                    <h3>Add New Unit</h3>
+                    <p class="section-header__subtitle">
+                        Create custom units for any level. If you later create a lesson template with the same
+                        Level &amp; Unit name, it will be linked automatically.
+                    </p>
+                    <form id="addUnitForm" class="add-unit-form">
+                        <div class="form-field form-field--inline">
+                            <label for="addUnitLevel">Level</label>
+                            <select id="addUnitLevel">
+                                <option value="Beginner">Beginner</option>
+                                <option value="Part One">Part One</option>
+                            </select>
+                        </div>
+                        <div class="form-field form-field--inline">
+                            <label for="addUnitName">Unit name</label>
+                            <input id="addUnitName" placeholder="e.g. Transportation" />
+                        </div>
+                        <button type="submit" class="btn btn--outline btn--sm">Add Unit</button>
+                    </form>
+                </div>
+            </section>
+            </div>
+        </section>
+
+        <!-- ============== LEVEL & UNIT SCREEN ============== -->
+        <section id="levels-screen" class="screen">
+            <div class="section-header section-header--with-actions">
+                <div>
+                    <h2 id="currentCurriculumTitle">Tajweed Curriculum</h2>
+                    <p class="section-header__subtitle">
+                        Current student: <span id="currentStudentNameLevels" class="tag"></span>
+                    </p>
+                </div>
+                <div class="section-header__actions">
+                    <button id="btnSwitchProfile" class="btn btn--ghost">Switch Profile</button>
+                    <button id="btnTajweedCurriculum" class="btn btn--primary btn--sm">Tajweed Curriculum</button>
+                    <button id="btnArabicCurriculum" class="btn btn--outline btn--sm">Arabic Curriculum</button>
+                    <button id="btnContinueLesson" class="btn btn--primary btn--sm">Continue</button>
+                    <button id="btnArabicLetters" class="btn btn--outline btn--sm">Arabic Letters</button>
+                    <button id="btnPlacementTest" class="btn btn--outline btn--sm" hidden>Placement Test</button>
+                    <button id="btnSyncLessonsNow" class="btn btn--ghost">↻ Sync lessons</button>
+                    <button id="btnGoTeacherDashboard" class="btn btn--outline">Teacher Dashboard</button>
+                </div>
+            </div>
+
+            <div id="levelsContainer" class="levels-grid"></div>
+
+            <section id="gazaSituationsHub" class="gaza-hub" aria-labelledby="gazaHubTitle" hidden>
+                <header class="gaza-hub__header">
+                    <p class="gaza-hub__eyebrow">Gaza Situations Hub</p>
+                    <h2 id="gazaHubTitle">Real-Life Spoken Arabic Situations</h2>
+                    <p>Supplementary classroom material is hidden until it is reviewed for the Tajweed curriculum.</p>
+                </header>
+                <div id="gazaSituationsContainer" class="gaza-hub__grid"></div>
+            </section>
+
+        </section>
+
+        <section id="gaza-situation-screen" class="screen">
+            <div class="section-header section-header--with-actions">
+                <div>
+                    <p class="gaza-hub__eyebrow">Gaza Situations Hub</p>
+                    <h2>Real-Life Spoken Arabic</h2>
+                </div>
+                <div class="section-header__actions">
+                    <button id="btnGazaSituationBack" class="btn btn--ghost btn--sm" type="button">Back to Curriculum</button>
+                </div>
+            </div>
+            <div id="gazaSituationRoot"></div>
+        </section>
+
+        <!-- ============== QURAN READER SCREEN ============== -->
+        <section id="quran-screen" class="screen quran-reader" dir="rtl" aria-labelledby="quranReaderTitle">
+            <header class="quran-reader__hero">
+                <div>
+                    <p class="quran-reader__eyebrow">المصحف التعليمي</p>
+                    <h2 id="quranReaderTitle">القرآن الكريم</h2>
+                    <p>نص عثماني واضح للقراءة والشرح أثناء مشاركة الشاشة.</p>
+                </div>
+                <button id="btnQuranBack" class="btn btn--ghost btn--sm" type="button">العودة للمنهج</button>
+            </header>
+
+            <div class="quran-reader__toolbar" aria-label="أدوات المصحف">
+                <label>
+                    <span>السورة</span>
+                    <select id="quranSurahSelect" aria-label="اختر السورة"></select>
+                </label>
+                <label>
+                    <span>انتقل إلى آية</span>
+                    <select id="quranAyahSelect" aria-label="اختر الآية"></select>
+                </label>
+                <label class="quran-reader__search">
+                    <span>بحث داخل الصفحة</span>
+                    <input id="quranSearchInput" type="search" placeholder="اكتب كلمة من الآية..." autocomplete="off" />
+                </label>
+                <div class="quran-reader__font-controls" aria-label="حجم خط القرآن">
+                    <button id="quranFontSmaller" class="btn btn--outline btn--sm" type="button" aria-label="تصغير الخط">أ−</button>
+                    <strong id="quranFontLabel">متوسط</strong>
+                    <button id="quranFontLarger" class="btn btn--outline btn--sm" type="button" aria-label="تكبير الخط">أ+</button>
+                </div>
+            </div>
+
+            <div class="quran-reader__viewbar" aria-label="طريقة عرض القرآن">
+                <div class="quran-reader__view-switch" role="group" aria-label="وضع العرض">
+                    <button id="quranMushafView" class="quran-view-button" type="button" data-quran-view="mushaf">عرض المصحف</button>
+                    <button id="quranTajweedView" class="quran-view-button" type="button" data-quran-view="tajweed">مصحف التجويد الملوّن</button>
+                    <button id="quranStudyView" class="quran-view-button quran-view-button--active" type="button" data-quran-view="study">الدراسة والتفسير</button>
+                </div>
+                <div id="quranStudyOptions" class="quran-reader__study-options">
+                    <label><input id="quranShowTranslation" type="checkbox" checked /> الترجمة الإنجليزية</label>
+                    <label><input id="quranShowTafsir" type="checkbox" checked /> التفسير الميسّر</label>
+                </div>
+            </div>
+            <div id="quranTajweedLegend" class="quran-tajweed-legend" hidden>
+                <span><i class="tajweed-color tajweed-color--madd"></i> المدود</span>
+                <span><i class="tajweed-color tajweed-color--ghunnah"></i> الغنة</span>
+                <span><i class="tajweed-color tajweed-color--ikhfa"></i> الإخفاء</span>
+                <span><i class="tajweed-color tajweed-color--idgham"></i> الإدغام</span>
+                <span><i class="tajweed-color tajweed-color--iqlab"></i> الإقلاب</span>
+                <span><i class="tajweed-color tajweed-color--qalqalah"></i> القلقلة</span>
+                <span><i class="tajweed-color tajweed-color--silent"></i> الحرف غير المنطوق</span>
+            </div>
+
+            <div id="quranStatus" class="quran-reader__status" role="status">جاري تجهيز المصحف…</div>
+            <article id="quranSurahHeader" class="quran-surah-header" hidden></article>
+            <nav class="quran-page-navigation" aria-label="التنقل بين صفحات المصحف">
+                <button id="quranNextPage" class="btn btn--outline btn--sm" type="button">الصفحة التالية</button>
+                <strong id="quranPageLabel">صفحة 1 من 1</strong>
+                <button id="quranPreviousPage" class="btn btn--outline btn--sm" type="button">الصفحة السابقة</button>
+            </nav>
+            <div id="quranVerses" class="quran-verses" aria-live="polite"></div>
+            <nav class="quran-page-navigation quran-page-navigation--bottom" aria-label="التنقل بين صفحات المصحف">
+                <button id="quranNextPageBottom" class="btn btn--outline btn--sm" type="button">الصفحة التالية</button>
+                <strong id="quranPageLabelBottom">صفحة 1 من 1</strong>
+                <button id="quranPreviousPageBottom" class="btn btn--outline btn--sm" type="button">الصفحة السابقة</button>
+            </nav>
+
+            <nav class="quran-reader__navigation" aria-label="التنقل بين السور">
+                <button id="quranNextSurah" class="btn btn--outline" type="button">السورة التالية</button>
+                <button id="quranPreviousSurah" class="btn btn--outline" type="button">السورة السابقة</button>
+            </nav>
+            <p class="quran-reader__credit">النص العثماني والتلاوة عبر AlQuran Cloud. يُرجى عدم استخدام ترجمة المتصفح على النص القرآني.</p>
+        </section>
+
+        <!-- ============== ARABIC LETTERS SCREEN ============== -->
+        <section id="arabic-letters-screen" class="screen">
+            <div class="section-header section-header--with-actions">
+                <div>
+                    <h2>Arabic Letters</h2>
+                    <p class="section-header__subtitle">
+                        Tap any letter to see its shapes, sound, and example.
+                    </p>
+                </div>
+                <div class="section-header__actions">
+                    <button id="btnLettersBackToUnits" class="btn btn--ghost btn--sm">Back to Units</button>
+                    <button id="btnExportArabicLettersPdf" class="btn btn--outline btn--sm">Export Letters PDF</button>
+                    <button class="btn btn--outline btn--sm letters-tab-btn" data-letters-tab="letters">Letters</button>
+                    <button class="btn btn--outline btn--sm letters-tab-btn" data-letters-tab="exercises">Exercises</button>
+                </div>
+            </div>
+
+            <div class="letters-tabs">
+                <div id="lettersTabLetters" class="letters-tab letters-tab--active">
+                    <div id="lettersExtras" class="letters-extras"></div>
+                    <div class="letters-layout">
+                        <div>
+                            <div id="lettersGrid" class="letters-grid"></div>
+                        </div>
+                        <aside id="lettersSide" class="letters-side"></aside>
+                    </div>
+                </div>
+
+                <div id="lettersTabExercises" class="letters-tab">
+                    <div id="lettersExercises" class="letters-exercises"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== BRANCHING DIALOGUE SCREEN ============== -->
+        <section id="branching-screen" class="screen">
+            <div class="lesson-topbar">
+                <div>
+                    <p class="lesson-topbar__label">Student</p>
+                    <p class="lesson-topbar__value" id="branchingStudentName">–</p>
+                </div>
+                <div class="lesson-topbar__center">
+                    <p class="lesson-topbar__label">Dialogue</p>
+                    <p class="lesson-topbar__value" id="branchingMeta">–</p>
+                </div>
+                <div class="lesson-topbar__right">
+                    <div class="font-controls">
+                        <button id="btnBranchingFontSmaller" class="btn btn--ghost btn--icon">A−</button>
+                        <button id="btnBranchingFontLarger" class="btn btn--ghost btn--icon">A+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-secondary-bar">
+                <div class="lesson-secondary-bar__buttons">
+                    <button id="btnBackToLevelsFromBranching" class="btn btn--ghost btn--sm">Back to Units</button>
+                    <button id="btnBranchingRestart" class="btn btn--outline btn--sm">Restart</button>
+                    <button id="btnBranchingUndo" class="btn btn--outline btn--sm">Undo</button>
+                    <button id="btnBranchingToggleAr" class="btn btn--outline btn--sm">Hide Arabic</button>
+                    <button id="btnBranchingToggleEn" class="btn btn--outline btn--sm">Hide English</button>
+                </div>
+            </div>
+
+            <div id="branchingContent" class="lesson-content"></div>
+        </section>
+
+        <!-- ============== LESSON VIEW SCREEN ============== -->
+        <section id="lesson-screen" class="screen">
+            <div class="lesson-topbar">
+                <div>
+                    <p class="lesson-topbar__label">Student</p>
+                    <p class="lesson-topbar__value" id="lessonStudentName">–</p>
+                </div>
+                <div class="lesson-topbar__center">
+                    <p class="lesson-topbar__label">Lesson</p>
+                    <p class="lesson-topbar__value" id="lessonMeta">Part One – Tajweed lesson</p>
+                </div>
+                <div class="lesson-topbar__right">
+                    <div class="font-controls">
+                        <button id="btnFontSmaller" class="btn btn--ghost btn--icon">A−</button>
+                        <button id="btnFontLarger" class="btn btn--ghost btn--icon">A+</button>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" id="teacherModeToggle" />
+                        <span class="toggle__fake"></span>
+                        <span class="toggle__label">Teacher Mode</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="lesson-secondary-bar">
+                <div class="progress">
+                    <div id="lessonProgressFill" class="progress__fill"></div>
+                </div>
+                <div class="lesson-secondary-bar__buttons">
+                    <button id="btnBackToLevels" class="btn btn--ghost btn--sm">Back to Units</button>
+                    <button id="btnBackToStudents" class="btn btn--ghost btn--sm">Back to Profiles</button>
+                    <button id="btnToggleWhiteboard" class="btn btn--ghost btn--sm">
+                        ✏️ Whiteboard
+                    </button>
+                    <button id="btnStartTajweedLive" class="btn btn--primary btn--sm" hidden>
+                        ▶ Live Lesson
+                    </button>
+                    <button id="btnSaveSpot" class="btn btn--outline btn--sm">
+                        💾 Save spot
+                    </button>
+                    <button id="btnExportLessonPdf" class="btn btn--outline btn--sm">
+                        📄 Export Lesson PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="lesson-tabs">
+                <button class="lesson-tab lesson-tab--active" data-tab="overview">Overview</button>
+                <button class="lesson-tab" data-tab="vocabulary">Vocabulary</button>
+                <button class="lesson-tab" data-tab="dialogue">Dialogue</button>
+                <button class="lesson-tab" data-tab="grammar">Grammar</button>
+                <button class="lesson-tab" data-tab="translation">Translation</button>
+                <button class="lesson-tab" data-tab="practice">Practice</button>
+                <button class="lesson-tab" data-tab="homework">Homework</button>
+                <button class="lesson-tab" data-tab="review">Quick Review</button>
+                <button class="lesson-tab lesson-tab--teacher-only" data-tab="teacher-notes">
+                    Teacher Notes
+                </button>
+            </div>
+
+            <div id="lessonTabContent" class="lesson-content">
+                <!-- Filled by JS -->
+            </div>
+            <!-- Whiteboard panel (hidden by default) -->
+            <section id="whiteboardPanel" class="whiteboard-panel hidden">
+                <div class="whiteboard-header">
+                    <h3>Lesson Whiteboard</h3>
+                    <span class="whiteboard-subtitle">
+                        Use the pen to write / draw explanations. Each lesson has its own board.
+                    </span>
+                </div>
+
+                <div class="whiteboard-toolbar">
+                    <label>
+                        Color:
+                        <input type="color" id="whiteboardColor" value="#111827">
+                    </label>
+
+                    <label>
+                        Size:
+                        <input type="range" id="whiteboardSize" min="1" max="12" value="3">
+                        <span id="whiteboardSizeVal">3px</span>
+                    </label>
+
+                    <button id="whiteboardClear" class="btn btn--outline btn--sm">
+                        Clear
+                    </button>
+
+                    <button id="whiteboardDownload" class="btn btn--primary btn--sm">
+                        Download PNG
+                    </button>
+                </div>
+
+                <div class="whiteboard-canvas-wrap">
+                    <canvas id="whiteboardCanvas" width="900" height="480"></canvas>
+                </div>
+
+                <p class="whiteboard-note">
+                    This whiteboard is saved locally per lesson. You can reopen the lesson later and continue from the
+                    same board.
+                </p>
+            </section>
+
+        </section>
+
+        <!-- ============== TEACHER DASHBOARD SCREEN ============== -->
+        <section id="teacher-dashboard-screen" class="screen">
+            <div class="section-header section-header--with-actions">
+                <div>
+                    <h2>Teacher Dashboard</h2>
+                    <p class="section-header__subtitle">
+                        Manage lessons, student profiles, backups, and classroom content.
+                    </p>
+
+                </div>
+                <section class="teacher-editor__section">
+                    <h3>Backup & Data Safety</h3>
+
+
+                    <div class="form-field form-field--inline">
+                        <label for="backupFrequencySelect">Backup reminder</label>
+                        <select id="backupFrequencySelect">
+                            <option value="off">No reminder</option>
+                            <option value="daily">Every day</option>
+                            <option value="2d">Every 2 days</option>
+                            <option value="weekly">Every week</option>
+                        </select>
+                    </div>
+
+                    <div class="td-editor-buttons">
+                        <button id="btnExportBackup" class="btn btn--primary btn--sm">
+                            💾 Export Backup (JSON)
+                        </button>
+                        <button id="btnImportBackup" class="btn btn--outline btn--sm">
+                            📂 Import Backup
+                        </button>
+                        <!-- input مخفي لاختيار ملف الـ backup -->
+                        <input type="file" id="backupFileInput" accept="application/json" style="display:none" />
+                    </div>
+
+                    <p id="backupLastInfo" class="teacher-edit-note"></p>
+
+                    <div id="backupReminderBanner" class="backup-reminder hidden">
+                        <strong>Reminder:</strong> It’s time to create a new backup of your data.
+                    </div>
+                </section>
+                <div class="section-header__actions">
+                    <button id="btnTDBackStudents" class="btn btn--ghost">Back to Profiles</button>
+                    <button id="btnTDBackLevels" class="btn btn--ghost">Back to Units</button>
+                    <button id="btnTDAddLesson" class="btn btn--primary btn--sm">
+                        + Add New Lesson Template
+                    </button>
+
+
+                </div>
+            </div>
+            <section class="teacher-editor__section">
+                <h4>Create Student Account</h4>
+                <p class="teacher-edit-note">
+                    استخدمي هذا النموذج لإنشاء حساب طالب. أعطيه الإيميل وكلمة السر ليدخل.
+                </p>
+                <form id="createStudentForm">
+                    <div class="form-field">
+                        <label>Student Email</label>
+                        <input type="email" id="newStudentEmail" required />
+                    </div>
+                    <div class="form-field">
+                        <label>Temporary Password</label>
+                        <input type="text" id="newStudentPassword" required />
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--sm">Create Student</button>
+                </form>
+                <p id="createStudentMsg" style="font-size:0.8rem; margin-top:4px;"></p>
+            </section>
+
+            <div class="td-layout">
+                <aside class="td-sidebar">
+                    <div class="td-sidebar__head">
+                        <h3 class="td-sidebar__title">Lessons</h3>
+                        <div class="td-sidebar__tools">
+                            <input id="tdLessonSearch" class="td-search" type="search"
+                                placeholder="Search lessons..." />
+                            <button id="tdSyncNowBtn" class="btn btn--ghost btn--sm"
+                                title="Sync lessons from cloud">↻</button>
+
+                            <div class="td-picker">
+                                <div class="form-field">
+                                    <label for="tdUnitSelect">Unit</label>
+                                    <select id="tdUnitSelect" class="td-select"></select>
+                                </div>
+                                <div class="form-field">
+                                    <label for="tdLessonSelect">Lesson</label>
+                                    <select id="tdLessonSelect" class="td-select"></select>
+                                </div>
+                                <div class="form-field">
+                                    <label for="tdPickSection">Section</label>
+                                    <select id="tdPickSection" class="td-select">
+                                        <option value="meta">Lesson Meta</option>
+                                        <option value="overview">Overview</option>
+                                        <option value="vocab">Vocabulary</option>
+                                        <option value="dialogue">Dialogue</option>
+                                        <option value="grammar">Grammar</option>
+                                        <option value="translation">Translation</option>
+                                        <option value="practice">Practice</option>
+                                        <option value="homework">Homework</option>
+                                        <option value="notes">Teacher Notes</option>
+                                    </select>
+                                </div>
+                                <div class="td-picker__actions">
+                                    <button id="tdSyncLessonsNow" class="btn btn--outline btn--sm">↻ Sync
+                                        lessons</button>
+                                    <button id="tdEditSelected" class="btn btn--primary btn--sm">Edit</button>
+                                    <button id="tdOpenSelected" class="btn btn--outline btn--sm">Open</button>
+                                    <button id="tdDeleteSelected" class="btn btn--ghost btn--sm">Delete</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="teacherLessonList" class="card-list td-lessonlist">
+                        <!-- Filled by JS -->
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =================== VOCAB MODAL =================== -->
+    <div id="vocabModal" class="modal">
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__body">
+            <button class="modal__close" data-close-modal>&times;</button>
+
+            <!-- الكلمة بالعربي -->
+
+            <h3 id="vocabModalWord" class="modal__word"></h3>
+
+            <!-- الكلمة بالإنجليزي -->
+            <p id="vocabModalMeaning" class="modal__meaning"></p>
+
+            <!-- Arabeezy -->
+            <p id="vocabModalArabeezy" class="modal__arabeezy"></p>
+
+            <p id="vocabModalHint" class="modal__hint"></p>
+            <div id="vocabModalProgress" class="modal__progress"></div>
+            <div id="vocabModalStatus" class="modal__status"></div>
+
+            <div class="modal__examples">
+                <p id="vocabModalExampleAr" class="modal__example--ar"></p>
+                <p id="vocabModalExampleArabeezy" class="modal__example--arabeezy"></p>
+                <p id="vocabModalExampleEn" class="modal__example--en"></p>
+            </div>
+
+            <div class="modal__actions">
+                <button id="vocabPrevBtn" class="btn btn--ghost btn--sm">⬅ Prev</button>
+                <button id="vocabToggleEnBtn" class="btn btn--outline btn--sm">
+                    👁 Hide English
+                </button>
+                <button id="vocabToggleArabeezyBtn" class="btn btn--outline btn--sm">Hide </button>
+
+                <button id="vocabToggleExamplesBtn" class="btn btn--outline btn--sm">
+                    👁 Hide
+                </button>
+                <button id="vocabNextBtn" class="btn btn--ghost btn--sm">Next ➡</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="letterModal" class="modal">
+        <div class="modal__backdrop" data-close-letter-modal></div>
+        <div class="modal__body letter-modal">
+            <button class="modal__close" data-close-letter-modal>&times;</button>
+            <div class="letter-modal__nav">
+                <button id="btnLetterModalPrev" class="btn btn--ghost btn--sm">Previous</button>
+                <button id="btnLetterModalNext" class="btn btn--ghost btn--sm">Next</button>
+            </div>
+            <div class="letter-detail__glyph" id="letterModalGlyph" lang="ar">ب</div>
+            <div class="letter-detail__name" id="letterModalName">Baa</div>
+            <div class="letter-detail__sound" id="letterModalSound">Sound: b</div>
+            <div class="letter-detail__sunmoon" id="letterModalSunMoon">Moon letter</div>
+
+            <div class="letter-forms">
+                <button class="letter-form letter-form--btn" data-letter-form="isolated">
+                    <span class="letter-form__label">Isolated</span>
+                    <span class="letter-form__value" id="letterModalFormIsolated" lang="ar">ب</span>
+                </button>
+                <button class="letter-form letter-form--btn" data-letter-form="initial">
+                    <span class="letter-form__label">Beginning</span>
+                    <span class="letter-form__value" id="letterModalFormInitial" lang="ar">بـ</span>
+                </button>
+                <button class="letter-form letter-form--btn" data-letter-form="medial">
+                    <span class="letter-form__label">Middle</span>
+                    <span class="letter-form__value" id="letterModalFormMedial" lang="ar">ـبـ</span>
+                </button>
+                <button class="letter-form letter-form--btn" data-letter-form="final">
+                    <span class="letter-form__label">End</span>
+                    <span class="letter-form__value" id="letterModalFormFinal" lang="ar">ـب</span>
+                </button>
+            </div>
+
+            <div class="letter-form-example">
+                <div class="letter-form-example__label" id="letterModalExampleLabel">Example (Beginning)</div>
+                <div class="letter-form-example__ar" id="letterModalExampleFormAr" lang="ar">بيت</div>
+                <div class="letter-form-example__ar" id="letterModalExampleFormArabeezy">bayt</div>
+            </div>
+
+            <div class="letter-note" id="letterModalNote">Connects on both sides.</div>
+
+            <div class="letter-writing">
+                <div class="letter-writing__title">How to write</div>
+                <ul id="letterModalWritingSteps" class="letter-writing__steps"></ul>
+                <div class="letter-writing__note">Tip: start with the isolated form, then connect it in a word.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== MICRO-CHECK MODAL =================== -->
+    <div id="microCheckModal" class="modal">
+        <div class="modal__backdrop"></div>
+        <div class="modal__body microcheck">
+            <button class="modal__close" id="microCheckCloseBtn">&times;</button>
+            <div class="microcheck__badge">Micro-Check</div>
+            <h3 id="microCheckTitle" class="microcheck__title"></h3>
+            <p id="microCheckPrompt" class="microcheck__prompt"></p>
+            <div id="microCheckOptions" class="microcheck__options"></div>
+            <div id="microCheckBuilder" class="microcheck__builder"></div>
+            <p id="microCheckFeedback" class="microcheck__feedback"></p>
+            <div class="microcheck__actions">
+                <button id="microCheckResetBtn" class="btn btn--ghost btn--sm">Reset</button>
+                <button id="microCheckCheckBtn" class="btn btn--outline btn--sm">Check</button>
+                <button id="microCheckContinueBtn" class="btn btn--primary btn--sm">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== EXPORT PDF OPTIONS MODAL =================== -->
+    <div id="exportModal" class="modal">
+        <div class="modal__backdrop" data-close-export-modal></div>
+        <div class="modal__body1">
+            <button class="modal__close" data-close-export-modal>&times;</button>
+            <h3 class="modal__word" style="margin-bottom: 8px; font-size: 1.2rem;">
+                Export Lesson as PDF
+            </h3>
+            <p class="modal__hint" style="margin-bottom: 8px;">
+                Choose what you want to include in the exported PDF.
+            </p>
+
+            <form id="exportOptionsForm" style="font-size: 0.9rem;">
+                <div style="margin-bottom: 6px;">
+                    <strong>Include sections:</strong>
+                </div>
+                <label style="display:block; margin-bottom:4px;">
+                    <input type="checkbox" id="expIncludeVocab" checked />
+                    Vocabulary (core + extra)
+                </label>
+                <label style="display:block; margin-bottom:4px;">
+                    <input type="checkbox" id="expIncludeDialogue" checked />
+                    Dialogue
+                </label>
+                <label style="display:block; margin-bottom:4px;">
+                    <input type="checkbox" id="expIncludeGrammar" checked />
+                    Grammar
+                </label>
+                <label style="display:block; margin-bottom:4px;">
+                    <input type="checkbox" id="expIncludeHomework" />
+                    Homework
+                </label>
+                <label style="display:block; margin-bottom:4px;">
+                    <input type="checkbox" id="expIncludeTeacherNotes" />
+                    Teacher Notes
+                </label>
+
+                <div style="margin:10px 0 6px;">
+                    <strong>Version:</strong>
+                </div>
+                <label style="display:block; margin-bottom:4px;">
+                    <input type="radio" name="expVersion" value="student" checked />
+                    Student version (hides Teacher Notes even if checked)
+                </label>
+                <label style="display:block; margin-bottom:8px;">
+                    <input type="radio" name="expVersion" value="teacher" />
+                    Teacher version
+                </label>
+
+                <div style="display:flex; gap:8px; margin-top:10px; justify-content:flex-end;">
+                    <button type="button" id="exportCancelBtn" class="btn btn--ghost btn--sm">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn--primary btn--sm">
+                        Generate PDF
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase compat SDKs (v9) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script>
+        // 🔹 Firebase config تبع مشروعك (نفس اللي جبتيه من الكونسول)
+        // SECURITY NOTE: 
+        // 1. Restrict this API key in Firebase Console to your domain only
+        // 2. Set up authorized domains in Firebase Console
+        // 3. Enable only the services you need
+        // 4. Monitor API usage regularly
+        // 🔹 تهيئة Firebase (compat style)
+        if (window.firebaseConfig) {
+            firebase.initializeApp(window.firebaseConfig);
+
+            // 🔹 Global handles used across the app (compat SDK)
+            // IMPORTANT: attach to window so other scripts can access reliably.
+            window.auth = firebase.auth();
+            window.db = firebase.firestore();
+        } else {
+            console.warn("Firebase runtime config is missing. App initialization was skipped.");
+        }
+    </script>
+
+    <!-- App scripts (order matters) -->
+    <script type="module" src="./js/app.js?v=20260515-lesson-sync"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,413 @@
+{
+  "id": "tajweed-u03-l06-complete-incomplete-idgham",
+  "unitId": "unit-03",
+  "lessonNumber": "3.6",
+  "title": {
+    "ar": "الإدغام الكامل والناقص",
+    "en": "Complete and incomplete idgham"
+  },
+  "source": {
+    "book": "Tajweed Rules of the Qur'an — Part One",
+    "pdf": "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+    "pdfPages": [44, 45],
+    "printedPages": [44, 45],
+    "chapter": "Noon Saakinah and Tanween Rules",
+    "section": "Complete and incomplete idgham",
+    "verification": "book source checked; examples reused from verified lessons"
+  },
+  "contentOrigin": "source-and-instructional-design",
+  "level": "Foundation",
+  "estimatedMinutes": 40,
+  "prerequisites": [
+    "Identify idgham with ghunnah in ي ن م و.",
+    "Identify idgham without ghunnah in ل ر.",
+    "Distinguish the target sound from its ghunnah characteristic."
+  ],
+  "learningOutcomes": [
+    "Define complete and incomplete idgham.",
+    "Classify ن م ل ر as complete idgham.",
+    "Classify ي و as incomplete idgham.",
+    "Explain that the ghunnah characteristic remains with ي and و.",
+    "Classify and recite representative examples accurately."
+  ],
+  "definition": {
+    "linguistic": {
+      "ar": "الكامل هو التام، والناقص هو ما بقي منه أثر.",
+      "en": "Complete means fully accomplished; incomplete means that a characteristic remains."
+    },
+    "technical": {
+      "ar": "الإدغام الكامل تذهب فيه ذات النون الساكنة أو التنوين وصفتها، ويكون مع ن م ل ر. والإدغام الناقص تذهب فيه ذات النون وتبقى صفة الغنة، ويكون مع ي و.",
+      "en": "In complete idgham, the noon or tanween is fully absorbed; this classification includes ن، م، ل، and ر. In incomplete idgham, the noon itself is absorbed while its ghunnah characteristic remains; this occurs with ي and و."
+    },
+    "studentFriendly": {
+      "ar": "مع ن م ل ر يكتمل الإدغام. ومع ي و تختفي النون لكن تبقى غنتها، لذلك يسمى الإدغام ناقصًا.",
+      "en": "With ن م ل ر the merging is complete. With ي و the noon disappears but its ghunnah remains, so the merging is called incomplete."
+    },
+    "memoryFormula": "كامل: ن م ل ر  |  ناقص: ي و"
+  },
+  "keyTerms": [
+    {"ar": "الإدغام الكامل", "transliteration": "al-idgham al-kamil", "en": "complete merging"},
+    {"ar": "الإدغام الناقص", "transliteration": "al-idgham an-naqis", "en": "incomplete merging"},
+    {"ar": "ذات الحرف", "transliteration": "dhat al-harf", "en": "the identity of the letter"},
+    {"ar": "صفة الغنة", "transliteration": "sifat al-ghunnah", "en": "the ghunnah characteristic that remains with ي and و"}
+  ],
+  "teacherPreparation": [
+    "Prepare two columns: complete ن م ل ر and incomplete ي و.",
+    "Reuse examples the learner already knows so the new challenge is classification.",
+    "Avoid turning terminology into a substitute for correct recitation.",
+    "Use color to show what disappears and what remains."
+  ],
+  "openingReview": [
+    {"minutes": 2, "teacherPrompt": "Ask for the six idgham letters."},
+    {"minutes": 2, "teacherPrompt": "Sort them into with-ghunnah and without-ghunnah groups."},
+    {"minutes": 1, "teacherPrompt": "Ask what remains during idgham with ya and waw."}
+  ],
+  "conceptExplanation": [
+    {
+      "audience": "student",
+      "text": "Complete versus incomplete does not mean correct versus incorrect. Both are correct types. The names describe whether the ghunnah characteristic of noon remains after merging."
+    },
+    {
+      "audience": "teacher",
+      "text": "Keep two classifications separate: with/without ghunnah describes performance; complete/incomplete describes the extent of absorption."
+    }
+  ],
+  "lessonPath": [
+    {"step": 1, "title": "Recall", "text": "Review all six idgham letters."},
+    {"step": 2, "title": "Separate", "text": "Distinguish the letter identity from its ghunnah."},
+    {"step": 3, "title": "Classify", "text": "Complete: ن م ل ر; incomplete: ي و."},
+    {"step": 4, "title": "Compare", "text": "Use familiar examples side by side."},
+    {"step": 5, "title": "Apply", "text": "Name both idgham classifications before reciting."}
+  ],
+  "visualExplanation": [
+    {
+      "type": "rule-equation",
+      "display": "ن م ل ر ← إدغام كامل  |  ي و ← إدغام ناقص لبقاء الغنة",
+      "teacherUse": "Ask what remains with each group."
+    }
+  ],
+  "ruleSummary": {
+    "condition": "A valid two-word idgham boundary has one of the six idgham letters.",
+    "result": "Classify ن م ل ر as complete and ي و as incomplete.",
+    "location": "Across two words, after noon saakinah or tanween.",
+    "letters": ["ن", "م", "ل", "ر", "ي", "و"]
+  },
+  "letterGroups": [
+    {"name": {"ar": "الإدغام الكامل", "en": "Complete idgham"}, "letters": ["ن", "م", "ل", "ر"]},
+    {"name": {"ar": "الإدغام الناقص", "en": "Incomplete idgham"}, "letters": ["ي", "و"]}
+  ],
+  "quranExamples": [
+    {
+      "arabic": "وَمَا بِكُم مِّن نِّعْمَةٍ فَمِنَ ٱللَّهِ",
+      "surah": {"ar": "النحل", "en": "An-Nahl"},
+      "ayah": 53,
+      "targetText": "ن نِّ",
+      "rule": "إدغام كامل بغنة",
+      "triggerLetter": "ن",
+      "previousLetter": "نْ",
+      "readingInstruction": "Merge fully into the strengthened noon with its required ghunnah.",
+      "teacherExplanation": "Noon belongs to the complete-idgham group.",
+      "commonError": "Calling every ghunnah idgham incomplete.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 44,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "أَلَمْ نَخْلُقْكُم مِّن مَّاءٍ مَّهِينٍ",
+      "surah": {"ar": "المرسلات", "en": "Al-Mursalat"},
+      "ayah": 20,
+      "targetText": "ن مَّ",
+      "rule": "إدغام كامل بغنة",
+      "triggerLetter": "م",
+      "previousLetter": "نْ",
+      "readingInstruction": "Merge fully into mim while maintaining the ghunnah of the strengthened mim.",
+      "teacherExplanation": "Mim is complete idgham even though ghunnah is present.",
+      "commonError": "Classifying mim with ya and waw merely because all use ghunnah.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 44,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "هُدًى لِّلْمُتَّقِينَ",
+      "surah": {"ar": "البقرة", "en": "Al-Baqarah"},
+      "ayah": 2,
+      "targetText": "دًى لِّ",
+      "rule": "إدغام كامل بغير غنة",
+      "triggerLetter": "ل",
+      "previousLetter": "تنوين فتح",
+      "readingInstruction": "Merge fully into lam without retaining the idgham ghunnah.",
+      "teacherExplanation": "Lam belongs to complete idgham.",
+      "commonError": "Assuming complete idgham must always have ghunnah.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 44,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "أُو۟لَـٰٓئِكَ عَلَىٰ هُدًى مِّن رَّبِّهِمْ",
+      "surah": {"ar": "البقرة", "en": "Al-Baqarah"},
+      "ayah": 5,
+      "targetText": "ن رَّ",
+      "rule": "إدغام كامل بغير غنة",
+      "triggerLetter": "ر",
+      "previousLetter": "نْ",
+      "readingInstruction": "Merge fully into ra without a two-count idgham ghunnah.",
+      "teacherExplanation": "Ra belongs to complete idgham.",
+      "commonError": "Adding ra to the incomplete group.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 44,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُۥ",
+      "surah": {"ar": "الزلزلة", "en": "Az-Zalzalah"},
+      "ayah": 7,
+      "targetText": "ن يَ",
+      "rule": "إدغام ناقص بغنة",
+      "triggerLetter": "ي",
+      "previousLetter": "نْ",
+      "readingInstruction": "Merge the noon identity into ya while retaining a two-count ghunnah.",
+      "teacherExplanation": "Ya is incomplete because the ghunnah characteristic remains.",
+      "commonError": "Removing the ghunnah entirely.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 45,
+      "verificationStatus": "verified"
+    },
+    {
+      "arabic": "إِنَّ رَبِّى رَحِيمٌ وَدُودٌ",
+      "surah": {"ar": "هود", "en": "Hud"},
+      "ayah": 90,
+      "targetText": "مٌ وَ",
+      "rule": "إدغام ناقص بغنة",
+      "triggerLetter": "و",
+      "previousLetter": "تنوين ضم",
+      "readingInstruction": "Merge into waw while retaining the two-count ghunnah.",
+      "teacherExplanation": "Waw belongs to incomplete idgham.",
+      "commonError": "Classifying waw as complete because the noon is not heard separately.",
+      "wordBoundary": "across-two-words",
+      "sourcePage": 45,
+      "verificationStatus": "verified"
+    }
+  ],
+  "guidedPractice": [
+    {
+      "sequence": 1,
+      "teacherAction": "Show one trigger.",
+      "studentAction": "State with/without ghunnah, then complete/incomplete.",
+      "feedback": "Do not allow the two classification systems to be mixed."
+    },
+    {
+      "sequence": 2,
+      "teacherAction": "Show a familiar full boundary.",
+      "studentAction": "Classify, explain what remains, then recite.",
+      "feedback": "Terminology must be followed by correct performance."
+    }
+  ],
+  "oralPractice": [
+    {
+      "cycle": ["find trigger", "name ghunnah type", "name extent type", "explain what remains", "recite"],
+      "examplesRequired": 6,
+      "teacherObservation": ["correct classification", "correct merging", "correct ghunnah performance", "smooth continuation"]
+    }
+  ],
+  "interactiveActivities": [
+    {
+      "stage": "1 · Build the groups",
+      "type": "letter-group",
+      "instruction": {"en": "Which is the complete-idgham group?"},
+      "prompt": "Choose all four letters.",
+      "items": ["ن م ل ر", "ي و", "ي ن م و", "ء ه ع ح غ خ"],
+      "acceptedAnswers": ["ن م ل ر"],
+      "feedbackCorrect": "Correct. Complete idgham includes noon, mim, lam, and ra.",
+      "feedbackIncorrect": "The complete group combines ن م with ل ر."
+    },
+    {
+      "stage": "1 · Build the groups",
+      "type": "letter-group",
+      "instruction": {"en": "Which is the incomplete-idgham group?"},
+      "prompt": "Choose the two letters.",
+      "items": ["ي و", "ن م", "ل ر", "ي ن م و"],
+      "acceptedAnswers": ["ي و"],
+      "feedbackCorrect": "Correct. Ya and waw retain the ghunnah characteristic.",
+      "feedbackIncorrect": "The incomplete pair is ي و."
+    },
+    {
+      "stage": "2 · Understand the names",
+      "type": "concept",
+      "instruction": {"en": "Why is idgham with ya incomplete?"},
+      "prompt": "Choose the precise reason.",
+      "items": ["The ghunnah characteristic remains", "No merging occurs", "Ya is a throat letter", "It occurs inside one word"],
+      "acceptedAnswers": ["The ghunnah characteristic remains"],
+      "feedbackCorrect": "Correct. The noon identity is absorbed but its ghunnah remains.",
+      "feedbackIncorrect": "Focus on what remains after merging."
+    },
+    {
+      "stage": "2 · Understand the names",
+      "type": "concept",
+      "instruction": {"en": "Does complete idgham always mean without ghunnah?"},
+      "prompt": "Think about noon and mim.",
+      "items": ["No", "Yes"],
+      "acceptedAnswers": ["No"],
+      "feedbackCorrect": "Correct. Noon and mim are complete idgham with ghunnah.",
+      "feedbackIncorrect": "Complete/incomplete and with/without ghunnah are different classifications."
+    },
+    {
+      "stage": "3 · Classify examples",
+      "type": "classification",
+      "instruction": {"en": "Classify the extent of idgham."},
+      "prompt": "مِن نِّعْمَةٍ",
+      "items": ["Complete", "Incomplete", "Not idgham"],
+      "acceptedAnswers": ["Complete"],
+      "feedbackCorrect": "Correct. Noon belongs to the complete group.",
+      "feedbackIncorrect": "Do not classify by the presence of ghunnah alone."
+    },
+    {
+      "stage": "3 · Classify examples",
+      "type": "classification",
+      "instruction": {"en": "Classify the extent of idgham."},
+      "prompt": "مِن مَّاءٍ",
+      "items": ["Complete", "Incomplete", "Not idgham"],
+      "acceptedAnswers": ["Complete"],
+      "feedbackCorrect": "Correct. Mim is complete idgham with ghunnah.",
+      "feedbackIncorrect": "Mim belongs with ن م ل ر."
+    },
+    {
+      "stage": "3 · Classify examples",
+      "type": "classification",
+      "instruction": {"en": "Classify the extent of idgham."},
+      "prompt": "مِن رَّبِّهِمْ",
+      "items": ["Complete", "Incomplete", "Not idgham"],
+      "acceptedAnswers": ["Complete"],
+      "feedbackCorrect": "Correct. Ra is complete idgham without ghunnah.",
+      "feedbackIncorrect": "Ra belongs with ن م ل ر."
+    },
+    {
+      "stage": "3 · Classify examples",
+      "type": "classification",
+      "instruction": {"en": "Classify the extent of idgham."},
+      "prompt": "فَمَن يَعْمَلْ",
+      "items": ["Complete", "Incomplete", "Not idgham"],
+      "acceptedAnswers": ["Incomplete"],
+      "feedbackCorrect": "Correct. The ghunnah remains with ya.",
+      "feedbackIncorrect": "Ya belongs to the incomplete pair."
+    },
+    {
+      "stage": "3 · Classify examples",
+      "type": "classification",
+      "instruction": {"en": "Classify the extent of idgham."},
+      "prompt": "رَحِيمٌ وَدُودٌ",
+      "items": ["Complete", "Incomplete", "Not idgham"],
+      "acceptedAnswers": ["Incomplete"],
+      "feedbackCorrect": "Correct. Waw belongs to the incomplete pair.",
+      "feedbackIncorrect": "The ghunnah characteristic remains with waw."
+    },
+    {
+      "stage": "4 · Diagnose confusion",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner says mim is incomplete because it has ghunnah. What is the correction?"},
+      "prompt": "Choose the accurate statement.",
+      "items": ["Mim is complete idgham with ghunnah", "Mim has no idgham", "Every ghunnah is incomplete", "Mim is izhar"],
+      "acceptedAnswers": ["Mim is complete idgham with ghunnah"],
+      "feedbackCorrect": "Correct. Keep the two classification systems separate.",
+      "feedbackIncorrect": "Presence of ghunnah alone does not decide complete versus incomplete."
+    },
+    {
+      "stage": "4 · Diagnose confusion",
+      "type": "error-diagnosis",
+      "instruction": {"en": "A learner removes ghunnah before waw. What is missing?"},
+      "prompt": "رَحِيمٌ وَدُودٌ",
+      "items": ["The remaining ghunnah characteristic", "A clear noon", "Qalqalah", "A throat sound"],
+      "acceptedAnswers": ["The remaining ghunnah characteristic"],
+      "feedbackCorrect": "Correct. Its presence is why the idgham is incomplete.",
+      "feedbackIncorrect": "Waw keeps the ghunnah characteristic."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Complete the classification map."},
+      "prompt": "Complete: ن م ل ر · Incomplete: …",
+      "items": ["ي و", "ء ه", "ل ر", "ب"],
+      "acceptedAnswers": ["ي و"],
+      "feedbackCorrect": "Correct. You know both groups.",
+      "feedbackIncorrect": "The incomplete pair is ya and waw."
+    },
+    {
+      "stage": "5 · Mastery check",
+      "type": "exit-check",
+      "instruction": {"en": "Choose the complete explanation."},
+      "prompt": "Why is فَمَن يَعْمَلْ incomplete idgham?",
+      "items": ["Noon merges into ya but its ghunnah remains", "Noon stays fully clear", "Ya is a throat letter", "It is one word"],
+      "acceptedAnswers": ["Noon merges into ya but its ghunnah remains"],
+      "feedbackCorrect": "Excellent. You explained both absorption and the remaining characteristic.",
+      "feedbackIncorrect": "State what disappears and what remains."
+    }
+  ],
+  "commonMistakes": [
+    "Thinking complete means without ghunnah.",
+    "Classifying mim as incomplete because ghunnah is present.",
+    "Forgetting that ya and waw form the incomplete pair.",
+    "Using terminology correctly while reciting incorrectly."
+  ],
+  "correctionTechniques": [
+    "Use a two-axis table: ghunnah performance and extent of absorption.",
+    "Ask two questions separately: Is there ghunnah? Is the idgham complete?",
+    "Reuse the same six examples until classification is automatic.",
+    "Require a spoken reason before recitation."
+  ],
+  "knowledgeChecks": [
+    {"type": "recall", "prompt": "Name both groups.", "success": "ن م ل ر and ي و are correct."},
+    {"type": "classification", "prompt": "Classify ten mixed idgham examples.", "success": "At least eight are correct."},
+    {"type": "explanation", "prompt": "Explain incomplete idgham.", "success": "The remaining ghunnah is identified."}
+  ],
+  "teacherQuestions": [
+    "Which trigger follows?",
+    "Is ghunnah used in performance?",
+    "Is the idgham complete or incomplete?",
+    "What disappears and what remains?"
+  ],
+  "studentTasks": [
+    "Build a two-group letter map.",
+    "Classify six familiar examples.",
+    "Explain why mim is complete despite ghunnah.",
+    "Explain why waw is incomplete."
+  ],
+  "liveClassFlow": [
+    {"minutes": 5, "phase": "Review", "display": "With and without ghunnah groups"},
+    {"minutes": 7, "phase": "New distinction", "display": "Letter identity and remaining characteristic"},
+    {"minutes": 6, "phase": "Visual classification", "display": "Complete versus incomplete groups"},
+    {"minutes": 8, "phase": "Familiar examples", "display": "Six verified boundaries"},
+    {"minutes": 7, "phase": "Mixed classification", "display": "Two classification questions"},
+    {"minutes": 4, "phase": "Error diagnosis", "display": "Mim and waw contrast"},
+    {"minutes": 3, "phase": "Exit check", "display": "Group and explain"}
+  ],
+  "independentPractice": [
+    "Create a table for all six idgham letters.",
+    "For each letter, write with/without ghunnah and complete/incomplete."
+  ],
+  "homework": [
+    "Classify six teacher-approved examples using both systems.",
+    "Recite one complete-with-ghunnah and one incomplete example."
+  ],
+  "exitTicket": [
+    "Name the complete and incomplete groups.",
+    "Explain why mim is complete.",
+    "Explain why ya is incomplete."
+  ],
+  "masteryCriteria": [
+    "Names both letter groups.",
+    "Keeps the two classification systems separate.",
+    "Classifies at least 8 of 10 examples.",
+    "Explains what remains in incomplete idgham.",
+    "Recites representative examples accurately."
+  ],
+  "teacherNotes": [
+    "This is primarily a conceptual organization lesson using already learned recitation.",
+    "Do not imply that incomplete means defective.",
+    "Teacher listening remains the final test of performance."
+  ],
+  "sourceNotes": [
+    "The complete/incomplete distinction uses pages 44–45.",
+    "Examples are reused from previously verified lessons.",
+    "Activities and visual classification are curriculum-design additions."
+  ],
+  "verificationStatus": "source-verified; examples previously checked; live teacher pronunciation review required"
+}

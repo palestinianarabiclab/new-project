@@ -1,0 +1,24 @@
+{
+  "id": "tajweed-part-three",
+  "level": "Part Three",
+  "levelOrder": 3,
+  "title": {"ar": "أحكام تجويد القرآن — الجزء الثالث", "en": "Tajweed Rules of the Qur'an — Part Three"},
+  "source": {
+    "pdf": "Tajweed-Rules-of-the-Quran-p3.pdf",
+    "author": "Kareema Carol Czerepinski",
+    "pdfPageCount": 131,
+    "recitation": "Hafs 'an 'Asim through Ash-Shatibiyyah",
+    "verification": "visually audited from scanned pages"
+  },
+  "delivery": "Teacher-led live screen-sharing lessons",
+  "units": [
+    {"id":"part3-unit-01","title":{"ar":"الوقف","en":"The Stop"},"sourcePages":[1,2,3,4,5,6,7,8,9,10,11],"lessons":["Introduction to stopping","Divisions of the stop","Optional stopping","Complete stop","Sufficient stop","Good stop","Repulsive stop","Required-stop clarification","Madinah Mushaf stop signs"]},
+    {"id":"part3-unit-02","title":{"ar":"الابتداء","en":"The Start"},"sourcePages":[12,13,14],"lessons":["Allowed starting","Complete and sufficient starting","Starting that is not allowed"]},
+    {"id":"part3-unit-03","title":{"ar":"القطع","en":"The Cut Off"},"sourcePages":[15,16],"lessons":["Cutting off recitation","Cut-off application and restart"]},
+    {"id":"part3-unit-04","title":{"ar":"السكت","en":"The Breathless Pause"},"sourcePages":[17,18,19],"lessons":["Meaning of the breathless pause","Required Hafs pauses","Allowed pause applications"]},
+    {"id":"part3-unit-05","title":{"ar":"الوقف على أواخر الكلم","en":"Stopping on Word Endings"},"sourcePages":[20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43],"lessons":["Strong and weak word endings","Stopping with rawm","Stopping with ishmam","Stopping with pure sukoon","Stopping on feminine ha","Stopping on pronoun and possessive ha","Stopping with deletion","Stopping with substitution","Stopping on alif endings","Stopping on waw and ya endings","Word-ending cumulative application"]},
+    {"id":"part3-unit-06","title":{"ar":"المقطوع والموصول","en":"The Joined and Separated"},"sourcePages":[44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62],"lessons":["Meaning of joined and separated writing","An and la combinations","In and ma combinations","An and ma combinations","Min and ma combinations","Am and man combinations","Ma with particles group one","Ma with particles group two","Special joined-word families","Joined and separated cumulative review"]},
+    {"id":"part3-unit-07","title":{"ar":"هاء التأنيث","en":"The Feminine Ha"},"sourcePages":[63,64,65,66,67,68,69,70,71,72,73,74,75],"lessons":["Feminine ha written with open ta","Agreed singular forms","Word-family applications","Forms differing among recitations","Feminine-ha cumulative review"]},
+    {"id":"part3-unit-08","title":{"ar":"الكلمات الخاصة لحفص","en":"Special Words for Hafs"},"sourcePages":[76,77,78,79,80],"lessons":["Special-word orientation","Ana, lakinna, and az-zununa","Special izhar and idgham words","Atini, salsabila, and qawarira","Malayahlik and ra with two allowed faces","Special breathless-pause words","Sad or sin reading words","Majraha and its imalah","Da'f and its allowed vowel","Final Part Three cumulative review"]}
+  ]
+}
