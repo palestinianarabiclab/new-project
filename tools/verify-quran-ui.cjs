@@ -57,6 +57,7 @@ const server = http.createServer((request, response) => {
         data: [
           { edition: { identifier: 'quran-uthmani', format: 'text' }, ayahs: text.map((ayah, index) => ({ numberInSurah: index + 1, text: ayah, page: number === 2 ? Math.floor(index / 5) + 2 : 604 })) },
           { edition: { identifier: 'quran-tajweed', format: 'text' }, ayahs: text.map((ayah, index) => ({ numberInSurah: index + 1, text: index === 0 ? `[g[${ayah.slice(0, 2)}]${ayah.slice(2)}` : ayah, page: number === 2 ? Math.floor(index / 5) + 2 : 604 })) },
+          { edition: { identifier: 'en.transliteration', format: 'text', type: 'transliteration' }, ayahs: text.map((_, index) => ({ numberInSurah: index + 1, text: `Pronunciation ${index + 1}` })) },
           { edition: { identifier: 'en.sahih', format: 'text', type: 'translation' }, ayahs: text.map((_, index) => ({ numberInSurah: index + 1, text: `Translation ${index + 1}` })) },
           { edition: { identifier: 'ar.muyassar', format: 'text', type: 'tafsir' }, ayahs: text.map((_, index) => ({ numberInSurah: index + 1, text: `التفسير الميسر ${index + 1}` })) },
           { edition: { identifier: 'ar.alafasy', format: 'audio' }, ayahs: text.map((_, index) => ({ numberInSurah: index + 1, audio: `https://cdn.islamic.network/audio/${number}-${index + 1}.mp3` })) },
@@ -75,6 +76,7 @@ const server = http.createServer((request, response) => {
     ayahs: document.querySelectorAll('.quran-ayah').length,
     firstText: document.querySelector('.quran-ayah__text')?.textContent,
     audioButtons: document.querySelectorAll('.quran-ayah__audio').length,
+    transliterations: document.querySelectorAll('.quran-ayah__transliteration').length,
     translations: document.querySelectorAll('.quran-ayah__translation').length,
     tafsir: document.querySelectorAll('.quran-ayah__tafsir').length,
   }));

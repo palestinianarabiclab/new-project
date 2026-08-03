@@ -2161,6 +2161,7 @@ async function saveStudentsToCloud() {
             homeworkNotes: s.homeworkNotes || {},
             lastSeen: s.lastSeen || null,
             lastSeenByCurriculum: s.lastSeenByCurriculum || {},
+            quranBookmark: s.quranBookmark || null,
         });
     });
 
@@ -2192,6 +2193,7 @@ async function syncTeacherStudentsFromCloud() {
             homeworkNotes: d.homeworkNotes || {},
             lastSeen: d.lastSeen || null,
             lastSeenByCurriculum: d.lastSeenByCurriculum || {},
+            quranBookmark: d.quranBookmark || null,
         });
     });
 
@@ -2236,6 +2238,23 @@ function getCurrentStudent() {
     }
     return appState.students.find((s) => s.id === appState.currentStudentId) || null;
 }
+
+window.getQuranStudentContext = () => {
+    const student = getCurrentStudent();
+    if (!student) return null;
+    return {
+        id: student.id,
+        name: student.name,
+        quranBookmark: student.quranBookmark || null,
+    };
+};
+
+window.saveQuranStudentBookmark = (bookmark) => {
+    const student = getCurrentStudent();
+    if (!student || !bookmark) return;
+    student.quranBookmark = { ...bookmark };
+    if (!isGuestUser()) saveStudentsToLS();
+};
 
 function getStudentProgress(student, lessonId) {
     ensureStudentProgress(student, lessonId);
@@ -2454,6 +2473,7 @@ function goToLevels() {
     renderLevels();
     renderGazaSituationsHub();
     updateContinueButton();
+    window.refreshQuranBookmarkButton?.();
 }
 
 function goToArabicLetters() {
@@ -2940,6 +2960,14 @@ function renderStudents() {
         levelEl.className = "student-card__level";
         levelEl.textContent = `Level: ${student.level}`;
 
+        const quranBookmarkEl = document.createElement("div");
+        quranBookmarkEl.className = "student-card__quran-bookmark";
+        if (student.quranBookmark) {
+            quranBookmarkEl.textContent = `📖 Quran: Surah ${student.quranBookmark.chapter} · Ayah ${student.quranBookmark.ayah || 1}`;
+        } else {
+            quranBookmarkEl.textContent = "📖 Quran: not started";
+        }
+
         const goalsWrap = document.createElement("div");
         goalsWrap.className = "student-card__goals";
 
@@ -2998,6 +3026,7 @@ function renderStudents() {
         card.appendChild(avatar);
         card.appendChild(nameEl);
         card.appendChild(levelEl);
+        card.appendChild(quranBookmarkEl);
         card.appendChild(goalsWrap);
         card.appendChild(footer);
 

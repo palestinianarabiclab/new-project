@@ -1,5 +1,5 @@
 const API_BASE = 'https://api.alquran.cloud/v1';
-const CACHE_PREFIX = 'tajweed_quran_surah_v3_';
+const CACHE_PREFIX = 'tajweed_quran_surah_v4_';
 const SETTINGS_KEY = 'tajweed_quran_reader_settings_v1';
 const FONT_STEPS = [1.65, 1.9, 2.2, 2.55, 2.9];
 const FONT_LABELS = ['صغير', 'متوسط', 'كبير', 'كبير جدًا', 'عرض الصف'];
@@ -9,17 +9,20 @@ const state = {
   chapter: 1,
   ayahs: [],
   tajweedAyahs: [],
+  transliterations: [],
   translations: [],
   tafsir: [],
   audio: [],
   fontIndex: 2,
   view: 'study',
+  showTransliteration: true,
   showTranslation: true,
   showTafsir: true,
   pages: [],
   pageIndex: 0,
   query: '',
   activeAudio: null,
+  studentId: null,
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -48,6 +51,7 @@ function saveSettings() {
     chapter: state.chapter,
     fontIndex: state.fontIndex,
     view: state.view,
+    showTransliteration: state.showTransliteration,
     showTranslation: state.showTranslation,
     showTafsir: state.showTafsir,
   }));
@@ -59,6 +63,7 @@ function loadSettings() {
     state.chapter = Math.min(114, Math.max(1, Number(saved.chapter) || 1));
     state.fontIndex = Math.min(FONT_STEPS.length - 1, Math.max(0, Number(saved.fontIndex) || 2));
     state.view = ['mushaf', 'tajweed'].includes(saved.view) ? saved.view : 'study';
+    state.showTransliteration = saved.showTransliteration !== false;
     state.showTranslation = saved.showTranslation !== false;
     state.showTafsir = saved.showTafsir !== false;
   } catch {
@@ -90,7 +95,59 @@ async function loadChapters() {
   renderChapterOptions();
 }
 
-async function loadSurah(number, { scrollTop = true } = {}) {
+function getStudentQuranContext() {
+  return window.getQuranStudentContext?.() || null;
+}
+
+function applyStudentBookmark(bookmark) {
+  if (!bookmark || Number(bookmark.chapter) !== state.chapter || !state.pages.length) return;
+  let pageIndex = -1;
+  if (bookmark.ayah) {
+    pageIndex = state.pages.findIndex((page) =>
+      page.ayahs.some((ayah) => ayah.numberInSurah === Number(bookmark.ayah))
+    );
+  }
+  if (pageIndex < 0 && bookmark.mushafPage) {
+    pageIndex = state.pages.findIndex((page) => page.mushafPage === Number(bookmark.mushafPage));
+  }
+  if (pageIndex >= 0) state.pageIndex = pageIndex;
+}
+
+function currentBookmark(ayahNumber = null) {
+  const page = currentPage();
+  const firstAyah = page.ayahs[0]?.numberInSurah || 1;
+  return {
+    chapter: state.chapter,
+    ayah: Number(ayahNumber) || firstAyah,
+    pageIndex: state.pageIndex,
+    mushafPage: page.mushafPage,
+    updatedAt: Date.now(),
+  };
+}
+
+function updateQuranBookmarkButton(bookmark = getStudentQuranContext()?.quranBookmark) {
+  const label = $('#studentQuranBookmark');
+  if (!label) return;
+  if (!bookmark) {
+    label.textContent = 'ابدأ القراءة';
+    return;
+  }
+  const chapter = state.chapters.find((item) => item.number === Number(bookmark.chapter));
+  const chapterName = chapter?.name ? chapter.name.replace(/^سُورَةُ\s*/u, '') : `سورة ${bookmark.chapter}`;
+  label.textContent = `${chapterName} · الآية ${bookmark.ayah || 1}`;
+}
+
+function saveQuranBookmark(ayahNumber = null) {
+  const context = getStudentQuranContext();
+  if (!context?.id || !state.ayahs.length) return;
+  const bookmark = currentBookmark(ayahNumber);
+  window.saveQuranStudentBookmark?.(bookmark);
+  updateQuranBookmarkButton(bookmark);
+}
+
+window.refreshQuranBookmarkButton = () => updateQuranBookmarkButton();
+
+async function loadSurah(number, { scrollTop = true, bookmark = null } = {}) {
   const chapter = Math.min(114, Math.max(1, Number(number) || 1));
   state.chapter = chapter;
   state.query = '';
@@ -111,27 +168,33 @@ async function loadSurah(number, { scrollTop = true } = {}) {
       }
     }
     if (!data) {
-      data = await fetchJson(`${API_BASE}/surah/${chapter}/editions/quran-uthmani,quran-tajweed,en.sahih,ar.muyassar,ar.alafasy`);
+      data = await fetchJson(`${API_BASE}/surah/${chapter}/editions/quran-uthmani,quran-tajweed,en.transliteration,en.sahih,ar.muyassar,ar.alafasy`);
       localStorage.setItem(cacheKey, JSON.stringify(data));
     }
     const textEdition = data.find((edition) => edition.edition?.identifier === 'quran-uthmani') || data[0];
     const tajweedEdition = data.find((edition) => edition.edition?.identifier === 'quran-tajweed');
+    const transliterationEdition = data.find((edition) => edition.edition?.identifier === 'en.transliteration');
     const translationEdition = data.find((edition) => edition.edition?.identifier === 'en.sahih');
     const tafsirEdition = data.find((edition) => edition.edition?.identifier === 'ar.muyassar');
     const audioEdition = data.find((edition) => edition.edition?.format === 'audio');
     state.ayahs = textEdition?.ayahs || [];
     state.tajweedAyahs = tajweedEdition?.ayahs || [];
+    state.transliterations = transliterationEdition?.ayahs || [];
     state.translations = translationEdition?.ayahs || [];
     state.tafsir = tafsirEdition?.ayahs || [];
     state.audio = audioEdition?.ayahs || [];
     buildPages();
+    applyStudentBookmark(bookmark);
     renderSurah();
+    if (bookmark) updateQuranBookmarkButton(bookmark);
+    else saveQuranBookmark();
     saveSettings();
     if (scrollTop) $('#quran-screen')?.scrollIntoView({ block: 'start' });
   } catch (error) {
     console.error(error);
     state.ayahs = [];
     state.tajweedAyahs = [];
+    state.transliterations = [];
     state.translations = [];
     state.tafsir = [];
     state.audio = [];
@@ -241,6 +304,7 @@ function renderVerses() {
   container.className = 'quran-verses quran-verses--study';
   container.innerHTML = visible.map((ayah) => {
     const audio = state.audio.find((item) => item.numberInSurah === ayah.numberInSurah);
+    const transliteration = state.transliterations.find((item) => item.numberInSurah === ayah.numberInSurah);
     const translation = state.translations.find((item) => item.numberInSurah === ayah.numberInSurah);
     const tafsir = state.tafsir.find((item) => item.numberInSurah === ayah.numberInSurah);
     return `
@@ -250,7 +314,15 @@ function renderVerses() {
           ${audio?.audio ? `<button class="quran-ayah__audio" type="button" data-audio="${escapeHtml(audio.audio)}" data-number="${ayah.numberInSurah}" aria-label="تشغيل الآية ${ayah.numberInSurah}">▶ استماع</button>` : ''}
         </div>
         <div class="quran-ayah__content">
-          <p class="quran-ayah__text" lang="ar">${escapeHtml(ayah.text)}</p>
+          <div class="quran-ayah__reading${state.showTransliteration && transliteration?.text ? '' : ' quran-ayah__reading--arabic-only'}">
+            <p class="quran-ayah__text" lang="ar">${escapeHtml(ayah.text)}</p>
+            ${state.showTransliteration && transliteration?.text ? `
+              <div class="quran-ayah__transliteration" dir="ltr" lang="en">
+                <span class="quran-reader__sr-only">Pronunciation in English letters</span>
+                <p>${escapeHtml(transliteration.text)}</p>
+              </div>
+            ` : ''}
+          </div>
           ${state.showTranslation && translation?.text ? `
             <div class="quran-ayah__translation" dir="ltr" lang="en">
               <span>English translation</span>
@@ -323,6 +395,7 @@ function changePage(offset) {
   $('#quranSearchInput').value = '';
   updatePageNavigation();
   renderVerses();
+  saveQuranBookmark();
   $('#quranSurahHeader')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
@@ -337,6 +410,7 @@ function goToAyah(number) {
   $('#quranSearchInput').value = '';
   updatePageNavigation();
   renderVerses();
+  saveQuranBookmark(ayahNumber);
   requestAnimationFrame(() => {
     document.getElementById(`quran-ayah-${ayahNumber}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
@@ -344,6 +418,7 @@ function goToAyah(number) {
 
 function toggleAudio(button) {
   const url = button.dataset.audio;
+  saveQuranBookmark(Number(button.dataset.number) || null);
   if (state.activeAudio?.url === url && !state.activeAudio.audio.paused) {
     state.activeAudio.audio.pause();
     button.textContent = '▶ استماع';
@@ -384,6 +459,7 @@ function applyViewSettings() {
   if (studyOptions) studyOptions.hidden = state.view !== 'study';
   const tajweedLegend = $('#quranTajweedLegend');
   if (tajweedLegend) tajweedLegend.hidden = state.view !== 'tajweed';
+  $('#quranShowTransliteration').checked = state.showTransliteration;
   $('#quranShowTranslation').checked = state.showTranslation;
   $('#quranShowTafsir').checked = state.showTafsir;
   saveSettings();
@@ -415,7 +491,7 @@ function showQuran() {
   document.querySelectorAll('.screen').forEach((screen) => {
     screen.classList.toggle('screen--active', screen.id === 'quran-screen');
   });
-  if (!state.ayahs.length) initializeReader();
+  initializeReader();
 }
 
 function leaveQuran() {
@@ -430,11 +506,15 @@ function leaveQuran() {
 
 async function initializeReader() {
   loadSettings();
+  const studentContext = getStudentQuranContext();
+  const bookmark = studentContext?.quranBookmark || null;
+  state.studentId = studentContext?.id || null;
+  if (bookmark?.chapter) state.chapter = Math.min(114, Math.max(1, Number(bookmark.chapter) || 1));
   applyFontSize();
   setStatus('جاري تجهيز قائمة السور…', 'loading');
   try {
     await loadChapters();
-    await loadSurah(state.chapter, { scrollTop: false });
+    await loadSurah(state.chapter, { scrollTop: false, bookmark });
   } catch (error) {
     console.error(error);
     setStatus('تعذّر الاتصال بمصدر القرآن. تأكد من الإنترنت ثم حاول مجددًا.', 'error', true);
@@ -455,6 +535,11 @@ function bindEvents() {
   $('#quranMushafView')?.addEventListener('click', () => setView('mushaf'));
   $('#quranTajweedView')?.addEventListener('click', () => setView('tajweed'));
   $('#quranStudyView')?.addEventListener('click', () => setView('study'));
+  $('#quranShowTransliteration')?.addEventListener('change', (event) => {
+    state.showTransliteration = event.target.checked;
+    saveSettings();
+    renderVerses();
+  });
   $('#quranShowTranslation')?.addEventListener('change', (event) => {
     state.showTranslation = event.target.checked;
     saveSettings();

@@ -218,7 +218,10 @@
                     <button id="btnContinueLesson" class="btn btn--primary btn--sm">Continue</button>
                     <button id="btnArabicLetters" class="btn btn--outline btn--sm">Arabic Letters</button>
                     <button id="btnPlacementTest" class="btn btn--outline btn--sm" hidden>Placement Test</button>
-                    <button id="btnSyncLessonsNow" class="btn btn--ghost">↻ Sync lessons</button>
+                    <button id="btnOpenStudentQuran" class="btn btn--outline btn--quran" type="button" data-nav="quran-screen">
+                        <span>📖 القرآن الكريم</span>
+                        <small id="studentQuranBookmark">ابدأ القراءة</small>
+                    </button>
                     <button id="btnGoTeacherDashboard" class="btn btn--outline">Teacher Dashboard</button>
                 </div>
             </div>
@@ -287,6 +290,7 @@
                     <button id="quranStudyView" class="quran-view-button quran-view-button--active" type="button" data-quran-view="study">الدراسة والتفسير</button>
                 </div>
                 <div id="quranStudyOptions" class="quran-reader__study-options">
+                    <label><input id="quranShowTransliteration" type="checkbox" checked /> النطق بالإنجليزية</label>
                     <label><input id="quranShowTranslation" type="checkbox" checked /> الترجمة الإنجليزية</label>
                     <label><input id="quranShowTafsir" type="checkbox" checked /> التفسير الميسّر</label>
                 </div>
