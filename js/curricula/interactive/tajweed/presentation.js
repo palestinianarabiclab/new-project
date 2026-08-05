@@ -10,6 +10,7 @@ export function classifyTajweedLesson(lesson) {
 
 export function buildTajweedPresentation(lesson) {
   const kind = classifyTajweedLesson(lesson);
+  const isPracticalPath = String(lesson?.unitId || '').startsWith('starter-');
   const examples = asArray(lesson?.quranExamples);
   const firstExample = examples[0] || {};
   const letters = asArray(lesson?.ruleSummary?.letters);
@@ -30,7 +31,13 @@ export function buildTajweedPresentation(lesson) {
     kind,
     keyLabel,
     performanceLabel,
-    stages: [
+    stages: isPracticalPath ? [
+      { key: 'see', number: 1, label: 'See' },
+      { key: 'hear-say', number: 2, label: 'Hear and say' },
+      { key: 'read', number: 3, label: 'Read' },
+      { key: 'practise', number: 4, label: 'Practise' },
+      { key: 'check', number: 5, label: 'Check' },
+    ] : [
       { key: 'definition', number: 1, label: 'Definition' },
       { key: 'keys', number: 2, label: letters.length ? 'Letters / markers' : 'Key idea' },
       { key: 'example', number: 3, label: 'Worked example' },

@@ -3425,23 +3425,33 @@ function updateLessonTabsVisibility(lesson) {
     const liveButton = document.getElementById("btnStartTajweedLive");
     if (liveButton) liveButton.hidden = lesson?.schemaType !== "tajweed-v1";
     if (lesson?.schemaType === "tajweed-v1") {
-        const labels = {
-            overview: "Learn",
+        const practical = String(lesson.unitId || "").startsWith("starter-");
+        const labels = practical ? {
+            overview: "Teaching Board",
+            practice: "Quick Practice",
+            homework: "Home Practice",
+            "teacher-notes": "Teacher Guide",
+        } : {
+            overview: "Teaching Board",
             vocabulary: "Key Terms",
             dialogue: "Rule & Visual",
             grammar: "Qur’anic Examples",
             translation: "Class Flow",
             practice: "Practice",
-            homework: "Homework",
+            homework: "Home Practice",
             review: "Mastery",
-            "teacher-notes": "Teacher Notes",
+            "teacher-notes": "Teacher Guide",
         };
         document.querySelectorAll(".lesson-tab").forEach((tab) => {
             tab.textContent = labels[tab.dataset.tab] || tab.textContent;
             const teacherOnly = TAJWEED_TEACHER_ONLY_TABS.has(tab.dataset.tab);
+            const practicalVisible = new Set(["overview", "practice", "homework", "teacher-notes"]);
+            const restoredVisible = new Set(["overview", "grammar", "practice", "homework", "teacher-notes"]);
+            const visibleSet = practical ? practicalVisible : restoredVisible;
+            const visible = visibleSet.has(tab.dataset.tab) && (!teacherOnly || appState.teacherMode);
             tab.classList.toggle("lesson-tab--teacher-only", teacherOnly);
-            tab.style.display = isTajweedTabVisible(tab.dataset.tab) ? "inline-flex" : "none";
-            tab.setAttribute("aria-hidden", isTajweedTabVisible(tab.dataset.tab) ? "false" : "true");
+            tab.style.display = visible ? "inline-flex" : "none";
+            tab.setAttribute("aria-hidden", visible ? "false" : "true");
         });
         return;
     }
@@ -3478,12 +3488,12 @@ function ensureTajweedLiveToolbar() {
         const content = document.getElementById("lessonTabContent");
         if (action === "exit") stopTajweedLiveMode();
         if (action === "previous") {
-            const journeyButton = content?.querySelector(".tajweed-journey__navigation .btn--outline:not(:disabled)");
+            const journeyButton = content?.querySelector(".tajweed-journey__navigation .btn--outline:not(:disabled), .quran-teaching-board__footer button:first-child:not(:disabled)");
             if (journeyButton) journeyButton.click();
             else moveTajweedLiveTab(-1);
         }
         if (action === "next") {
-            const journeyButtons = [...(content?.querySelectorAll(".tajweed-journey__navigation .btn--primary:not(:disabled)") || [])];
+            const journeyButtons = [...(content?.querySelectorAll(".tajweed-journey__navigation .btn--primary:not(:disabled), .quran-teaching-board__footer button:last-child:not(:disabled)") || [])];
             if (journeyButtons[0]) journeyButtons[0].click();
             else moveTajweedLiveTab(1);
         }
@@ -3949,6 +3959,12 @@ function renderTajweedOverview(container, lesson) {
 }
 
 function renderTajweedJourney(container, lesson) {
+    if (String(lesson.unitId || "").startsWith("starter-")) {
+        renderPracticalQuranBoard(container, lesson);
+        return;
+    }
+    renderAppliedTajweedBoard(container, lesson);
+    return;
     const examples = safeArr(lesson.quranExamples);
     const firstExample = examples[0] || {};
     const studentExplanation = lesson.conceptExplanation?.find((item) => item.audience === "student")?.text
@@ -3958,6 +3974,7 @@ function renderTajweedJourney(container, lesson) {
     const throatLetters = safeArr(lesson.ruleSummary?.letters);
     const hasKeySymbols = throatLetters.length > 0;
     const presentation = lesson.presentation || {};
+    const isPracticalPath = String(lesson.unitId || "").startsWith("starter-");
     const lessonContext = `${lesson.unitId || ""} ${lesson.title?.en || ""} ${lesson.source?.chapter || ""}`;
     const isStopLesson = /part3-|stop|stopping|start|pause|sakt|cut off/i.test(lessonContext);
     const isArticulationLesson = /articulation|makhraj|mouth|throat|tongue|lips|nasal|letter formation/i.test(lessonContext);
@@ -4185,7 +4202,7 @@ function renderTajweedJourney(container, lesson) {
     const moreExamplesButton = document.createElement("button");
     moreExamplesButton.type = "button";
     moreExamplesButton.className = "btn btn--outline";
-    moreExamplesButton.textContent = "Open all Qur’anic examples";
+    moreExamplesButton.textContent = isPracticalPath ? "Open all class examples" : "Open all Qur’anic examples";
     moreExamplesButton.addEventListener("click", () => document.querySelector('.lesson-tab[data-tab="grammar"]')?.click());
     examplesStage.append(exampleDisplay, exampleAnalysis, exampleReason, moreExamplesButton);
 
@@ -4193,7 +4210,21 @@ function renderTajweedJourney(container, lesson) {
     practiceStage.querySelector(".tajweed-journey__stage-label").textContent = "6 · Application";
     checkStage.querySelector(".tajweed-journey__stage-label").textContent = "5 · Questions";
     closeStage.querySelector(".tajweed-journey__stage-label").textContent = "7 · Summary";
-    const stages = [definitionStage, lettersStage, examplesStage, soundStage, checkStage, practiceStage, closeStage];
+    let stages = [definitionStage, lettersStage, examplesStage, soundStage, checkStage, practiceStage, closeStage];
+    if (isPracticalPath) {
+        lettersStage.querySelector(".tajweed-journey__stage-label").textContent = "1 · See";
+        lettersStage.querySelector("h3").textContent = "Look at today's targets";
+        lettersStage.querySelector(".tajweed-journey__prompt").textContent = "The teacher reveals one large target at a time. Point to it before naming it.";
+        soundStage.querySelector(".tajweed-journey__stage-label").textContent = "2 · Hear and say";
+        soundStage.querySelector("h3").textContent = "Watch the mouth, listen, then imitate";
+        examplesStage.querySelector(".tajweed-journey__stage-label").textContent = "3 · Read";
+        examplesStage.querySelector("h3").textContent = "Read a short combination";
+        practiceStage.querySelector(".tajweed-journey__stage-label").textContent = "4 · Practise";
+        practiceStage.querySelector("h3").textContent = "Try a new card with less help";
+        checkStage.querySelector(".tajweed-journey__stage-label").textContent = "5 · Check";
+        checkStage.querySelector("h3").textContent = "Can the learner recognise and say it alone?";
+        stages = [lettersStage, soundStage, examplesStage, practiceStage, checkStage];
+    }
     let currentStage = 0;
     stages.forEach((stage) => stageHost.appendChild(stage));
 
@@ -4262,6 +4293,429 @@ function renderTajweedJourney(container, lesson) {
     }
 
     updateStage();
+}
+
+function renderAppliedTajweedBoard(container, lesson) {
+    const examples = safeArr(lesson.quranExamples);
+    const targets = safeArr(lesson.ruleSummary?.letters);
+    const simpleRule = lesson.definition?.studentFriendly?.en
+        || lesson.conceptExplanation?.find(item => item.audience === "student")?.text
+        || lesson.ruleSummary?.result
+        || "";
+    let currentExample = 0;
+    let mode = "notice";
+
+    const board = document.createElement("section");
+    board.className = "applied-tajweed-board";
+    const header = document.createElement("header");
+    header.className = "applied-tajweed-board__header";
+    const heading = document.createElement("div");
+    const eyebrow = document.createElement("span");
+    eyebrow.textContent = `Lesson ${lesson.lessonNumber || ""}`;
+    const title = document.createElement("h2");
+    title.textContent = lesson.title?.en || "Tajweed lesson";
+    const titleAr = document.createElement("p");
+    titleAr.dir = "rtl";
+    titleAr.textContent = lesson.title?.ar || "";
+    heading.append(eyebrow, title, titleAr);
+    const formula = document.createElement("strong");
+    formula.dir = "rtl";
+    formula.textContent = lesson.definition?.memoryFormula || "Observe · Listen · Repeat · Read";
+    header.append(heading, formula);
+    board.appendChild(header);
+
+    const modeBar = document.createElement("nav");
+    modeBar.className = "applied-tajweed-board__modes";
+    [["notice","1 · Notice"],["listen","2 · Listen & repeat"],["read","3 · Read"],["apply","4 · Apply"]].forEach(([value,label]) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.dataset.mode = value;
+        button.textContent = label;
+        button.addEventListener("click", () => { mode = value; paint(); });
+        modeBar.appendChild(button);
+    });
+    board.appendChild(modeBar);
+
+    const rule = document.createElement("section");
+    rule.className = "applied-tajweed-board__rule";
+    const ruleText = document.createElement("p");
+    ruleText.textContent = simpleRule;
+    const targetRow = document.createElement("div");
+    targetRow.dir = "rtl";
+    targets.forEach(target => {
+        const badge = document.createElement("span");
+        badge.textContent = target;
+        targetRow.appendChild(badge);
+    });
+    rule.append(ruleText, targetRow);
+    board.appendChild(rule);
+
+    const stage = document.createElement("section");
+    stage.className = "applied-tajweed-board__stage";
+    const instruction = document.createElement("h3");
+    const arabic = document.createElement("div");
+    arabic.className = "applied-tajweed-board__arabic";
+    arabic.dir = "rtl";
+    const reveal = document.createElement("div");
+    reveal.className = "applied-tajweed-board__reveal";
+    reveal.hidden = true;
+    const revealButton = document.createElement("button");
+    revealButton.type = "button";
+    revealButton.className = "btn btn--primary";
+    revealButton.textContent = "Show reading help";
+    revealButton.addEventListener("click", () => {
+        reveal.hidden = !reveal.hidden;
+        revealButton.textContent = reveal.hidden ? "Show reading help" : "Hide reading help";
+    });
+    stage.append(instruction, arabic, reveal, revealButton);
+    board.appendChild(stage);
+
+    const footer = document.createElement("footer");
+    footer.className = "applied-tajweed-board__footer";
+    const previous = document.createElement("button");
+    previous.type = "button";
+    previous.textContent = "← Previous example";
+    const counter = document.createElement("strong");
+    const next = document.createElement("button");
+    next.type = "button";
+    next.textContent = "Next example →";
+    previous.addEventListener("click", () => { if (currentExample > 0) { currentExample -= 1; paint(); } });
+    next.addEventListener("click", () => { if (currentExample < examples.length - 1) { currentExample += 1; paint(); } });
+    footer.append(previous, counter, next);
+    board.appendChild(footer);
+    container.appendChild(board);
+
+    function paint() {
+        const example = examples[currentExample] || {};
+        [...modeBar.children].forEach(button => button.classList.toggle("is-active", button.dataset.mode === mode));
+        const instructions = {
+            notice: "Look only at the highlighted letter or sign. What do you see?",
+            listen: "The teacher reads once. Listen, then repeat the same sound.",
+            read: "Read the complete example slowly without help.",
+            apply: "Find the same rule in this example and read it correctly.",
+        };
+        instruction.textContent = instructions[mode];
+        arabic.replaceChildren();
+        appendHighlightedTajweedText(arabic, example.arabic || lesson.definition?.memoryFormula || "", example.targetText || example.triggerLetter || "");
+        reveal.replaceChildren();
+        const doCard = document.createElement("div");
+        const doTitle = document.createElement("strong");
+        doTitle.textContent = "Read it like this";
+        const doText = document.createElement("p");
+        doText.textContent = example.readingInstruction || lesson.ruleSummary?.result || simpleRule;
+        doCard.append(doTitle, doText);
+        const avoidCard = document.createElement("div");
+        const avoidTitle = document.createElement("strong");
+        avoidTitle.textContent = "Avoid";
+        const avoidText = document.createElement("p");
+        avoidText.textContent = example.commonError || safeArr(lesson.commonMistakes)[0] || "Do not add or remove a sound.";
+        avoidCard.append(avoidTitle, avoidText);
+        reveal.append(doCard, avoidCard);
+        reveal.hidden = true;
+        revealButton.textContent = "Show reading help";
+        counter.textContent = examples.length ? `${currentExample + 1} / ${examples.length}` : "Practice";
+        previous.disabled = currentExample === 0;
+        next.disabled = !examples.length || currentExample >= examples.length - 1;
+    }
+    paint();
+}
+
+function renderPracticalQuranBoard(container, lesson) {
+    const targets = safeArr(lesson.ruleSummary?.letters);
+    const examples = safeArr(lesson.quranExamples);
+    const formMap = {
+        "ا": ["ا", "ا", "ـا", "ـا"], "ب": ["ب", "بـ", "ـبـ", "ـب"], "ت": ["ت", "تـ", "ـتـ", "ـت"],
+        "ث": ["ث", "ثـ", "ـثـ", "ـث"], "ن": ["ن", "نـ", "ـنـ", "ـن"], "ي": ["ي", "يـ", "ـيـ", "ـي"],
+        "ج": ["ج", "جـ", "ـجـ", "ـج"], "ح": ["ح", "حـ", "ـحـ", "ـح"], "خ": ["خ", "خـ", "ـخـ", "ـخ"],
+        "د": ["د", "د", "ـد", "ـد"], "ذ": ["ذ", "ذ", "ـذ", "ـذ"], "ر": ["ر", "ر", "ـر", "ـر"], "ز": ["ز", "ز", "ـز", "ـز"],
+        "س": ["س", "سـ", "ـسـ", "ـس"], "ش": ["ش", "شـ", "ـشـ", "ـش"], "ص": ["ص", "صـ", "ـصـ", "ـص"],
+        "ض": ["ض", "ضـ", "ـضـ", "ـض"], "ط": ["ط", "طـ", "ـطـ", "ـط"], "ظ": ["ظ", "ظـ", "ـظـ", "ـظ"],
+        "ع": ["ع", "عـ", "ـعـ", "ـع"], "غ": ["غ", "غـ", "ـغـ", "ـغ"], "ف": ["ف", "فـ", "ـفـ", "ـف"],
+        "ق": ["ق", "قـ", "ـقـ", "ـق"], "ك": ["ك", "كـ", "ـكـ", "ـك"], "ل": ["ل", "لـ", "ـلـ", "ـل"],
+        "م": ["م", "مـ", "ـمـ", "ـم"], "هـ": ["هـ", "هـ", "ـهـ", "ـه"], "و": ["و", "و", "ـو", "ـو"],
+    };
+    const letterNames = { "ا":"Alif", "ب":"Bā", "ت":"Tā", "ث":"Thā", "ن":"Nūn", "ي":"Yā", "ج":"Jīm", "ح":"Ḥā", "خ":"Khā", "د":"Dāl", "ذ":"Dhāl", "ر":"Rā", "ز":"Zāy", "س":"Sīn", "ش":"Shīn", "ص":"Ṣād", "ض":"Ḍād", "ط":"Ṭā", "ظ":"Ẓā", "ع":"ʿAyn", "غ":"Ghayn", "ف":"Fā", "ق":"Qāf", "ك":"Kāf", "ل":"Lām", "م":"Mīm", "هـ":"Hā", "و":"Wāw" };
+    const articulation = {
+        "ا":["Open space / throat", "Open the mouth naturally. Begin with the teacher's clear أَ sound."],
+        "ب":["Two lips", "Close both lips, hold no air, then release gently."], "م":["Two lips + nose", "Close both lips and allow the nasal resonance."],
+        "و":["Rounded lips", "Round the lips without closing them completely."], "ف":["Lower lip + upper teeth", "Touch the inner lower lip lightly to the upper front teeth and let air pass."],
+        "ت":["Tongue tip + upper gums", "Touch behind the upper front teeth and release with air."], "د":["Tongue tip + upper gums", "Use the same place as ت with voice and a quick release."],
+        "ط":["Tongue tip + upper gums", "Raise the back of the tongue and pronounce a full, heavy sound."], "ث":["Tongue tip between teeth", "Show the tongue tip slightly and let air pass."],
+        "ذ":["Tongue tip between teeth", "Show the tongue tip slightly and use the voice."], "ظ":["Tongue tip between teeth", "Show the tongue tip and make the sound full and heavy."],
+        "س":["Tongue near lower teeth", "Keep a narrow air channel and pronounce a light hiss."], "ز":["Tongue near lower teeth", "Use the same channel as س with voice."],
+        "ص":["Tongue near lower teeth", "Raise the back of the tongue for a full, heavy hiss."], "ر":["Tongue tip + upper gum", "Touch the upper gum lightly; do not repeat or roll excessively."],
+        "ل":["Tongue edge/tip + upper gum", "Place the front edge of the tongue against the upper gum."], "ن":["Tongue tip + nose", "Touch the upper gum and allow the sound through the nose."],
+        "ج":["Middle of tongue", "Raise the middle of the tongue toward the middle palate."], "ش":["Middle of tongue", "Raise the middle of the tongue and let air spread."],
+        "ي":["Middle of tongue", "Raise the middle of the tongue without closing the passage fully."], "ق":["Deep tongue + upper palate", "Raise the deepest part of the tongue; keep the sound full."],
+        "ك":["Deep tongue + upper palate", "Use a point slightly forward from ق and keep it light."], "ض":["Side of tongue + upper molars", "Press one side of the tongue along the upper molars."],
+        "ء":["Deep throat", "Close and release the sound cleanly."], "هـ":["Deep throat", "Let a soft breath flow from the deepest throat."],
+        "ع":["Middle throat", "Narrow the middle throat gently without replacing it with a vowel."], "ح":["Middle throat", "Let clear breath pass through the middle throat without voice."],
+        "غ":["Upper throat", "Use the throat area nearest the mouth with voice."], "خ":["Upper throat", "Use the throat area nearest the mouth with flowing air."],
+    };
+    const articulationPoints = {
+        "ا":[38,58,"Open cavity"], "ء":[29,76,"Deep throat"], "هـ":[29,76,"Deep throat"],
+        "ع":[29,65,"Middle throat"], "ح":[29,65,"Middle throat"], "غ":[30,53,"Upper throat"], "خ":[30,53,"Upper throat"],
+        "ق":[45,47,"Deep tongue"], "ك":[49,45,"Deep tongue"], "ج":[57,49,"Middle tongue"], "ش":[57,49,"Middle tongue"], "ي":[57,49,"Middle tongue"],
+        "ض":[55,64,"Side of tongue"], "ل":[69,48,"Tongue edge"], "ن":[72,46,"Tongue tip + nasal sound"], "ر":[72,46,"Tongue tip"],
+        "ط":[73,48,"Tongue tip at upper gums"], "د":[73,48,"Tongue tip at upper gums"], "ت":[73,48,"Tongue tip at upper gums"],
+        "ص":[72,55,"Tongue near lower teeth"], "ز":[72,55,"Tongue near lower teeth"], "س":[72,55,"Tongue near lower teeth"],
+        "ظ":[78,48,"Tongue between teeth"], "ذ":[78,48,"Tongue between teeth"], "ث":[78,48,"Tongue between teeth"],
+        "ف":[82,49,"Lower lip + upper teeth"], "ب":[84,55,"Two lips"], "م":[84,55,"Two lips + nasal sound"], "و":[84,55,"Rounded lips"],
+    };
+    const positionExamples = {
+        "ا":["ا","أَحَد","سَأَلَ","دُعَا"], "ب":["ب","بَاب","حَبِيب","كِتَاب"], "ت":["ت","تِين","كِتَاب","بَيْت"],
+        "ث":["ث","ثَوْب","مِثْل","حَدِيث"], "ن":["ن","نُور","مَنَازِل","رَحْمَن"], "ي":["ي","يَد","بَيَان","فِي"],
+        "ج":["ج","جَنَّة","سَجَدَ","بُرُوج"], "ح":["ح","حَمْد","رَحِيم","فَتْح"], "خ":["خ","خَلَقَ","يَخْلُقُ","شَيْخ"],
+        "د":["د","دِين","هُدًى","أَحَد"], "ذ":["ذ","ذِكْر","هَذَا","إِذ"], "ر":["ر","رَبّ","كَرِيم","قَمَر"], "ز":["ز","زَكَاة","مِيزَان","عَزِيز"],
+        "س":["س","سَلَام","مَسَاجِد","نَاس"], "ش":["ش","شَمْس","بَشِير","عَرْش"], "ص":["ص","صِرَاط","بَصِير","خَالِص"],
+        "ض":["ض","ضُحَى","يَضْرِبُ","أَرْض"], "ط":["ط","طَيِّب","صِرَاطَ","مُحِيط"], "ظ":["ظ","ظَلَمَ","عَظِيم","حَفِيظ"],
+        "ع":["ع","عَلِيم","نَعْبُدُ","سَمِيع"], "غ":["غ","غَفُور","يَغْفِرُ","بَلَاغ"], "ف":["ف","فَلَق","غَفُور","خَوْف"],
+        "ق":["ق","قَمَر","يَقُولُ","خَلَق"], "ك":["ك","كَرِيم","مَلَكُوت","مَلِك"], "ل":["ل","لَيْل","عَلِيم","قُل"],
+        "م":["م","مَلِك","رَحْمَن","رَحِيم"], "هـ":["هـ","هُدًى","يَهْدِي","وَجْه"], "و":["و","وَرْد","سَوَاء","هُو"],
+    };
+    let current = 0;
+    let selectedForm = 0;
+    let readingMode = "isolate";
+    let repeatCount = 3;
+    let capsule = "shape";
+
+    const board = document.createElement("section");
+    board.className = "quran-teaching-board";
+    const top = document.createElement("header");
+    top.className = "quran-teaching-board__top";
+    const titleBox = document.createElement("div");
+    const unit = document.createElement("span");
+    unit.textContent = `Lesson ${lesson.lessonNumber || ""}`;
+    const title = document.createElement("h2");
+    title.textContent = lesson.title?.en || "Qur'an reading";
+    titleBox.append(unit, title);
+    const method = document.createElement("strong");
+    method.className = "quran-teaching-board__method";
+    method.textContent = "See · Listen · Repeat · Read";
+    top.append(titleBox, method);
+    board.appendChild(top);
+
+    const targetNav = document.createElement("nav");
+    targetNav.className = "quran-teaching-board__targets";
+    targets.forEach((target, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.dir = "rtl";
+        button.textContent = target;
+        button.addEventListener("click", () => { current = index; selectedForm = 0; paint(); });
+        targetNav.appendChild(button);
+    });
+    board.appendChild(targetNav);
+
+    const readingControls = document.createElement("div");
+    readingControls.className = "quran-teaching-board__controls";
+    const modeGroup = document.createElement("div");
+    const modes = [
+        ["isolate", "1 · Spell separately"],
+        ["join", "2 · Join the units"],
+        ["visual", "3 · Visual spelling"],
+        ["direct", "4 · Direct reading"],
+    ];
+    modes.forEach(([value, label]) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.dataset.readingMode = value;
+        button.textContent = label;
+        button.addEventListener("click", () => { readingMode = value; paint(); });
+        modeGroup.appendChild(button);
+    });
+    const repeat = document.createElement("label");
+    repeat.append(document.createTextNode("Repeat "));
+    const repeatSelect = document.createElement("select");
+    [1, 2, 3, 4, 5, 6, 8, 10].forEach(value => {
+        const option = document.createElement("option");
+        option.value = String(value);
+        option.textContent = `${value}×`;
+        option.selected = value === repeatCount;
+        repeatSelect.appendChild(option);
+    });
+    repeatSelect.addEventListener("change", () => { repeatCount = Number(repeatSelect.value); paint(); });
+    repeat.appendChild(repeatSelect);
+    readingControls.append(modeGroup, repeat);
+    board.appendChild(readingControls);
+
+    const capsuleNav = document.createElement("nav");
+    capsuleNav.className = "quran-teaching-board__capsules";
+    [["shape","1 · Shape"],["makhraj","2 · Articulation"],["vowels","3 · Vowels"],["word","4 · In words"],["check","5 · Quick check"]].forEach(([value,label]) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.dataset.capsule = value;
+        button.textContent = label;
+        button.addEventListener("click", () => { capsule = value; paint(); });
+        capsuleNav.appendChild(button);
+    });
+    board.appendChild(capsuleNav);
+
+    const workspace = document.createElement("div");
+    workspace.className = "quran-teaching-board__workspace quran-teaching-board__workspace--single";
+    const main = document.createElement("div");
+    main.className = "quran-teaching-board__main";
+    const prompt = document.createElement("p");
+    prompt.className = "quran-teaching-board__prompt";
+    const huge = document.createElement("div");
+    huge.className = "quran-teaching-board__huge";
+    huge.dir = "rtl";
+    const name = document.createElement("strong");
+    name.className = "quran-teaching-board__name";
+    const soundPanel = document.createElement("div");
+    soundPanel.className = "quran-teaching-board__sound";
+    const makhrajImage = document.createElement("img");
+    makhrajImage.className = "quran-teaching-board__makhraj-image";
+    makhrajImage.src = "assets/makharij/articulation-profile.png";
+    makhrajImage.alt = "Side-view illustration of the mouth, tongue, nasal passage, and throat articulation areas";
+    const makhrajFigure = document.createElement("button");
+    makhrajFigure.type = "button";
+    makhrajFigure.className = "quran-teaching-board__makhraj-figure";
+    makhrajFigure.setAttribute("aria-label", "Show the articulation point again");
+    const makhrajMarker = document.createElement("span");
+    makhrajMarker.className = "quran-teaching-board__makhraj-marker";
+    const makhrajMarkerLabel = document.createElement("strong");
+    makhrajMarkerLabel.className = "quran-teaching-board__makhraj-marker-label";
+    makhrajFigure.append(makhrajImage, makhrajMarker, makhrajMarkerLabel);
+    makhrajFigure.addEventListener("click", () => {
+        makhrajFigure.classList.remove("is-pulsing");
+        requestAnimationFrame(() => makhrajFigure.classList.add("is-pulsing"));
+    });
+    const makhraj = document.createElement("div");
+    const mouthCue = document.createElement("div");
+    const vowels = document.createElement("div");
+    vowels.className = "quran-teaching-board__vowels";
+    soundPanel.append(makhrajFigure, makhraj, mouthCue, vowels);
+    const forms = document.createElement("div");
+    forms.className = "quran-teaching-board__forms";
+    const sample = document.createElement("div");
+    sample.className = "quran-teaching-board__sample";
+    sample.dir = "rtl";
+    const checkPanel = document.createElement("div");
+    checkPanel.className = "quran-teaching-board__check";
+    checkPanel.innerHTML = "<strong>Student challenge</strong><p>Name the letter, say it with one vowel, then find it inside a word.</p>";
+    main.append(prompt, huge, name, soundPanel, forms, sample, checkPanel);
+
+    const teacher = document.createElement("aside");
+    teacher.className = "quran-teaching-board__teacher";
+    const teacherTitle = document.createElement("h3");
+    teacherTitle.textContent = "Teacher cue";
+    const cue = document.createElement("p");
+    const task = document.createElement("div");
+    task.className = "quran-teaching-board__task";
+    const reveal = document.createElement("button");
+    reveal.type = "button";
+    reveal.className = "btn btn--primary";
+    reveal.textContent = "Reveal example";
+    reveal.addEventListener("click", () => sample.classList.toggle("is-visible"));
+    teacher.append(teacherTitle, cue, task, reveal);
+    workspace.append(main);
+    board.appendChild(workspace);
+
+    const footer = document.createElement("footer");
+    footer.className = "quran-teaching-board__footer";
+    const previous = document.createElement("button");
+    previous.type = "button"; previous.textContent = "← Previous";
+    const counter = document.createElement("strong");
+    const next = document.createElement("button");
+    next.type = "button"; next.textContent = "Next →";
+    previous.addEventListener("click", () => { if (current > 0) { current -= 1; selectedForm = 0; paint(); } });
+    next.addEventListener("click", () => { if (current < targets.length - 1) { current += 1; selectedForm = 0; paint(); } });
+    footer.append(previous, counter, next);
+    board.appendChild(footer);
+    container.appendChild(board);
+
+    function paint() {
+        const target = targets[current] || "";
+        const isLetter = !!formMap[target];
+        [...targetNav.children].forEach((button, index) => button.classList.toggle("is-active", index === current));
+        [...modeGroup.children].forEach(button => button.classList.toggle("is-active", button.dataset.readingMode === readingMode));
+        [...capsuleNav.children].forEach(button => button.classList.toggle("is-active", button.dataset.capsule === capsule));
+        const prompts = {
+            isolate: `Teacher models each unit separately; learner repeats ${repeatCount}×.`,
+            join: `Join each new unit to the previous one; repeat ${repeatCount}×.`,
+            visual: `Learner reads by looking only, without naming the marks; repeat ${repeatCount}×.`,
+            direct: `Learner reads the complete target directly ${repeatCount}×.`,
+        };
+        prompt.textContent = prompts[readingMode];
+        huge.textContent = target;
+        name.textContent = letterNames[target] ? `${letterNames[target]} — ${target}` : target;
+        const soundInfo = articulation[target];
+        const showMakhraj = capsule === "makhraj" && !!soundInfo;
+        const showVowels = capsule === "vowels" && !!soundInfo;
+        soundPanel.hidden = !showMakhraj && !showVowels;
+        makhrajFigure.hidden = !showMakhraj;
+        makhraj.hidden = !showMakhraj;
+        mouthCue.hidden = !showMakhraj;
+        vowels.hidden = !showVowels;
+        const point = articulationPoints[target] || [50,50,soundInfo?.[0] || "Articulation area"];
+        makhrajMarker.style.left = `${point[0]}%`;
+        makhrajMarker.style.top = `${point[1]}%`;
+        makhrajMarkerLabel.style.left = `${Math.min(point[0] + 4, 72)}%`;
+        makhrajMarkerLabel.style.top = `${Math.max(point[1] - 7, 4)}%`;
+        makhrajMarkerLabel.textContent = `${target} · ${point[2]}`;
+        makhrajFigure.classList.toggle("is-pulsing", showMakhraj);
+        makhraj.innerHTML = "";
+        mouthCue.innerHTML = "";
+        vowels.replaceChildren();
+        if (soundInfo) {
+            const makhrajLabel = document.createElement("strong");
+            makhrajLabel.textContent = "Comes from: ";
+            makhraj.append(makhrajLabel, document.createTextNode(soundInfo[0]));
+            const cueLabel = document.createElement("strong");
+            cueLabel.textContent = "How: ";
+            mouthCue.append(cueLabel, document.createTextNode(soundInfo[1]));
+            const vowelBase = target === "ا" ? "أ" : target === "هـ" ? "ه" : target;
+            [["Fatḥah", "َ"], ["Kasrah", "ِ"], ["Ḍammah", "ُ"]].forEach(([label, mark]) => {
+                const item = document.createElement("button");
+                item.type = "button";
+                item.innerHTML = `<span>${label}</span><b dir="rtl">${vowelBase}${mark}</b>`;
+                item.addEventListener("click", () => {
+                    sample.textContent = `${vowelBase}َ  ${vowelBase}ِ  ${vowelBase}ُ`;
+                    sample.classList.add("is-visible");
+                });
+                vowels.appendChild(item);
+            });
+        }
+        forms.replaceChildren();
+        if (isLetter) {
+            const labels = ["Isolated", "Beginning", "Middle", "End"];
+            formMap[target].forEach((form, index) => {
+                const card = document.createElement("button");
+                card.type = "button";
+                card.classList.toggle("is-active", index === selectedForm);
+                const label = document.createElement("span");
+                label.textContent = labels[index];
+                const glyph = document.createElement("b");
+                glyph.dir = "rtl";
+                glyph.textContent = form;
+                card.append(label, glyph);
+                card.addEventListener("click", () => { selectedForm = index; paint(); sample.classList.add("is-visible"); });
+                forms.appendChild(card);
+            });
+        }
+        const chosenExample = positionExamples[target]?.[selectedForm]
+            || examples[current % Math.max(examples.length, 1)]?.arabic
+            || lesson.definition?.memoryFormula
+            || "";
+        sample.textContent = chosenExample;
+        sample.classList.toggle("is-visible", capsule === "word");
+        forms.hidden = capsule !== "word";
+        checkPanel.hidden = capsule !== "check";
+        name.hidden = capsule === "check";
+        cue.textContent = readingMode === "isolate"
+            ? "Point with the cursor. Pronounce one unit and pause for imitation."
+            : readingMode === "join"
+                ? "Read the first unit, add the next, then read everything joined."
+                : readingMode === "visual"
+                    ? "Do not explain the mark. Point and let the learner decode it by sight."
+                    : "Hide help and ask for one smooth, direct reading.";
+        task.textContent = `Repeat target: ${repeatCount}×. Correct only the current skill before moving on.`;
+        counter.textContent = `${current + 1} / ${targets.length}`;
+        previous.disabled = current === 0;
+        next.disabled = current === targets.length - 1;
+    }
+    paint();
 }
 
 function renderTajweedTerms(container, lesson) {
@@ -4465,6 +4919,87 @@ function renderTajweedClassFlow(container, lesson) {
 }
 
 function renderTajweedPractice(container, lesson) {
+    if (String(lesson.unitId || "").startsWith("starter-")) {
+        const targets = safeArr(lesson.ruleSummary?.letters);
+        appendTajweedHeading(container, "Quick live check", "The teacher chooses a challenge. The learner answers by pointing and speaking.");
+        const card = document.createElement("section");
+        card.className = "quran-quick-check";
+        const challenge = document.createElement("h3");
+        const choices = document.createElement("div");
+        choices.className = "quran-teaching-board__targets";
+        targets.forEach(target => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.textContent = target;
+            button.addEventListener("click", () => button.classList.toggle("is-active"));
+            choices.appendChild(button);
+        });
+        const next = document.createElement("button");
+        next.type = "button";
+        next.className = "btn btn--primary";
+        const tasks = ["Point to it, then say its sound.", "Find it after the teacher says its sound.", "Read it with fatḥah: َ", "Read it with kasrah: ِ", "Read it with ḍammah: ُ"];
+        let taskIndex = 0;
+        const update = () => { challenge.textContent = tasks[taskIndex % tasks.length]; };
+        next.textContent = "New challenge";
+        next.addEventListener("click", () => { taskIndex += 1; update(); });
+        card.append(challenge, choices, next);
+        container.appendChild(card);
+        update();
+        return;
+    }
+    renderAppliedOralPractice(container, lesson);
+    return;
+}
+
+function renderAppliedOralPractice(container, lesson) {
+    const examples = safeArr(lesson.quranExamples);
+    let current = 0;
+    appendTajweedHeading(container, "Live reading practice", "No definitions to memorise: notice the target, listen, repeat, then read.");
+    const practice = document.createElement("section");
+    practice.className = "applied-oral-practice";
+    const steps = document.createElement("div");
+    steps.className = "applied-oral-practice__steps";
+    ["1 · Find", "2 · Listen", "3 · Repeat", "4 · Read"].forEach(text => {
+        const span = document.createElement("span");
+        span.textContent = text;
+        steps.appendChild(span);
+    });
+    const arabic = document.createElement("div");
+    arabic.className = "applied-oral-practice__arabic";
+    arabic.dir = "rtl";
+    const prompt = document.createElement("p");
+    prompt.textContent = "The teacher models once. The learner repeats, then reads without help.";
+    const controls = document.createElement("div");
+    controls.className = "applied-oral-practice__controls";
+    const again = document.createElement("button");
+    again.type = "button";
+    again.textContent = "↻ Practise again";
+    const good = document.createElement("button");
+    good.type = "button";
+    good.className = "btn btn--primary";
+    good.textContent = "Read correctly · Next";
+    const counter = document.createElement("strong");
+    again.addEventListener("click", () => {
+        arabic.classList.remove("is-ready");
+        requestAnimationFrame(() => arabic.classList.add("is-ready"));
+    });
+    good.addEventListener("click", () => { if (current < examples.length - 1) { current += 1; paint(); } });
+    controls.append(again, counter, good);
+    practice.append(steps, arabic, prompt, controls);
+    container.appendChild(practice);
+
+    function paint() {
+        const example = examples[current] || {};
+        arabic.replaceChildren();
+        appendHighlightedTajweedText(arabic, example.arabic || lesson.definition?.memoryFormula || "", example.targetText || example.triggerLetter || "");
+        counter.textContent = examples.length ? `${current + 1} / ${examples.length}` : "Practice";
+        good.disabled = !examples.length || current >= examples.length - 1;
+        good.textContent = current >= examples.length - 1 ? "Practice complete" : "Read correctly · Next";
+    }
+    paint();
+}
+
+function renderLegacyTajweedQuiz(container, lesson) {
     const activities = safeArr(lesson.interactiveActivities);
     const completed = new Set();
     appendTajweedHeading(container, "Interactive practice", "Work in order. A correct answer completes the card; an incorrect answer can be retried.");
