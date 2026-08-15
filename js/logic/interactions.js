@@ -3409,8 +3409,7 @@ function isGuestAllowedLesson(lessonId) {
 
 function isGrammarTabEnabled(lesson) {
     if (!lesson) return false;
-    const hasGrammar = Array.isArray(lesson.grammar) && lesson.grammar.length > 0;
-    return appState.teacherMode && hasGrammar;
+    return Array.isArray(lesson.grammar) && lesson.grammar.length > 0;
 }
 
 const TAJWEED_HIDDEN_TABS = new Set(["vocabulary", "dialogue"]);
@@ -3455,11 +3454,28 @@ function updateLessonTabsVisibility(lesson) {
         });
         return;
     }
-    const grammarTab = document.querySelector('.lesson-tab[data-tab="grammar"]');
-    if (grammarTab) {
-        grammarTab.textContent = "Grammar";
-        grammarTab.style.display = isGrammarTabEnabled(lesson) ? "inline-flex" : "none";
-    }
+    const arabicLabels = {
+        overview: "Overview",
+        vocabulary: "Vocabulary",
+        dialogue: "Dialogue",
+        grammar: "Grammar",
+        translation: "Translation",
+        practice: "Practice",
+        homework: "Homework",
+        review: "Quick Review",
+        "teacher-notes": "Teacher Notes",
+    };
+    document.querySelectorAll(".lesson-tab").forEach((tab) => {
+        const tabKey = tab.dataset.tab;
+        const isTeacherNotes = tabKey === "teacher-notes";
+        const visible = tabKey === "grammar"
+            ? isGrammarTabEnabled(lesson)
+            : !isTeacherNotes || appState.teacherMode;
+        tab.textContent = arabicLabels[tabKey] || tab.textContent;
+        tab.classList.toggle("lesson-tab--teacher-only", isTeacherNotes);
+        tab.style.display = visible ? "inline-flex" : "none";
+        tab.setAttribute("aria-hidden", visible ? "false" : "true");
+    });
 }
 
 let tajweedLiveMode = false;
@@ -3697,6 +3713,7 @@ function setActiveTab(tabKey) {
     const container = $("#lessonTabContent");
     container.innerHTML = "";
     if (!lesson) return;
+    container.classList.toggle("tajweed-lesson", lesson.schemaType === "tajweed-v1");
 
     if (lesson.schemaType === "tajweed-v1") {
         renderTajweedTab(container, lesson, normalizedTab);
@@ -6199,7 +6216,7 @@ function renderReviewTab(container, lesson) {
     title.className = "td-lessonitem__title";
     title.textContent = "Quick Review – Flashcards";
 
-    const all = [...lesson.vocabulary.core, ...lesson.vocabulary.extra];
+    const all = [...safeArr(lesson?.vocabulary?.core), ...safeArr(lesson?.vocabulary?.extra)];
     if (!all.length) {
         const p = document.createElement("p");
         p.textContent = "No vocabulary available for review.";
