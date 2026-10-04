@@ -1,0 +1,202 @@
+const src = (pages, section) => ({
+  book: "Tajweed Rules of the Qur'an — Part One", pdf: "en_Tajweed_Rules_of_the_Quran_Part_01.pdf",
+  pdfPages: pages, printedPages: pages, chapter: "Mudood", section,
+  verification: "book source aligned; exact recitation timing requires teacher approval",
+});
+const e = (arabic, label, target, rule, why, how, page) => ({
+  arabic, surah: { ar: "مثال قرآني", en: label }, ayah: "—", targetText: target, triggerLetter: target,
+  previousLetter: "حرف مد", rule, teacherExplanation: why, readingInstruction: how,
+  commonError: "Using the count of another madd type.", wordBoundary: "instructional-context",
+  sourcePage: page, verificationStatus: "teacher-review-required",
+});
+const a = (stage, prompt, items, answer, right, wrong) => ({
+  stage, type: "madd-decision", instruction: { en: "Choose the best answer." }, prompt, items,
+  acceptedAnswers: [answer], feedbackCorrect: right, feedbackIncorrect: wrong,
+});
+function make(spec) {
+  const { id, n, ar, en, p, defAr, defEn, formula, count, causes, examples, extra = [] } = spec;
+  return {
+    id, unitId: "unit-07", lessonNumber: `7.${n}`, title: { ar, en }, source: src(p, en),
+    contentOrigin: "source-and-instructional-design", level: "Foundation", estimatedMinutes: n === 16 ? 60 : 45,
+    prerequisites: ["Recognize alif, waw, and ya.", "Distinguish vowelled and sakin letters.", "Count two, four, five, and six evenly."],
+    learningOutcomes: [`Define ${en}.`, "Identify its cause and context.", `Apply its count: ${count}.`, "Contrast it with a neighboring madd type.", "Recite teacher-approved examples."],
+    definition: {
+      linguistic: { ar: "المد لغةً: الزيادة.", en: "Madd linguistically means extension." },
+      technical: { ar: defAr, en: defEn }, studentFriendly: { ar: defAr, en: defEn }, memoryFormula: formula,
+    },
+    keyTerms: [
+      { ar: "المد", transliteration: "al-madd", en: "lengthening" },
+      { ar: "حرف المد", transliteration: "harf al-madd", en: "a madd letter" },
+      { ar: "سبب المد", transliteration: "sabab al-madd", en: causes },
+      { ar: "مقدار المد", transliteration: "miqdar al-madd", en: count },
+    ],
+    teacherPreparation: ["Prepare a visible count scale: 2 · 4 · 5 · 6.", "Mark the madd letter and cause separately.", "Model connection and stopping where relevant.", "Use one consistent Hafs timing choice in class."],
+    openingReview: [{ minutes: 2, teacherPrompt: "Find the madd letter." }, { minutes: 2, teacherPrompt: "Find hamzah or sukoon if present." }],
+    conceptExplanation: [
+      { audience: "student", text: defEn },
+      { audience: "teacher", text: `Require three answers before recitation: madd letter, cause/context, and count (${count}).` },
+    ],
+    lessonPath: [
+      { step: 1, title: "Find", text: "Locate the madd or leen letter." }, { step: 2, title: "Inspect", text: "Find the cause or stopping context." },
+      { step: 3, title: "Name", text: "State the madd type." }, { step: 4, title: "Count", text: `Use ${count}.` },
+      { step: 5, title: "Recite", text: "Keep the count steady in context." },
+    ],
+    visualExplanation: [{ type: "rule-equation", display: formula, teacherUse: "Point to letter, cause, then count." }],
+    ruleSummary: { condition: causes, result: defEn, location: "Apply according to the stated connection or stopping context.", letters: ["ا", "و", "ي"] },
+    letterGroups: [
+      { name: { ar: "حروف المد", en: "Madd letters" }, letters: ["ا", "و", "ي"] },
+      { name: { ar: "المقدار", en: "Count" }, letters: [count] },
+    ],
+    quranExamples: examples,
+    guidedPractice: [
+      { sequence: 1, teacherAction: "Reveal letter and cause.", studentAction: "Name type and count.", feedback: "Correct classification before timing." },
+      { sequence: 2, teacherAction: "Model an even count.", studentAction: "Repeat and recite in context.", feedback: "Correct count without speeding the surrounding letters." },
+    ],
+    oralPractice: [{ cycle: ["find", "find cause", "name", "count", "recite"], examplesRequired: examples.length, teacherObservation: ["correct type", "even count", "correct connection/stopping", "no added vowel"] }],
+    interactiveActivities: [
+      a("1 · Definition", "What is the lesson type?", [en, "Qalqalah", "Ghunnah"], en, "Correct.", "Use the lesson definition."),
+      a("2 · Cause", "What selects this ruling?", [causes, "Any long-looking word", "The font color"], causes, "Correct.", "Find the actual cause or context."),
+      a("3 · Count", "What count is taught here?", [count, "Always one count", "Any length"], count, "Correct.", "Use the stated count."),
+      a("4 · Method", "What must be found first?", ["The madd or leen letter", "The translation", "The verse number"], "The madd or leen letter", "Correct.", "Begin with the sound structure."),
+      a("5 · Error", "The learner uses a different madd count.", [`Return to ${count}`, "Lengthen randomly", "Remove the letter"], `Return to ${count}`, "Correct.", "Classification controls timing."),
+      ...extra,
+    ],
+    commonMistakes: ["Naming the type without finding its cause.", "Changing count within one reading.", "Lengthening a short vowel.", "Ignoring whether reading continues or stops."],
+    correctionTechniques: ["Tap an even beat.", "Mark letter and cause in two colors.", "Contrast with the nearest madd type.", "Practice the word before the full verse."],
+    knowledgeChecks: [{ type: "recognition", prompt: "Classify ten samples.", success: "At least eight are correct with cause and count." }, { type: "recitation", prompt: "Recite a mixed set.", success: "Teacher approves two attempts." }],
+    teacherQuestions: ["Where is the madd letter?", "What is the cause?", "Are we connecting or stopping?", "How many counts?"],
+    studentTasks: ["Highlight letter and cause.", "State type and count.", "Recite with an even beat."],
+    liveClassFlow: [
+      { minutes: 5, phase: "Review", display: "Madd letters" }, { minutes: 8, phase: "Definition", display: formula },
+      { minutes: 10, phase: "Teacher model", display: "Contrasting examples" }, { minutes: 10, phase: "Classification", display: "Cause and count" },
+      { minutes: 8, phase: "Recitation", display: "Teacher listening" }, { minutes: 4, phase: "Exit", display: "Type, cause, count" },
+    ],
+    independentPractice: ["Mark the madd letter, cause, and count in teacher-approved examples."],
+    homework: ["Prepare four examples and state type, cause, context, and count."],
+    exitTicket: ["Name the type.", "State the cause.", `Recite using ${count}.`],
+    masteryCriteria: ["Finds the letter.", "Names the cause.", "States the correct count.", "Recites correctly twice."],
+    teacherNotes: ["Maintain one transmitted timing choice consistently.", "Do not accept visual length as proof of correct timing."],
+    sourceNotes: [`Uses pages ${p.join(", ")}.`, "Activities and timing drills are instructional-design additions."],
+    verificationStatus: "source-aligned; teacher timing review required",
+  };
+}
+const specs = [
+  {
+    id:"tajweed-u07-l01-letters",n:1,ar:"حروف المد واللين",en:"Madd and leen letters",p:[63],
+    defAr:"حروف المد: ألف ساكنة قبلها فتح، وواو ساكنة قبلها ضم، وياء ساكنة قبلها كسر. وحرفا اللين واو أو ياء ساكنتان قبلهما فتح.",
+    defEn:"Madd letters are sakin alif after fathah, sakin waw after dammah, and sakin ya after kasrah. Leen letters are sakin waw or ya after fathah.",
+    formula:"ـَ ا | ـُ وْ | ـِ يْ = مد  ||  ـَ وْ / ـَ يْ = لين",count:"Recognition before counting",causes:"The preceding vowel and the letter's sukoon",
+    examples:[e("قَالَ","Alif madd","قَا","حرف مد","Fathah precedes alif.","Identify the alif pair.",63),e("قِيلَ","Ya madd","قِي","حرف مد","Kasrah precedes ya.","Identify the ya pair.",63),e("خَوْف","Leen waw","خَوْ","حرف لين","Fathah precedes sakin waw.","Treat it as leen.",63)],
+  },
+  {
+    id:"tajweed-u07-l02-natural",n:2,ar:"المد الطبيعي",en:"Natural madd",p:[64],
+    defAr:"المد الطبيعي هو المد الذي لا تقوم ذات حرف المد إلا به، ولا يتوقف على همز أو سكون، ومقداره حركتان.",
+    defEn:"Natural madd has no hamzah or sukoon cause after the madd letter and is held for two counts.",
+    formula:"حرف مد بلا همز أو سكون بعده = حركتان",count:"2 counts",causes:"A valid madd letter with no secondary hamzah or sukoon",
+    examples:[e("قَالَ","Alif","قَا","مد طبيعي","No secondary cause follows.","Hold two counts.",64),e("يَقُولُ","Waw","قُو","مد طبيعي","Waw follows dammah.","Hold two counts.",64),e("قِيلَ","Ya","قِي","مد طبيعي","Ya follows kasrah.","Hold two counts.",64)],
+  },
+  {
+    id:"tajweed-u07-l03-lesser-sila",n:3,ar:"مد الصلة الصغرى",en:"Lesser connecting madd",p:[65],
+    defAr:"صلة هاء الضمير المفرد المذكر الغائب إذا وقعت بين متحركين ولم يأت بعدها همز، وتوصل بواو أو ياء لفظية مقدارها حركتان.",
+    defEn:"Lesser sila connects the masculine singular pronoun ha between vowelled letters when no hamzah follows, for two counts.",
+    formula:"هاء الضمير بين متحركين + لا همز بعدها = صلة صغرى 2",count:"2 counts in connection",causes:"Pronoun ha between vowelled letters with no following hamzah",
+    examples:[e("إِنَّهُۥ كَانَ","Pronoun ha","هُۥ","صلة صغرى","No hamzah follows the pronoun.","Connect for two counts.",65),e("بِهِۦ خَبِيرًا","Pronoun ha","هِۦ","صلة صغرى","The ha lies between vowelled sounds.","Connect for two counts.",65)],
+  },
+  {
+    id:"tajweed-u07-l04-badal",n:4,ar:"مد البدل",en:"Substitute madd",p:[66],
+    defAr:"مد البدل يأتي عندما يتقدم الهمز على حرف المد في كلمة واحدة، ومقداره في حفص حركتان.",
+    defEn:"Badal occurs when hamzah precedes the madd letter in the same word and is read for two counts in Hafs.",
+    formula:"همز + حرف مد في كلمة واحدة = بدل 2",count:"2 counts",causes:"Hamzah immediately precedes the madd letter in one word",
+    examples:[e("ءَامَنُوا","Alif badal","ءَا","مد بدل","Hamzah precedes alif.","Hold two counts.",66),e("إِيمَـٰنًا","Ya badal","إِي","مد بدل","Hamzah with kasrah precedes ya madd.","Hold two counts.",66),e("أُوتُوا","Waw badal","أُو","مد بدل","Hamzah with dammah precedes waw.","Hold two counts.",66)],
+  },
+  {
+    id:"tajweed-u07-l05-secondary",n:5,ar:"المد الفرعي وأسبابه",en:"Secondary madd and its causes",p:[67],
+    defAr:"المد الفرعي زيادة على الطبيعي بسبب همز أو سكون، وتتفرع أنواعه بحسب مكان السبب وثبوته.",
+    defEn:"Secondary madd exceeds natural madd because of hamzah or sukoon; its type depends on where and how the cause occurs.",
+    formula:"مد طبيعي + همز أو سكون = مد فرعي",count:"Depends on the subtype",causes:"Hamzah or sukoon",
+    examples:[e("جَآءَ","Hamzah cause","جَآءَ","مد فرعي","Hamzah follows madd in one word.","Classify as attached.",67),e("ٱلضَّآلِّينَ","Sukoon cause","ضَّآلِّ","مد فرعي","Permanent sukoon follows madd.","Classify as compulsory.",67)],
+  },
+  {
+    id:"tajweed-u07-l06-iwad",n:6,ar:"مد العوض",en:"Exchange madd",p:[68],
+    defAr:"عند الوقف على تنوين الفتح يُعوض عنه بألف مدية مقدارها حركتان، عدا المواضع المستثناة التي يبينها المعلم.",
+    defEn:"When stopping on fathatayn, its ending is generally exchanged for a two-count alif madd, subject to the taught exceptions.",
+    formula:"تنوين فتح + وقف = عوض 2",count:"2 counts when stopping",causes:"Stopping on a valid fathatayn ending",
+    examples:[e("عَلِيمًا","Stop on fathatayn","مًا","مد عوض","Stopping replaces tanween with alif sound.","Stop for two counts.",68),e("حَكِيمًا","Stop on fathatayn","مًا","مد عوض","The rule applies at stopping.","Do not pronounce the tanween noon.",68)],
+  },
+  {
+    id:"tajweed-u07-l07-muttasil",n:7,ar:"المد الواجب المتصل",en:"Required attached madd",p:[69],
+    defAr:"أن يأتي الهمز بعد حرف المد في الكلمة نفسها، ويمد في طريق الشاطبية أربعًا أو خمس حركات مع التزام وجه واحد.",
+    defEn:"Attached madd occurs when hamzah follows a madd letter in the same word; in this course it is read four or five counts consistently.",
+    formula:"حرف مد + همز في نفس الكلمة = متصل 4 أو 5",count:"4 or 5 counts consistently",causes:"Following hamzah in the same word",
+    examples:[e("جَآءَ","Attached hamzah","جَآءَ","واجب متصل","Hamzah follows alif in one word.","Use the teacher-selected 4 or 5.",69),e("ٱلسَّمَآءِ","Attached hamzah","مَآءِ","واجب متصل","Madd and hamzah share one word.","Keep the chosen count.",69)],
+  },
+  {
+    id:"tajweed-u07-l08-munfasil",n:8,ar:"المد الجائز المنفصل",en:"Separate allowed madd",p:[70],
+    defAr:"أن يكون حرف المد آخر كلمة والهمز أول الكلمة التالية، ويمد في هذا الطريق أربعًا أو خمس حركات عند الوصل.",
+    defEn:"Separate madd occurs when the madd letter ends one word and hamzah begins the next; it is read four or five counts in connection for this course.",
+    formula:"حرف مد | همز في الكلمة التالية = منفصل 4 أو 5",count:"4 or 5 counts in connection",causes:"Madd at word end followed by hamzah in the next word",
+    examples:[e("فِىٓ أَنفُسِكُمْ","Separate words","فِىٓ أَ","جائز منفصل","Ya madd and hamzah are in separate words.","Connect with the selected count.",70),e("بِمَآ أُنزِلَ","Separate words","مَآ أُ","جائز منفصل","Hamzah begins the next word.","Keep one consistent face.",70)],
+  },
+  {
+    id:"tajweed-u07-l09-greater-sila",n:9,ar:"مد الصلة الكبرى",en:"Greater connecting madd",p:[71],
+    defAr:"صلة هاء الضمير إذا جاء بعدها همز في الكلمة التالية، فتأخذ حكم المنفصل عند الوصل.",
+    defEn:"Greater sila occurs when hamzah follows the pronoun ha in the next word; in connection it takes the course's separate-madd count.",
+    formula:"هاء الضمير + همز بعدها = صلة كبرى 4 أو 5",count:"4 or 5 counts in connection",causes:"Pronoun ha followed by hamzah",
+    examples:[e("مَالَهُۥٓ أَخْلَدَهُۥ","Ha then hamzah","هُۥٓ أَ","صلة كبرى","Hamzah follows pronoun ha.","Connect with 4 or 5.",71),e("عِندَهُۥٓ إِلَّا","Ha then hamzah","هُۥٓ إِ","صلة كبرى","Hamzah begins the next word.","Use the selected count.",71)],
+  },
+  {
+    id:"tajweed-u07-l10-arid",n:10,ar:"المد العارض للسكون",en:"Presented sukoon madd",p:[72,73],
+    defAr:"إذا وقف القارئ فسكن الحرف الأخير بعد حرف مد، جاز المد حركتين أو أربعًا أو ستًا مع مراعاة التناسق.",
+    defEn:"Presented-sukoon madd occurs when stopping creates a temporary sukoon after a madd letter; two, four, or six counts are allowed consistently.",
+    formula:"حرف مد + سكون عارض بسبب الوقف = 2 أو 4 أو 6",count:"2, 4, or 6 counts when stopping",causes:"Temporary sukoon created by stopping",
+    examples:[e("ٱلْعَـٰلَمِينَ","Stop at verse end","مِينَ","عارض للسكون","Stopping makes the final noon sakin.","Choose 2, 4, or 6.",73),e("ٱلرَّحِيمِ","Stop","حِيمِ","عارض للسكون","Stopping creates temporary sukoon on mim.","Use a consistent allowed count.",73)],
+  },
+  {
+    id:"tajweed-u07-l11-leen",n:11,ar:"مد اللين",en:"Leen madd",p:[74],
+    defAr:"عند الوقف على كلمة فيها واو أو ياء ساكنة قبلهما فتح وبعدهما حرف يسكن للوقف، يجوز المد حركتين أو أربعًا أو ستًا.",
+    defEn:"Leen madd occurs when stopping after sakin waw or ya preceded by fathah; two, four, or six counts are allowed.",
+    formula:"ـَوْ / ـَيْ + سكون الوقف = لين 2 أو 4 أو 6",count:"2, 4, or 6 counts when stopping",causes:"Stopping after a leen letter",
+    examples:[e("خَوْفٍ","Leen waw","خَوْ","مد لين","Fathah precedes sakin waw.","At stopping choose 2, 4, or 6.",74),e("ٱلْبَيْتِ","Leen ya","بَيْ","مد لين","Fathah precedes sakin ya.","Apply only in the stopping context.",74)],
+  },
+  {
+    id:"tajweed-u07-l12-lazim-overview",n:12,ar:"المد اللازم",en:"Compulsory madd overview",p:[75],
+    defAr:"المد اللازم يأتي بعد حرف المد سكون أصلي ثابت وصلاً ووقفًا، ومقداره ست حركات، وينقسم إلى كلمي وحرفي مثقل ومخفف.",
+    defEn:"Compulsory madd has permanent sukoon after the madd letter in connection and stopping, is held six counts, and divides into word/letter and heavy/light forms.",
+    formula:"حرف مد + سكون أصلي = لازم 6",count:"6 counts",causes:"Permanent original sukoon",
+    examples:[e("ٱلضَّآلِّينَ","Word form","ضَّآلِّ","مد لازم","Permanent assimilated sukoon follows.","Hold six counts.",75),e("الٓمٓ","Letter form","لٓ","مد لازم حرفي","A spelled opening letter contains permanent sukoon.","Hold six where applicable.",75)],
+  },
+  {
+    id:"tajweed-u07-l13-lazim-word",n:13,ar:"المد اللازم الكلمي",en:"Compulsory madd in a word",p:[76,77],
+    defAr:"اللازم الكلمي يكون في كلمة؛ فإن جاء بعد المد حرف مشدد فهو مثقل، وإن جاء ساكن غير مشدد فهو مخفف، وكلاهما ست حركات.",
+    defEn:"Word compulsory madd occurs inside a word: heavy when followed by a strengthened letter and light when followed by unstrengthened permanent sukoon; both are six counts.",
+    formula:"داخل كلمة: مشدد = مثقل | ساكن بلا تشديد = مخفف | كلاهما 6",count:"6 counts",causes:"Permanent sukoon inside a word",
+    examples:[e("ٱلضَّآلِّينَ","Heavy word","ضَّآلِّ","لازم كلمي مثقل","Shaddah follows madd.","Hold six counts.",76),e("ءَآلْـَٰٔنَ","Light word","ءَآلْ","لازم كلمي مخفف","Permanent sukoon follows without shaddah.","Hold six counts.",77)],
+  },
+  {
+    id:"tajweed-u07-l14-lazim-letter",n:14,ar:"المد اللازم الحرفي",en:"Compulsory madd in a letter",p:[78,79],
+    defAr:"اللازم الحرفي يوجد في الحروف المقطعة بأوائل السور عندما يشتمل هجاء الحرف على حرف مد بعده سكون أصلي، ويمد ست حركات في مواضعه.",
+    defEn:"Letter compulsory madd occurs in selected opening letters whose spelled names contain a madd letter followed by permanent sukoon; applicable forms are held six counts.",
+    formula:"هجاء حرف مقطع يحوي مدًا ثم سكونًا أصليًا = لازم حرفي 6",count:"6 counts where applicable",causes:"Permanent sukoon in the spelled name of an opening letter",
+    examples:[e("الٓمٓ","Lam opening letter","لٓ","لازم حرفي مثقل","The spelled lam ends into mim assimilation.","Hold lam for six.",78),e("قٓ","Qaf opening letter","قٓ","لازم حرفي مخفف","The spelled letter contains madd and permanent sukoon.","Hold six.",79)],
+  },
+  {
+    id:"tajweed-u07-l15-stronger-cause",n:15,ar:"أقوى السببين",en:"Stronger of two causes",p:[80],
+    defAr:"إذا اجتمع سببان للمد في موضع واحد عُمِل بالأقوى منهما بحسب ترتيب الأحكام في القراءة، ولا يجمع القارئ مدين مستقلين على حرف واحد.",
+    defEn:"When two madd causes meet on one location, apply the stronger applicable cause rather than stacking two independent lengthenings.",
+    formula:"سببان على حرف مد واحد → اعمل بالأقوى",count:"Use the stronger rule's count",causes:"Two competing madd causes at one location",
+    examples:[e("جَآءَ","Attached madd while stopping","جَآءَ","أقوى السببين","The original attached-hamzah cause remains when stopping adds a temporary sukoon.","Apply the stronger attached-madd ruling consistently.",80),e("ٱلسَّمَآءِ","Attached madd at a stopping point","مَآءِ","أقوى السببين","The hamzah is an original cause in the same word; the stopping condition is secondary.","Do not stack two lengthenings; follow the stronger taught ruling.",80)],
+  },
+  {
+    id:"tajweed-u07-l16-review",n:16,ar:"المراجعة الشاملة للمدود",en:"Cumulative madd decision practice",p:[63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81],
+    defAr:"تجمع المراجعة حروف المد واللين، والسبب، وموضعه، وحالة الوصل أو الوقف، ثم تختار نوع المد ومقداره دون تخمين.",
+    defEn:"Cumulative practice combines the letter, cause, word boundary, and connection/stopping context to select the madd type and count.",
+    formula:"الحرف → السبب → الموضع → وصل/وقف → النوع → العدد",count:"2 / 4 / 5 / 6 according to the rule",causes:"All learned hamzah, sukoon, pronoun-ha, and stopping contexts",
+    examples:[e("قَالَ","Natural","قَا","طبيعي","No secondary cause.","Two counts.",81),e("جَآءَ","Attached","جَآءَ","متصل","Hamzah is in one word.","Four or five.",81),e("ٱلْعَـٰلَمِينَ","Stopping","مِينَ","عارض","Stopping creates sukoon.","Two, four, or six.",81),e("ٱلضَّآلِّينَ","Compulsory","ضَّآلِّ","لازم","Permanent sukoon follows.","Six counts.",81)],
+    extra:[
+      a("6 · Mixed","جَآءَ",["Attached madd","Natural madd","Leen madd"],"Attached madd","Correct.","Hamzah follows in one word."),
+      a("6 · Mixed","فِىٓ أَنفُسِكُمْ",["Separate madd","Attached madd","Badal"],"Separate madd","Correct.","Hamzah begins the next word."),
+      a("6 · Mixed","Stopping on العالمين",["Presented sukoon","Natural only","Badal"],"Presented sukoon","Correct.","Stopping creates temporary sukoon."),
+    ],
+  },
+];
+export const unit07Lessons = specs.map(make);
