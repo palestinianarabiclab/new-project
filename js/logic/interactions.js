@@ -2285,7 +2285,11 @@ function loadLessonDataFromLS() {
             const id = key.slice(LS_LESSON_PREFIX.length);
             try {
                 const data = JSON.parse(localStorage.getItem(key));
-                if (["tajweed-v1", "arabic-v1"].includes(data?.schemaType)) lessons[id] = data;
+                const isArabic = data?.schemaType === "arabic-v1";
+                const currentArabicSource = defaultLessons[id]?.meta?.curriculumSourceRevision;
+                const isCurrentArabic = isArabic && currentArabicSource
+                    && data?.meta?.curriculumSourceRevision === currentArabicSource;
+                if (data?.schemaType === "tajweed-v1" || isCurrentArabic) lessons[id] = data;
             } catch {
                 /* ignore */
             }
