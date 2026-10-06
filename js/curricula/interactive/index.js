@@ -1,4 +1,4 @@
-import { defaultLessons as arabicLessons } from './lessons/index.js';
+import { defaultLessons as arabicLessons } from '../../../20260821-curriculum-backup/interactive/lessons/index.js';
 import { practicalTajweedLessons, practicalTajweedOutline } from './tajweed/practical-path.js';
 import { unit04Lessons } from './tajweed/unit04.js';
 import { unit05Lessons } from './tajweed/unit05.js';
